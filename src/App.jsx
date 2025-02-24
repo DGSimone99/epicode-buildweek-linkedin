@@ -15,20 +15,19 @@ function App() {
     <>
       <CustomNav />
       <Container fluid>
-        <Row>
-          <Col xs={8}>
+        <Row xs={1} sm={2}>
+          <Col sm={8}>
             <ProfiloPrincipale />
             <Consigliato />
             <Analisi />
           </Col>
-          <Col xs={4}>
+          <Col sm={4}>
             <Language />
             <Persone />
           </Col>
         </Row>
       </Container>
       <Chat />
-      <ProfiloPrincipale />
     </>
   );
 }
