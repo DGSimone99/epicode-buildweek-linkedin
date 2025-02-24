@@ -4,7 +4,7 @@ import { ArrowRight, EyeFill } from "react-bootstrap-icons";
 const Analisi = () => {
   return (
     <>
-      <Container className="border rounded-3 p-0 pt-3">
+      <Container className=" bg-white border rounded-3 p-0 pt-3">
         {/* py-3 */}
         <div className="ps-4">
           <h5 className="mb-0">
