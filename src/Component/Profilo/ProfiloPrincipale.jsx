@@ -8,12 +8,12 @@ import Language from "./Language";
 const ProfiloPrincipale = () => {
   return (
     <Row xs={1} sm={2}>
-      <Col sm={8}>
+      <Col sm={9}>
         <Team />
         <Consigliato />
         <Analisi />
       </Col>
-      <Col sm={4}>
+      <Col sm={3}>
         <Language />
         <Persone />
       </Col>
