@@ -117,3 +117,11 @@ span {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
+
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+#input-group-dropdown {
+  background-color: lightgray !important;
+}
