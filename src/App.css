@@ -18,6 +18,13 @@ body {
   left: 30px;
 }
 
+.plusImg {
+  color: #0a66c2;
+  border: solid 0.05em #0a66c2 !important;
+  font-size: 3.5rem;
+  cursor: pointer;
+}
+
 .cameraDiv {
   top: 20px;
   right: 20px;

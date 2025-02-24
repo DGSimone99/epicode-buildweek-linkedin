@@ -1,8 +1,8 @@
 import { Button, Card, Col, Container, Image, Row } from "react-bootstrap";
 import Carousel from "react-bootstrap/Carousel";
 import { useState } from "react";
-import { BsFillCameraFill, BsXLg } from "react-icons/bs";
-import { BiCamera, BiPencil } from "react-icons/bi";
+import { BsFillCameraFill, BsPlus, BsXLg } from "react-icons/bs";
+import { BiPencil } from "react-icons/bi";
 
 const Team = () => {
   const [index, setIndex] = useState(0);
@@ -11,8 +11,8 @@ const Team = () => {
     setIndex(selectedIndex);
   };
   return (
-    <Container>
-      <Card className="cardBox rounded-3">
+    <Container className="cardBox rounded-3">
+      <Card>
         <Card.Img
           variant="top"
           src="https://www.reliant-rehab.com/wp-content/uploads/2019/02/reliant-generic-background-1.jpg"
@@ -21,10 +21,14 @@ const Team = () => {
         <Button className="position-absolute cameraDiv bg-white rounded-circle p-2">
           <BsFillCameraFill className="camera"></BsFillCameraFill>
         </Button>
-        <Image
-          src="https://i.pinimg.com/736x/f3/d1/ed/f3d1edf10d63c40e1fa06364176fa502.jpg"
-          className="userImg rounded-circle"
-        ></Image>
+        <div className="userImg">
+          <Image
+            src="https://i.pinimg.com/736x/f3/d1/ed/f3d1edf10d63c40e1fa06364176fa502.jpg"
+            fluid
+            className="rounded-circle position-relative"
+          ></Image>
+          <BsPlus className="position-absolute bottom-0 end-0 rounded-circle bg-white plusImg"></BsPlus>
+        </div>
         <Card.Body className="mt-5 px-4 position-relative">
           <BiPencil className="position-absolute pencil"></BiPencil>
           <Row>
