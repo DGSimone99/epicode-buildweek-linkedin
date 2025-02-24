@@ -7,7 +7,6 @@ import {
   ChatDotsFill,
   BellFill,
   Grid3x3GapFill,
-  CaretDownFill,
 } from "react-bootstrap-icons";
 
 const CustomNav = () => {
