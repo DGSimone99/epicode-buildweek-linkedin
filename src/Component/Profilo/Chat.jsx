@@ -33,7 +33,7 @@ const Chat = () => {
         <div className="p-2" id="chat-collapse-content">
           <InputGroup size="sm" className="mb-3 rounded-2">
             <InputGroup.Text id="inputGroup-sizing-sm" className="border-0 bg-body-secondary">
-              <Search size={15} />
+              <Search size={15} color="black" />
             </InputGroup.Text>
             <Form.Control
               className="border-0 bg-body-secondary"
@@ -42,8 +42,7 @@ const Chat = () => {
               placeholder="Cerca messaggi"
             />
             <DropdownButton
-              className="bg-body-secondary"
-              title=""
+              title={<Sliders2 size={18} color="black" />}
               variant="white"
               id="input-group-dropdown"
               align="end"
