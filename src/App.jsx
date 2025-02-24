@@ -1,7 +1,12 @@
 import "./App.css";
+import ProfiloPrincipale from "./Component/Profilo/ProfiloPrincipale";
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <ProfiloPrincipale />
+    </>
+  );
 }
 
 export default App;
