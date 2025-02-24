@@ -9,10 +9,10 @@ const MyHome = () => {
       <Row>
         <User />
 
-        <Col xs={5}>
+        <Col xs={6}>
           <CreaPost />
         </Col>
-        <Col xs={4}>
+        <Col xs={3}>
           <PrimoPiano />
         </Col>
       </Row>
