@@ -10,10 +10,9 @@ import {
   Search,
   SquareFill,
 } from "react-bootstrap-icons";
-import { useDispatch } from "react-redux";
+
 import { fetchUser } from "../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchUser } from "./redux/actions";
 
 const CustomNav = () => {
   const user = useSelector((state) => state.user.content);

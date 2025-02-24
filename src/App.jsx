@@ -11,14 +11,14 @@ function App() {
   return (
     <BrowserRouter>
       <CustomNav />
-      <Routes>
-        <Container fluid className="pt-3">
-          <Container>
+      <Container fluid className="pt-3">
+        <Container>
+          <Routes>
             <Route path="/" element={<MyHome />} />
             <Route path="/me" element={<ProfiloPrincipale />} />
-          </Container>
+          </Routes>
         </Container>
-      </Routes>
+      </Container>
       <Chat />
     </BrowserRouter>
   );
