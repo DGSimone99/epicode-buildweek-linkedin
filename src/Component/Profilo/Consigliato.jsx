@@ -27,7 +27,7 @@ const Consigliato = () => {
             <div className="mt-2">
               <p>Gli utenti che includono un riepilogo ricevono fino a 3,9 volte più visualizzazioni del profilo.</p>
             </div>
-            <button type="button" class="btn btn-outline-secondary rounded-5 py-1">
+            <button type="button" className="btn btn-outline-secondary rounded-5 py-1">
               <strong>Aggiungi un riepilogo</strong>
             </button>
           </Col>
