@@ -8,7 +8,7 @@ const User = () => {
   const user = useSelector((state) => state.user.content);
   return (
     <Col xs={3}>
-      <Container className="cardBox rounded-3 px-0 my-2">
+      <Container className="cardBox rounded-3 px-0 mb-2">
         <Card>
           <Card.Img
             variant="top"
