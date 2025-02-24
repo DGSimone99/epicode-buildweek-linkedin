@@ -3,12 +3,12 @@ import { Pen } from "react-bootstrap-icons";
 
 const Language = () => {
   return (
-    <Container fluid className="border rounded-3 my-4 bg-white">
+    <Container className="border rounded-3 my-3 bg-white">
       <Row className="my-3">
-        <Col lg={10} className="fw-bold">
+        <Col lg={10} xs={9} className="fw-bold">
           Lingua del profilo
         </Col>
-        <Col lg={2}>
+        <Col lg={2} xs={3}>
           <Button className="border-0 bg-white m-0 p-0">
             <Pen size={20} color="black" />
           </Button>
@@ -17,10 +17,10 @@ const Language = () => {
       </Row>
       <hr />
       <Row className="my-3">
-        <Col lg={10} className="fw-bold">
+        <Col lg={10} xs={9} className="fw-bold">
           Profilo pubblico e URL
         </Col>
-        <Col lg={2}>
+        <Col lg={2} xs={3}>
           <Button className="border-0 bg-white m-0 p-0">
             <Pen size={20} color="black" />
           </Button>

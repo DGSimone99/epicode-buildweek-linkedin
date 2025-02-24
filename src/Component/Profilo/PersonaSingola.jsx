@@ -22,7 +22,7 @@ const PersonaSingola = (props) => {
                 {props.nome} {props.cognome}
               </strong>
             </p>
-            <p className="text-truncate">
+            <p className="textTruncate">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius aliquid consequatur nesciunt
             </p>
             <Button
