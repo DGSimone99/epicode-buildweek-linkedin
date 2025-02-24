@@ -5,6 +5,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 /* import ProfiloPrincipale from "./Component/Profilo/ProfiloPrincipale"; */
 import "bootstrap/dist/css/bootstrap.min.css";
 import ProfiloPrincipale from "./Component/Profilo/ProfiloPrincipale";
+import Language from "./Component/Profilo/Language";
+import Chat from "./Component/Profilo/Chat";
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
       <ProfiloPrincipale />
       <Consigliato />
       <Analisi />
+      <Language />
+      <Chat />
     </>
   );
 }
