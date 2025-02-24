@@ -12,12 +12,16 @@ import {
 } from "react-bootstrap-icons";
 import { useDispatch } from "react-redux";
 import { fetchUser } from "../redux/actions";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchUser } from "./redux/actions";
 
 const CustomNav = () => {
+  const user = useSelector((state) => state.user.content);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchUser());
   }, []);
+
   return (
     <Navbar bg="white" expand="lg" className="px-3 shadow-sm container-fluid sticky-top ">
       <Container>
@@ -63,30 +67,18 @@ const CustomNav = () => {
 
           <Dropdown>
             <Dropdown.Toggle variant="white" className="text-dark border-0">
-              <Image
-                src="https://cdn.pixabay.com/photo/2019/08/11/18/59/icon-4399701_1280.png"
-                roundedCircle
-                width="24"
-                height="24"
-                className="me-1 d-block"
-              />
+              <Image src={user.image} roundedCircle width="24" height="24" className="me-1 d-block" />
               <span>Tu</span>
             </Dropdown.Toggle>
             <Dropdown.Menu>
               <Dropdown.Item href="#">
                 <div className="d-flex aling-items-center">
                   <div>
-                    <Image
-                      src="https://cdn.pixabay.com/photo/2019/08/11/18/59/icon-4399701_1280.png"
-                      roundedCircle
-                      width="50"
-                      height="50"
-                      className="me-1 d-block"
-                    />
+                    <Image src={user.image} roundedCircle width="50" height="50" className="me-1 d-block" />
                   </div>
                   <div className="align-content-center">
-                    <h6 className="m-0">Team 3 Epicode</h6>
-                    <p className="m-0 mt-1">Studente presso EPICODE</p>
+                    <h6 className="m-0">{user.name + " " + user.surname}</h6>
+                    <p className="m-0 mt-1">{user.title}</p>
                   </div>
                 </div>
                 <Button variant="outline-primary" className="rounded-pill fw-semibold px-5 py-0 my-2">
