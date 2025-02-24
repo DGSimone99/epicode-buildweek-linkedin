@@ -11,7 +11,7 @@ import {
   SquareFill,
 } from "react-bootstrap-icons";
 import { useDispatch } from "react-redux";
-import { fetchUser } from "./redux/actions";
+import { fetchUser } from "../redux/actions";
 
 const CustomNav = () => {
   const dispatch = useDispatch();
