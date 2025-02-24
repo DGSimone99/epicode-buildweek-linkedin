@@ -1,5 +1,5 @@
-import { Col, Container, Image, Row } from "react-bootstrap";
-import { ArrowRight, EyeFill, PeopleFill } from "react-bootstrap-icons";
+import { Container } from "react-bootstrap";
+import { ArrowRight, EyeFill } from "react-bootstrap-icons";
 
 const Analisi = () => {
   return (
@@ -56,7 +56,7 @@ const Analisi = () => {
               <p className="mb-0">
                 <strong>Impression del post</strong>
               </p>
-              <p className="mb-0">Crea un post per aumentare l'interesse.</p>
+              <p className="mb-0">Crea un post per aumentare l&apos;interesse.</p>
               <p className="text-secondary">Ultimi 7 giorni</p>
             </div>
           </div>
