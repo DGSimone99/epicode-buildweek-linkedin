@@ -21,6 +21,12 @@ import {
   Grid3x3GapFill,
   Search,
   SquareFill,
+  CompassFill,
+  FileEarmarkBarGraphFill,
+  LaptopFill,
+  InfoCircleFill,
+  Bullseye,
+  PlayBtnFill,
 } from "react-bootstrap-icons";
 
 const CustomNav = () => {
@@ -126,41 +132,57 @@ const CustomNav = () => {
               <span>Per le aziende</span>
             </Dropdown.Toggle>
             <Dropdown.Menu className="dropdown-menu-end mt-2" style={{ width: "680px" }}>
-              <Container className="m-4">
+              <Container className="p-4">
                 <Row xs={1} md={2}>
                   <Col className="border-end">
                     <div href="#">
-                      <h6>Le mie App</h6>
-                      <p className="mt-4 fw-semibold">Trova lead</p>
-                      <p className="my-3 fw-semibold">Gruppi</p>
+                      <h5>Le mie App</h5>
+                      <p className="mt-4 fw-semibold">
+                        <CompassFill /> Trova lead
+                      </p>
+                      <p className="my-4 fw-semibold">
+                        <PeopleFill /> Gruppi
+                      </p>
                       <p className="fw-semibold text-secondary mt-4">Talent</p>
-                      <p className="my-3 fw-semibold">Talent Insights</p>
-                      <p className="my-3 fw-semibold">Pubblica un'offerta di lavoro</p>
+                      <p className="my-4 fw-semibold">
+                        <FileEarmarkBarGraphFill />
+                        Talent Insights
+                      </p>
+                      <p className="my-4 fw-semibold">
+                        <LaptopFill /> Pubblica un'offerta di lavoro
+                      </p>
                       <p className="fw-semibold text-secondary mt-4">Vendite</p>
-                      <p className="my-3 fw-semibold">Marketplace dei servizi</p>
+                      <p className="my-4 fw-semibold">
+                        <InfoCircleFill /> Marketplace dei servizi
+                      </p>
                       <p className="fw-semibold text-secondary mt-4">Marketing</p>
-                      <p className="my-3 fw-semibold">Pubblicizza</p>
+                      <p className="my-4 fw-semibold">
+                        <Bullseye /> Pubblicizza
+                      </p>
                       <p className="fw-semibold text-secondary mt-4">Learning</p>
-                      <p className="my-3 fw-semibold">Learning</p>
+                      <p className="my-4 fw-semibold">
+                        <PlayBtnFill /> Learning
+                      </p>
                     </div>
                   </Col>
-                  <Col>
+                  <Col className="ps-4">
                     <div href="#">
-                      <h6>Scopri altro per il business</h6>
-                      <p className="mt-4 fw-semibold">Assumi su Linkedin</p>
-                      <p>Trova, attrai e assumi</p>
-                      <p className="mt-4 fw-semibold">Vendi con Linkedin</p>
-                      <p>Trova, attrai e assumi</p>
-                      <p className="mt-4 fw-semibold">Assumi su Linkedin</p>
-                      <p>Trova, attrai e assumi</p>
-                      <p className="mt-4 fw-semibold">Assumi su Linkedin</p>
-                      <p>Trova, attrai e assumi</p>
-                      <p className="mt-4 fw-semibold">Assumi su Linkedin</p>
-                      <p>Trova, attrai e assumi</p>
-                      <p className="mt-4 fw-semibold">Assumi su Linkedin</p>
-                      <p>Trova, attrai e assumi</p>
-                      <p className="mt-4 fw-semibold">Assumi su Linkedin</p>
-                      <p>Trova, attrai e assumi</p>
+                      <h5>Scopri altro per il business</h5>
+                      <p className="mt-4 mb-1 fw-semibold">Assumi su Linkedin</p>
+                      <p className="pAziende">Trova, attrai e assumi</p>
+                      <p className="mt-4 mb-1 fw-semibold">Vendi con Linkedin</p>
+                      <p className="pAziende">Sblocca nuove opportunità di vendita</p>
+                      <p className="mt-4 mb-1 fw-semibold">Offerta di lavoro gratuita</p>
+                      <p className="pAziende">Ottieni rapidamente candidati qualificati</p>
+                      <p className="mt-4 mb-1 fw-semibold">Fai pubblicità su Linkedin</p>
+                      <p className="pAziende">Acquisisci clienti e fai crescere la tua azienda</p>
+                      <p className="mt-4 mb-1 fw-semibold">Inizia con Premium</p>
+                      <p className="pAziende">Amplia e sfrutta la tua rete</p>
+                      <p className="mt-4 mb-1 fw-semibold">Impara con Linkedin</p>
+                      <p className="pAziende">Corsi per formare i tuoi dipendenti</p>
+                      <p className="mt-4 mb-1 fw-semibold">Admin Center</p>
+                      <p className="pAziende">Gestisci i dettagli di fatturazione e account</p>
+                      <p className="mt-4 mb-1 fw-semibold">Crea una pagina aziendale +</p>
                     </div>
                   </Col>
                 </Row>
