@@ -152,10 +152,10 @@ span {
   }
 }
 
-.dropdown-toggle::after {
+/* .dropdown-toggle::after {
   display: none !important;
 }
 
 #input-group-dropdown {
   background-color: lightgray !important;
-}
+} */
