@@ -20,11 +20,11 @@ const Persone = () => {
       </Container>
       <Container className="px-4">
         {profiles.length > 0 ? (
-          profiles.slice(0, 5).map((profile) => {
+          profiles.slice(0, 5).map((profile, i) => {
             return (
               <div key={profile._id}>
                 <PersonaSingola profile={profile} />
-                <hr className="hrProfiles" />
+                {i < 4 && <hr />}
               </div>
             );
           })
