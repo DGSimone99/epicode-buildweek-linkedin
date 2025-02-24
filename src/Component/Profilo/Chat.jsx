@@ -25,10 +25,10 @@ const Chat = () => {
         <div className="p-2" id="chat-collapse-content">
           <InputGroup size="sm" className="mb-3 rounded-2">
             <InputGroup.Text id="inputGroup-sizing-sm" className="border-0 bg-body-secondary">
-              <Search size={15} />
+              <Search size={15} color="black" />
             </InputGroup.Text>
             <Form.Control className="border-0 bg-body-secondary" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Cerca messaggi" />
-            <DropdownButton className="bg-body-secondary" title="" variant="white" id="input-group-dropdown" align="end">
+            <DropdownButton title={<Sliders2 size={18} color="black" />} variant="white" id="input-group-dropdown" align="end">
               <Dropdown.Item href="#">Da leggere</Dropdown.Item>
               <Dropdown.Item href="#">Contassegnati con una stella</Dropdown.Item>
               <Dropdown.Item href="#">Messaggi InMail</Dropdown.Item>
