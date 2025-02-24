@@ -19,24 +19,26 @@ const CustomNav = () => {
     dispatch(fetchUser());
   }, []);
   return (
-    <Navbar bg="white" expand="lg" className="px-3 shadow-sm container-fluid sticky-top">
+    <Navbar bg="white" expand="lg" className="px-3 shadow-sm container-fluid sticky-top ">
       <Container>
-        <Navbar.Brand href="#">
-          <Image
-            src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
-            width="34"
-            height="34"
-            alt="LinkedIn Logo"
-          />
-        </Navbar.Brand>
-        <Form>
-          <InputGroup style={{ backgroundColor: "#F4F2EE", borderRadius: "4px", overflow: "hidden" }}>
-            <InputGroup.Text style={{ backgroundColor: "#F4F2EE", border: "none" }}>
-              <Search />
-            </InputGroup.Text>
-            <FormControl type="search" placeholder="Cerca" style={{ backgroundColor: "#F4F2EE", border: "none" }} />
-          </InputGroup>
-        </Form>
+        <div className="d-flex align-items-center">
+          <Navbar.Brand href="#">
+            <Image
+              src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
+              width="34"
+              height="34"
+              alt="LinkedIn Logo"
+            />
+          </Navbar.Brand>
+          <Form>
+            <InputGroup style={{ backgroundColor: "#F4F2EE", borderRadius: "4px", overflow: "hidden" }}>
+              <InputGroup.Text style={{ backgroundColor: "#F4F2EE", border: "none" }}>
+                <Search />
+              </InputGroup.Text>
+              <FormControl type="search" placeholder="Cerca" style={{ backgroundColor: "#F4F2EE", border: "none" }} />
+            </InputGroup>
+          </Form>
+        </div>
         <Nav className="d-flex align-items-center">
           <Nav.Link href="#" className="text-secondary text-center">
             <HouseDoorFill size={20} className="mb-1 mx-4" />

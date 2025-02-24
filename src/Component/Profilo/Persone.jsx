@@ -10,6 +10,7 @@ const Persone = () => {
   useEffect(() => {
     dispatch(fetchProfiles());
   }, []);
+
   return (
     <Container className="bg-white border rounded-3 d-flex flex-column px-0">
       <Container className="px-4 pt-4">

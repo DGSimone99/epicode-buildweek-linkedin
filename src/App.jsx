@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <CustomNav />
-      <Container fluid className="my-5 pt-3">
+      <Container fluid className="pt-3">
         <Container>
           <Home />
           <ProfiloPrincipale />
