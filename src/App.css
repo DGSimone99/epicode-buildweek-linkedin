@@ -11,10 +11,19 @@ body {
   max-height: 201px;
 }
 
+.imgTeam2 {
+  max-height: 58px;
+}
+
 .userImg {
   position: absolute;
-  width: 152px;
   top: 90px;
+  left: 30px;
+}
+
+.userImg2 {
+  position: absolute;
+  top: 30px;
   left: 30px;
 }
 
@@ -22,6 +31,13 @@ body {
   color: #0a66c2;
   border: solid 0.05em #0a66c2 !important;
   font-size: 3.5rem;
+  cursor: pointer;
+}
+
+.plusImg2 {
+  color: white;
+  background-color: #0a66c2;
+  font-size: 2rem;
   cursor: pointer;
 }
 
