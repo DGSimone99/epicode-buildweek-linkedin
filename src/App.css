@@ -101,3 +101,23 @@ span {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
+
+.dropdown-item p {
+  font-size: 0.8rem;
+  margin: 8px 0;
+}
+
+/*RESPONSIVE - NAVBAR*/
+
+@media screen and (max-width: 1024px) {
+  .navbar {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+  }
+}
+@media screen and (max-width: 769px) {
+  .nav-link div,
+  span {
+    display: none;
+  }
+}

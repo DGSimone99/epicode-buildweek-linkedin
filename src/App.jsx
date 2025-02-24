@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <CustomNav />
-      <Container fluid>
+      <Container fluid className="my-5 pt-3">
         <Container>
           <ProfiloPrincipale />
         </Container>
