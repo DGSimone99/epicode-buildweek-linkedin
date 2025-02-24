@@ -6,7 +6,9 @@ const Consigliato = () => {
     <>
       <Container className="border rounded-3 py-3">
         <div className="ps-3">
-          <h5 className="mb-0">Consigliato per te</h5>
+          <h5 className="mb-0">
+            <strong>Consigliato per te</strong>
+          </h5>
           <p className="text-secondary">
             <EyeFill /> Solo per te
           </p>
