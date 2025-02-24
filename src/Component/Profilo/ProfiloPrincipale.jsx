@@ -1,4 +1,7 @@
+import Team from "./Team";
+
 const ProfiloPrincipale = () => {
-  return <div></div>;
+  return <Team />;
 };
+
 export default ProfiloPrincipale;
