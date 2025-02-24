@@ -1,5 +1,17 @@
 import React from "react";
-import { Navbar, Nav, Form, FormControl, Image, Container, Dropdown, InputGroup, Button } from "react-bootstrap";
+import {
+  Navbar,
+  Nav,
+  Form,
+  FormControl,
+  Image,
+  Container,
+  Dropdown,
+  InputGroup,
+  Button,
+  Col,
+  Row,
+} from "react-bootstrap";
 import {
   HouseDoorFill,
   PeopleFill,
@@ -31,7 +43,7 @@ const CustomNav = () => {
             <FormControl type="search" placeholder="Cerca" style={{ backgroundColor: "#F4F2EE", border: "none" }} />
           </InputGroup>
         </Form>
-        <Nav className="d-flex align-items-center">
+        <Nav className="d-flex align-items-center ">
           <Nav.Link href="#" className="text-secondary text-center">
             <HouseDoorFill size={20} className="mb-1 mx-4" />
             <div>Home</div>
@@ -53,7 +65,7 @@ const CustomNav = () => {
             <div>Notifiche</div>
           </Nav.Link>
 
-          <Dropdown>
+          <Dropdown className="border-end ">
             <Dropdown.Toggle variant="white" className="text-dark border-0">
               <Image
                 src="https://cdn.pixabay.com/photo/2019/08/11/18/59/icon-4399701_1280.png"
@@ -64,7 +76,7 @@ const CustomNav = () => {
               />
               <span>Tu</span>
             </Dropdown.Toggle>
-            <Dropdown.Menu>
+            <Dropdown.Menu className="dropdown-menu-end mt-2">
               <Dropdown.Item href="#">
                 <div className="d-flex aling-items-center">
                   <div>
@@ -108,16 +120,51 @@ const CustomNav = () => {
             </Dropdown.Menu>
           </Dropdown>
 
-          <div className="vr mx-2"></div>
-
           <Dropdown>
             <Dropdown.Toggle variant="white" className="text-dark border-0">
               <Grid3x3GapFill size={20} className="mb-1 mx-4 d-block" />
               <span>Per le aziende</span>
             </Dropdown.Toggle>
-            <Dropdown.Menu>
-              <Dropdown.Item href="#">Le mie App</Dropdown.Item>
-              <Dropdown.Item href="#">Scopri altro per il business</Dropdown.Item>
+            <Dropdown.Menu className="dropdown-menu-end mt-2" style={{ width: "680px" }}>
+              <Container className="m-4">
+                <Row xs={1} md={2}>
+                  <Col className="border-end">
+                    <div href="#">
+                      <h6>Le mie App</h6>
+                      <p className="mt-4 fw-semibold">Trova lead</p>
+                      <p className="my-3 fw-semibold">Gruppi</p>
+                      <p className="fw-semibold text-secondary mt-4">Talent</p>
+                      <p className="my-3 fw-semibold">Talent Insights</p>
+                      <p className="my-3 fw-semibold">Pubblica un'offerta di lavoro</p>
+                      <p className="fw-semibold text-secondary mt-4">Vendite</p>
+                      <p className="my-3 fw-semibold">Marketplace dei servizi</p>
+                      <p className="fw-semibold text-secondary mt-4">Marketing</p>
+                      <p className="my-3 fw-semibold">Pubblicizza</p>
+                      <p className="fw-semibold text-secondary mt-4">Learning</p>
+                      <p className="my-3 fw-semibold">Learning</p>
+                    </div>
+                  </Col>
+                  <Col>
+                    <div href="#">
+                      <h6>Scopri altro per il business</h6>
+                      <p className="mt-4 fw-semibold">Assumi su Linkedin</p>
+                      <p>Trova, attrai e assumi</p>
+                      <p className="mt-4 fw-semibold">Vendi con Linkedin</p>
+                      <p>Trova, attrai e assumi</p>
+                      <p className="mt-4 fw-semibold">Assumi su Linkedin</p>
+                      <p>Trova, attrai e assumi</p>
+                      <p className="mt-4 fw-semibold">Assumi su Linkedin</p>
+                      <p>Trova, attrai e assumi</p>
+                      <p className="mt-4 fw-semibold">Assumi su Linkedin</p>
+                      <p>Trova, attrai e assumi</p>
+                      <p className="mt-4 fw-semibold">Assumi su Linkedin</p>
+                      <p>Trova, attrai e assumi</p>
+                      <p className="mt-4 fw-semibold">Assumi su Linkedin</p>
+                      <p>Trova, attrai e assumi</p>
+                    </div>
+                  </Col>
+                </Row>
+              </Container>
             </Dropdown.Menu>
           </Dropdown>
           <Nav.Link

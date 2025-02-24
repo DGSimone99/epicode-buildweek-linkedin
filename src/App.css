@@ -101,6 +101,10 @@ span,
   height: 60px;
 }
 
+#dropAziende {
+  width: 300px !important;
+}
+
 .nav-link div,
 span {
   font-size: 0.7rem;
