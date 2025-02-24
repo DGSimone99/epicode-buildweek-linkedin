@@ -4,6 +4,7 @@ import ProfiloPrincipale from "./Component/Profilo/ProfiloPrincipale";
 import Chat from "./Component/Profilo/Chat";
 import { Container } from "react-bootstrap";
 import CustomNav from "./Component/CustomNav";
+import Home from "./Component/Home/Home";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <CustomNav />
       <Container fluid>
         <Container>
+          <Home />
           <ProfiloPrincipale />
         </Container>
       </Container>

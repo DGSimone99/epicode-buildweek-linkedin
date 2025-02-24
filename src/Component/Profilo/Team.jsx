@@ -26,6 +26,7 @@ const Team = () => {
             src="https://i.pinimg.com/736x/f3/d1/ed/f3d1edf10d63c40e1fa06364176fa502.jpg"
             fluid
             className="rounded-circle position-relative"
+            width={152}
           ></Image>
           <BsPlus className="position-absolute bottom-0 end-0 rounded-circle bg-white plusImg"></BsPlus>
         </div>
