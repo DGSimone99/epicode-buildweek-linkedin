@@ -1,0 +1,26 @@
+/* Footer */
+
+.linkedIn-footer,
+.linkedIn-footer a {
+  text-decoration: none;
+  color: #737373;
+  font-weight: 400;
+  font-size: 1.15rem;
+}
+
+.linkedIn-footer a {
+  font-weight: bold;
+}
+
+.linkedIn-footer i {
+  color: #3d3d3c;
+  font-size: 1.25rem;
+  padding-right: 0.5rem;
+}
+
+.linkedIn-footer select {
+  border: 1px solid black;
+  border-radius: 0.2rem;
+  width: 100%;
+  padding: 0.2rem;
+}
