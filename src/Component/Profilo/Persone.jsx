@@ -1,7 +1,15 @@
-import { Container } from "react-bootstrap";
+import { Container, Spinner } from "react-bootstrap";
 import PersonaSingola from "./PersonaSingola";
+import { useEffect } from "react";
+import { fetchProfiles } from "../redux/actions";
+import { useDispatch, useSelector } from "react-redux";
 
 const Persone = () => {
+  const profiles = useSelector((state) => state.profiles.content);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchProfiles());
+  }, []);
   return (
     <Container className="bg-white border-secondary rounded-3 d-flex flex-column px-0">
       <Container className="px-4 pt-4">
@@ -11,13 +19,18 @@ const Persone = () => {
         <h5 className="text-secondary">Dalla tua scuola o università</h5>
       </Container>
       <Container className="px-4">
-        <PersonaSingola nome="Giangianni" cognome="Scirecco" />
-        <hr />
-        <PersonaSingola nome="Temistualdo" cognome="Cipolloni" />
-        <hr />
-        <PersonaSingola nome="Gianmario" cognome="Palude" />
-        <hr />
-        <PersonaSingola nome="Leopoldo" cognome="Megliofuori" />
+        {profiles.length > 0 ? (
+          profiles.slice(0, 5).map((profile) => {
+            return (
+              <div key={profile._id}>
+                <PersonaSingola profile={profile} />
+                <hr className="hrProfiles" />
+              </div>
+            );
+          })
+        ) : (
+          <Spinner animation="grow" />
+        )}
       </Container>
       <hr />
       <p className="text-center">

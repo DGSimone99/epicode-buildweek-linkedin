@@ -8,8 +8,8 @@ const PersonaSingola = (props) => {
         <Row>
           <Col xs={3}>
             <img
-              src="https://thumbs.dreamstime.com/z/shrek-est-un-ogre-vert-fictif-madame-tussauds-uk-personnage-d-cr%C3%A9%C3%A9-par-l-auteur-am%C3%A9ricain-william-steig-la-voix-de-mike-myers-216406315.jpg"
-              alt="propic"
+              src={props.profile.image}
+              alt={props.profile.name + " propic"}
               className="rounded-circle"
               width="60rem"
               height="60rem"
@@ -19,12 +19,10 @@ const PersonaSingola = (props) => {
           <Col xs={9} className="d-flex flex-column">
             <p>
               <strong>
-                {props.nome} {props.cognome}
+                {props.profile.name} {props.profile.surname}
               </strong>
             </p>
-            <p className="textTruncate">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius aliquid consequatur nesciunt
-            </p>
+            <p className="textTruncate">{props.profile.bio}</p>
             <Button
               variant="light"
               className="rounded-pill border border-black fw-bold d-flex align-items-center justify-content-center me-auto"
