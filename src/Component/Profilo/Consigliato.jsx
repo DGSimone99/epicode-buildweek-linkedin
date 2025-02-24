@@ -4,7 +4,7 @@ import { EyeFill } from "react-bootstrap-icons";
 const Consigliato = () => {
   return (
     <>
-      <Container className="border rounded-3 py-3 bg-white">
+      <Container className="border rounded-3 py-3 bg-white my-3">
         <div className="ps-3">
           <h5 className="mb-0">
             <strong>Consigliato per te</strong>

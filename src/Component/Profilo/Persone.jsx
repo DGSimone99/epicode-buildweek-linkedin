@@ -3,7 +3,7 @@ import PersonaSingola from "./PersonaSingola";
 
 const Persone = () => {
   return (
-    <Container className="bg-white border-secondary rounded-3 d-flex flex-column px-0">
+    <Container className="bg-white border rounded-3 d-flex flex-column px-0">
       <Container className="px-4 pt-4">
         <h4>
           <strong>Persone che potresti conoscere</strong>
