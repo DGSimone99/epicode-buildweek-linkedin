@@ -11,8 +11,8 @@ const PersonaSingola = (props) => {
               src="https://thumbs.dreamstime.com/z/shrek-est-un-ogre-vert-fictif-madame-tussauds-uk-personnage-d-cr%C3%A9%C3%A9-par-l-auteur-am%C3%A9ricain-william-steig-la-voix-de-mike-myers-216406315.jpg"
               alt="propic"
               className="rounded-circle"
-              width="120rem"
-              height="120rem"
+              width="60rem"
+              height="60rem"
               style={{ objectFit: "cover", objectPosition: "center" }}
             />
           </Col>
