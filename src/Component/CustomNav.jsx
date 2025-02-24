@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect } from "react";
 import {
   Navbar,
   Nav,
@@ -28,28 +28,38 @@ import {
   Bullseye,
   PlayBtnFill,
 } from "react-bootstrap-icons";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchUser } from "./redux/actions";
 
 const CustomNav = () => {
+  const user = useSelector((state) => state.user.content);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchUser());
+  }, []);
+
   return (
-    <Navbar bg="white" expand="lg" className="px-3 shadow-sm container-fluid fixed-top">
+    <Navbar bg="white" expand="lg" className="px-3 shadow-sm container-fluid sticky-top ">
       <Container>
-        <Navbar.Brand href="#">
-          <Image
-            src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
-            width="34"
-            height="34"
-            alt="LinkedIn Logo"
-          />
-        </Navbar.Brand>
-        <Form>
-          <InputGroup style={{ backgroundColor: "#F4F2EE", borderRadius: "4px", overflow: "hidden" }}>
-            <InputGroup.Text style={{ backgroundColor: "#F4F2EE", border: "none" }}>
-              <Search />
-            </InputGroup.Text>
-            <FormControl type="search" placeholder="Cerca" style={{ backgroundColor: "#F4F2EE", border: "none" }} />
-          </InputGroup>
-        </Form>
-        <Nav className="d-flex align-items-center ">
+        <div className="d-flex align-items-center">
+          <Navbar.Brand href="#">
+            <Image
+              src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
+              width="34"
+              height="34"
+              alt="LinkedIn Logo"
+            />
+          </Navbar.Brand>
+          <Form>
+            <InputGroup style={{ backgroundColor: "#F4F2EE", borderRadius: "4px", overflow: "hidden" }}>
+              <InputGroup.Text style={{ backgroundColor: "#F4F2EE", border: "none" }}>
+                <Search />
+              </InputGroup.Text>
+              <FormControl type="search" placeholder="Cerca" style={{ backgroundColor: "#F4F2EE", border: "none" }} />
+            </InputGroup>
+          </Form>
+        </div>
+        <Nav className="d-flex align-items-center">
           <Nav.Link href="#" className="text-secondary text-center">
             <HouseDoorFill size={20} className="mb-1 mx-4" />
             <div>Home</div>
@@ -73,30 +83,18 @@ const CustomNav = () => {
 
           <Dropdown className="border-end ">
             <Dropdown.Toggle variant="white" className="text-dark border-0">
-              <Image
-                src="https://cdn.pixabay.com/photo/2019/08/11/18/59/icon-4399701_1280.png"
-                roundedCircle
-                width="24"
-                height="24"
-                className="me-1 d-block"
-              />
+              <Image src={user.image} roundedCircle width="24" height="24" className="me-1 d-block" />
               <span>Tu</span>
             </Dropdown.Toggle>
             <Dropdown.Menu className="dropdown-menu-end mt-2">
               <Dropdown.Item href="#">
                 <div className="d-flex aling-items-center">
                   <div>
-                    <Image
-                      src="https://cdn.pixabay.com/photo/2019/08/11/18/59/icon-4399701_1280.png"
-                      roundedCircle
-                      width="50"
-                      height="50"
-                      className="me-1 d-block"
-                    />
+                    <Image src={user.image} roundedCircle width="50" height="50" className="me-1 d-block" />
                   </div>
                   <div className="align-content-center">
-                    <h6 className="m-0">Team 3 Epicode</h6>
-                    <p className="m-0 mt-1">Studente presso EPICODE</p>
+                    <h6 className="m-0">{user.name + " " + user.surname}</h6>
+                    <p className="m-0 mt-1">{user.title}</p>
                   </div>
                 </div>
                 <Button variant="outline-primary" className="rounded-pill fw-semibold px-5 py-0 my-2">

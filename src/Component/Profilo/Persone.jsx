@@ -1,15 +1,18 @@
 import { Container, Spinner } from "react-bootstrap";
 import PersonaSingola from "./PersonaSingola";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { fetchProfiles } from "../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
+import PersoneModal from "./PersoneModal";
 
 const Persone = () => {
+  const [modalShow, setModalShow] = React.useState(false);
   const profiles = useSelector((state) => state.profiles.content);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchProfiles());
   }, []);
+
   return (
     <Container className="bg-white border rounded-3 d-flex flex-column px-0">
       <Container className="px-4 pt-4">
@@ -33,9 +36,10 @@ const Persone = () => {
         )}
       </Container>
       <hr />
-      <p className="text-center">
+      <p className="text-center" onClick={() => setModalShow(true)}>
         <strong>Mostra tutto</strong>
       </p>
+      <PersoneModal show={modalShow} onHide={() => setModalShow(false)} profiles={profiles} />
     </Container>
   );
 };
