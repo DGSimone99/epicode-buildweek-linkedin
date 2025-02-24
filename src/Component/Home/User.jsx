@@ -1,6 +1,6 @@
-import { Card, Col, Container, Image, Navbar, NavLink } from "react-bootstrap";
+import { Card, Col, Container, Image, NavLink } from "react-bootstrap";
 import { PeopleFill, PersonPlusFill } from "react-bootstrap-icons";
-import { BiCalendar, BiCalendarAlt } from "react-icons/bi";
+import { BiCalendarAlt } from "react-icons/bi";
 import { BsFillBookmarkFill, BsFillSlashSquareFill, BsPlus } from "react-icons/bs";
 
 const User = () => {
@@ -43,11 +43,17 @@ const User = () => {
         <Card>
           <Card.Body className="px-2">
             <Container>
-              <Card.Text className="fw-bold mb-3">Visualizza tutte le analisi</Card.Text>
+              <Card.Text className="fw-bold mb-3">
+                <a href="#" className="nav-link">
+                  Visualizza tutte le analisi
+                </a>
+              </Card.Text>
               <div className="d-flex justify-content-between">
                 <div>
-                  <Card.Text className="mb-0 fw-bold">Collegamenti</Card.Text>
-                  <Card.Text className="text-secondary my-0">Espandi la tua rete</Card.Text>
+                  <a href="#" className="nav-link">
+                    <Card.Text className="mb-0 fw-bold">Collegamenti</Card.Text>
+                    <Card.Text className="text-secondary my-0">Espandi la tua rete</Card.Text>
+                  </a>
                 </div>
                 <div>
                   <PersonPlusFill className="text-black"></PersonPlusFill>
@@ -62,11 +68,13 @@ const User = () => {
         <Card>
           <Card.Body className="px-2">
             <Container>
-              <Card.Text className="text-secondary mb-3">Accedi a strumenti e informazioni in esclusiva</Card.Text>
-              <Card.Text className="mb-0 fw-bold d-flex align-items-center">
-                <BsFillSlashSquareFill className="me-2" style={{ color: "#E7A33E" }}></BsFillSlashSquareFill> Prova
-                Premium per 0 EUR
-              </Card.Text>
+              <a href="#" className="nav-link">
+                <Card.Text className="text-secondary mb-3">Accedi a strumenti e informazioni in esclusiva</Card.Text>
+                <Card.Text className="mb-0 fw-bold d-flex align-items-center">
+                  <BsFillSlashSquareFill className="me-2" style={{ color: "#E7A33E" }}></BsFillSlashSquareFill> Prova
+                  Premium per 0 EUR
+                </Card.Text>{" "}
+              </a>
             </Container>
           </Card.Body>
         </Card>
