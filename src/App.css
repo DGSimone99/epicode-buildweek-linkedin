@@ -67,3 +67,22 @@ body {
   right: 20px;
   font-size: 1.4em;
 }
+
+.bi,
+span,
+.dropdown-toggle::after {
+  color: grey;
+}
+
+.navbar {
+  height: 60px;
+}
+
+.nav-link div,
+span {
+  font-size: 0.7rem;
+}
+
+.dropdown-toggle::after {
+  margin-top: 10px;
+}
