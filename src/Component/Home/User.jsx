@@ -2,8 +2,10 @@ import { Card, Col, Container, Image, NavLink } from "react-bootstrap";
 import { PeopleFill, PersonPlusFill } from "react-bootstrap-icons";
 import { BiCalendarAlt } from "react-icons/bi";
 import { BsFillBookmarkFill, BsFillSlashSquareFill, BsPlus } from "react-icons/bs";
+import { useSelector } from "react-redux";
 
 const User = () => {
+  const user = useSelector((state) => state.user.content);
   return (
     <Col xs={3}>
       <Container className="cardBox rounded-3 px-0 my-2">
@@ -14,19 +16,14 @@ const User = () => {
             className="imgTeam2 position-relative"
           />
           <div className="userImg2">
-            <Image
-              src="https://i.pinimg.com/736x/f3/d1/ed/f3d1edf10d63c40e1fa06364176fa502.jpg"
-              fluid
-              className="rounded-circle position-relative"
-              width={68}
-            ></Image>
+            <Image src={user.image} fluid className="rounded-circle position-relative" width={68}></Image>
             <BsPlus className="position-absolute bottom-0 end-0 rounded-circle plusImg2"></BsPlus>
           </div>
           <Card.Body className="mt-4 px-2">
             <Container>
-              <Card.Title className="fs-3 mb-0">Team 3 Epicode</Card.Title>
-              <Card.Text className="mb-0">Studente presso EPICODE</Card.Text>
-              <Card.Text className="text-secondary my-0">Roma, Lazio</Card.Text>
+              <Card.Title className="fs-3 mb-0">{user.name + " " + user.surname}</Card.Title>
+              <Card.Text className="mb-0">{user.title}</Card.Text>
+              <Card.Text className="text-secondary my-0">{user.area}</Card.Text>
               <Card.Text className="my-1">
                 <img
                   src="https://media.licdn.com/dms/image/v2/C4E0BAQHYgix-Ynux1A/company-logo_100_100/company-logo_100_100/0/1646830188798/epicodeschool_logo?e=1748476800&amp;v=beta&amp;t=doTFJx0D6s9OjWg9ZXuLy9TSWloZEUtDzU0J_gPyBJs"

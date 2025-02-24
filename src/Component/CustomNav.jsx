@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Navbar, Nav, Form, FormControl, Image, Container, NavDropdown, Dropdown } from "react-bootstrap";
 import {
   HouseDoorFill,
@@ -8,8 +8,14 @@ import {
   BellFill,
   Grid3x3GapFill,
 } from "react-bootstrap-icons";
+import { useDispatch } from "react-redux";
+import { fetchUser } from "./redux/actions";
 
 const CustomNav = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchUser());
+  }, []);
   return (
     <Navbar bg="white" expand="lg" className="px-3 shadow-sm container-fluid">
       <Container>

@@ -3,10 +3,12 @@ import Carousel from "react-bootstrap/Carousel";
 import { useState } from "react";
 import { BsFillCameraFill, BsPlus, BsXLg } from "react-icons/bs";
 import { BiPencil } from "react-icons/bi";
+import { useSelector } from "react-redux";
 
 const Team = () => {
-  const [index, setIndex] = useState(0);
+  const user = useSelector((state) => state.user.content);
 
+  const [index, setIndex] = useState(0);
   const handleSelect = (selectedIndex) => {
     setIndex(selectedIndex);
   };
@@ -22,22 +24,17 @@ const Team = () => {
           <BsFillCameraFill className="camera"></BsFillCameraFill>
         </Button>
         <div className="userImg">
-          <Image
-            src="https://i.pinimg.com/736x/f3/d1/ed/f3d1edf10d63c40e1fa06364176fa502.jpg"
-            fluid
-            className="rounded-circle position-relative"
-            width={152}
-          ></Image>
+          <Image src={user.image} fluid className="rounded-circle position-relative" width={152}></Image>
           <BsPlus className="position-absolute bottom-0 end-0 rounded-circle bg-white plusImg"></BsPlus>
         </div>
         <Card.Body className="mt-5 px-4 position-relative">
           <BiPencil className="position-absolute pencil"></BiPencil>
           <Row>
             <Col xs={8}>
-              <Card.Title className="fs-2 mb-0">Team 3 Epicode</Card.Title>
-              <Card.Text className="fs-5">Studente presso EPICODE</Card.Text>
+              <Card.Title className="fs-2 mb-0">{user.name + " " + user.surname}</Card.Title>
+              <Card.Text className="fs-5">{user.title}</Card.Text>
               <Card.Text className="text-secondary">
-                Roma, Lazio, Italia <a href="#">Informazioni di contatto</a>
+                {user.area} <a href="#">Informazioni di contatto</a>
               </Card.Text>
             </Col>
             <Col>
