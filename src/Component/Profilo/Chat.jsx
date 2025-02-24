@@ -3,7 +3,7 @@ import { PersonCircle, ThreeDots, PencilSquare } from "react-bootstrap-icons";
 
 const Chat = () => {
   return (
-    <div className="position-fixed bottom-0 end-0 m-3 border rounded-3">
+    <div className="position-fixed bottom-0 end-0 m-3 border rounded-3 bg-white">
       <Dropdown drop="up">
         <Dropdown.Toggle variant="white">
           <PersonCircle size={20} color="grey" />

@@ -15,6 +15,7 @@ function App() {
     <>
       <CustomNav />
       <Container fluid>
+<<<<<<< HEAD
         <Row xs={1} sm={2}>
           <Col sm={8}>
             <ProfiloPrincipale />
@@ -26,6 +27,21 @@ function App() {
             <Persone />
           </Col>
         </Row>
+=======
+        <Container>
+          <Row>
+            <Col xs={8}>
+              <ProfiloPrincipale />
+              <Consigliato />
+              <Analisi />
+            </Col>
+            <Col xs={4}>
+              <Language />
+              <Persone />
+            </Col>
+          </Row>
+        </Container>
+>>>>>>> 32aa37ddd0dbc4b54c581fe9e328d3b87c7e2077
       </Container>
       <Chat />
     </>

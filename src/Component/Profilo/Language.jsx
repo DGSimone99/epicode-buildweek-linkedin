@@ -3,7 +3,7 @@ import { Pen } from "react-bootstrap-icons";
 
 const Language = () => {
   return (
-    <Container className="border rounded-3 my-4" style={{ width: "300px" }}>
+    <Container fluid className="border rounded-3 my-4 bg-white">
       <Row className="my-3">
         <Col lg={10} className="fw-bold">
           Lingua del profilo
