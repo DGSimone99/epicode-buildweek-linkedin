@@ -11,7 +11,7 @@ const Team = () => {
     setIndex(selectedIndex);
   };
   return (
-    <Container className="cardBox rounded-3">
+    <Container className="cardBox rounded-3 px-0">
       <Card>
         <Card.Img
           variant="top"

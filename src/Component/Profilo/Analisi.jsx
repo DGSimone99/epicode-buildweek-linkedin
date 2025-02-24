@@ -1,5 +1,5 @@
-import { Col, Container, Image, Row } from "react-bootstrap";
-import { ArrowRight, EyeFill, PeopleFill } from "react-bootstrap-icons";
+import { Container } from "react-bootstrap";
+import { ArrowRight, EyeFill } from "react-bootstrap-icons";
 
 const Analisi = () => {
   return (
@@ -21,7 +21,7 @@ const Analisi = () => {
                 viewBox="0 0 24 24"
                 data-supported-dps="24x24"
                 fill="currentColor"
-                class="mercado-match"
+                className="mercado-match"
                 width="24"
                 height="24"
                 focusable="false"
