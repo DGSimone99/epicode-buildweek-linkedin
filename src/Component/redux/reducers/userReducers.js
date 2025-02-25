@@ -1,4 +1,4 @@
-import { EDIT_USER, SET_USER } from "../actions";
+import { SET_USER } from "../actions";
 
 const initialState = {
   content: {},
@@ -6,12 +6,6 @@ const initialState = {
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_USER:
-      return {
-        ...state,
-        content: action.payload,
-      };
-
-    case EDIT_USER:
       return {
         ...state,
         content: action.payload,

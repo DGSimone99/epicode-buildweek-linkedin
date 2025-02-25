@@ -1,21 +1,19 @@
 import { Button, Card, Col, Container, Image, Row } from "react-bootstrap";
 import Carousel from "react-bootstrap/Carousel";
-import React, { useState } from "react";
+import { useState } from "react";
 import { BsFillCameraFill, BsPlus, BsXLg } from "react-icons/bs";
 import { BiPencil } from "react-icons/bi";
 import { useSelector } from "react-redux";
-import EditProfilo from "./EditProfilo";
 
 const Team = () => {
   const user = useSelector((state) => state.user.content);
 
   const [index, setIndex] = useState(0);
-  const [modalShow, setModalShow] = React.useState(false);
   const handleSelect = (selectedIndex) => {
     setIndex(selectedIndex);
   };
   return (
-    <Container className="cardBox rounded-3 px-0 my-3">
+    <Container className="cardBox rounded-3 px-0">
       <Card>
         <Card.Img
           variant="top"
@@ -30,7 +28,7 @@ const Team = () => {
           <BsPlus className="position-absolute bottom-0 end-0 rounded-circle bg-white plusImg"></BsPlus>
         </div>
         <Card.Body className="mt-5 px-4 position-relative">
-          <BiPencil className="position-absolute pencil" onClick={() => setModalShow(true)}></BiPencil>
+          <BiPencil className="position-absolute pencil"></BiPencil>
           <Row>
             <Col xs={8}>
               <Card.Title className="fs-2 mb-0">{user.name + " " + user.surname}</Card.Title>
@@ -65,20 +63,25 @@ const Team = () => {
             <Carousel.Item>
               <Row>
                 <Col>
-                  <div className="border border-1 px-3 py-2 rounded-3 position-relative">
+                  <div className="border border-1 px-3 py-2 rounded-3 position-relative h-100">
                     <p className="mb-0 pe-5">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque distinctio voluptates earum
-                      blanditiis amet, tempore.
+                      <span className="fw-bold text-black" style={{ fontSize: "16px" }}>
+                        Mostra ai recruiter che sei disponibile a lavorare
+                      </span>
+                      : sei tu che decidi chi può vedere questa informazione.{" "}
                     </p>
                     <a href="#">Inizia</a>
+
                     <BsXLg className="position-absolute xCarousel"></BsXLg>
                   </div>
                 </Col>
                 <Col>
-                  <div className="border border-1 px-3 py-2 rounded-3 position-relative">
+                  <div className="border border-1 px-3 py-2 rounded-3 position-relative h-100">
                     <p className="mb-0 pe-5">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque distinctio voluptates earum
-                      blanditiis amet, tempore.
+                      <span className="fw-bold text-black" style={{ fontSize: "16px" }}>
+                        Fai sapere che stai facendo selezione&nbsp;
+                      </span>
+                      e attrai candidati qualificati.
                     </p>
                     <a href="#">Inizia</a>
                     <BsXLg className="position-absolute xCarousel"></BsXLg>
@@ -89,20 +92,24 @@ const Team = () => {
             <Carousel.Item>
               <Row>
                 <Col>
-                  <div className="border border-1 px-3 py-2 rounded-3 position-relative">
+                  <div className="border border-1 px-3 py-2 rounded-3 position-relative h-100">
                     <p className="mb-0 pe-5">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque distinctio voluptates earum
-                      blanditiis amet, tempore.
+                      <span className="fw-bold text-black" style={{ fontSize: "16px" }}>
+                        Metti in risalto i tuoi servizi&nbsp;
+                      </span>
+                      in un’apposita sezione sul tuo profilo, così sarà più facile trovarti.
                     </p>
                     <a href="#">Inizia</a>
                     <BsXLg className="position-absolute xCarousel"></BsXLg>
                   </div>
                 </Col>
                 <Col>
-                  <div className="border border-1 px-3 py-2 rounded-3 position-relative">
+                  <div className="border border-1 px-3 py-2 rounded-3 position-relative h-100">
                     <p className="mb-0 pe-5">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque distinctio voluptates earum
-                      blanditiis amet, tempore.
+                      <span className="fw-bold text-black" style={{ fontSize: "16px" }}>
+                        Mostra ai recruiter che sei disponibile a lavorare
+                      </span>
+                      : sei tu che decidi chi può vedere questa informazione.{" "}
                     </p>
                     <a href="#">Inizia</a>
                     <BsXLg className="position-absolute xCarousel"></BsXLg>
@@ -113,7 +120,6 @@ const Team = () => {
           </Carousel>
         </Card.Body>
       </Card>
-      <EditProfilo show={modalShow} onHide={() => setModalShow(false)} />
     </Container>
   );
 };

@@ -1,6 +1,5 @@
 export const SET_PROFILES = "SET_PROFILES";
 export const SET_USER = "SET_USER";
-export const EDIT_USER = "EDIT_USER";
 export const setProfilesAction = (data) => ({ type: SET_PROFILES, payload: data });
 export const setUserAction = (data) => ({ type: SET_USER, payload: data });
 
@@ -43,28 +42,5 @@ export const fetchUser = () => {
         }
       })
       .catch((err) => console.error(err));
-  };
-};
-
-export const editUser = (newUserData) => {
-  return async (dispatch) => {
-    try {
-      let resp = await fetch("https://striveschool-api.herokuapp.com/api/profile/me", {
-        method: "PUT",
-        headers: {
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2JjNGRjY2U3MDMzNzAwMTUzMTZkYjEiLCJpYXQiOjE3NDAzOTM5MzIsImV4cCI6MTc0MTYwMzUzMn0.1t8kxCm5d0UPnuFQqZs9G6-VZkPjsGpIMIhIadrrE4Q",
-        },
-        body: JSON.stringify(newUserData),
-      });
-      if (resp.ok) {
-        let userData = await resp.json();
-        dispatch({ type: EDIT_USER, payload: userData });
-      } else {
-        console.log("error");
-      }
-    } catch (error) {
-      console.log(error);
-    }
   };
 };
