@@ -4,11 +4,11 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { Link } from "react-router";
 
-function EsperienzeModal(props) {
+function FormazioneModal(props) {
   return (
     <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">Aggiungi esperienza</Modal.Title>
+        <Modal.Title id="contained-modal-title-vcenter">Aggiungi titoli di studio</Modal.Title>
       </Modal.Header>
       <Form>
         <Modal.Body className="p-0" style={{ maxHeight: "70vh", overflowY: "auto" }}>
@@ -26,34 +26,23 @@ function EsperienzeModal(props) {
               </Col>
               <Col xs={2}>
                 <Form.Label>Sì</Form.Label>
-                <Form.Check // prettier-ignore
-                  type="switch"
-                  id="custom-switch"
-                />
+                <Form.Check type="switch" id="custom-switch" />
               </Col>
             </Row>
           </div>
           <Container className="px-5 py-3">
             <p className="text-secondary">* Indica che è obbligatorio</p>
-            <Form.Label>Qualifica*</Form.Label>
-            <Form.Control className="mb-4" type="text" placeholder="Esempio: Backend Developer" required />
-            <Form.Label>Tipo di impiego</Form.Label>
-            <Form.Select className="mb-4">
-              <option>Seleziona</option>
-              <option value="A tempo pieno">A tempo pieno</option>
-              <option value="Part-time">Part-time</option>
-              <option value="Autonomo">Autonomo</option>
-              <option value="Freelance">Freelance</option>
-              <option value="A contratto">A contratto</option>
-              <option value="Stage">Stage</option>
-              <option value="Apprendistato">Apprendistato</option>
-              <option value="Stagionale">Stagionale</option>
-            </Form.Select>
-            <Form.Label>Azienda o organizzazione</Form.Label>
-            <Form.Control className="mb-4" type="text" placeholder="Esempio: Microsoft" />
-            <Form.Check className="d-inline me-2" />
-            <Form.Label className="mb-4">Attualmente Ricopro questo ruolo</Form.Label>
-            <br />
+            <Form.Label>Scuola o università*</Form.Label>
+            <Form.Control
+              className="mb-4"
+              type="text"
+              placeholder="Esempio: Università degli Studi di Salerno"
+              required
+            />
+            <Form.Label>Tipo di studio</Form.Label>
+            <Form.Control className="mb-4" type="text" placeholder="Esempio: Laurea" required />
+            <Form.Label>Corso di studi</Form.Label>
+            <Form.Control className="mb-4" type="text" placeholder="Esempio: Economia" />
             <Form.Label>Data di inizio*</Form.Label>
             <Row className="mb-4">
               <Col>
@@ -112,34 +101,18 @@ function EsperienzeModal(props) {
                 </Form.Select>
               </Col>
             </Row>
-            <Form.Label>Località</Form.Label>
-            <Form.Control className="mb-4" type="text" placeholder="Esempio: Roma, Italia" />
-            <Form.Label>Tipo di località</Form.Label>
-            <Form.Select type="text" placeholder="Esempio: Roma, Italia">
-              <option>Seleziona</option>
-              <option value="In sede">In sede</option>
-              <option value="Ibrida">Ibrida</option>
-              <option value="Da remoto">Da Remoto</option>
-            </Form.Select>
-            <p className="text-secondary mb-4">Scegli un tipo di località</p>
+            <Form.Label>Votazione</Form.Label>
+            <Form.Control className="mb-4" type="text" />
+            <Form.Label>Attività e associazioni</Form.Label>
+            <Form.Control
+              className="mb-4"
+              as="textarea"
+              maxLength={500}
+              placeholder="Esempio: pesca, pallavolo, immersioni"
+            />
             <Form.Label>Descrizione</Form.Label>
-            <Form.Control className="mb-4" as="textarea" maxLength={2000}></Form.Control>
-            <Form.Label>Sommario del profilo</Form.Label>
-            <Form.Control type="text" />
-            <p className="text-secondary mb-4">Compare sotto il tuo nome nella parte superiore del profilo</p>
-            <Form.Label>Dove hai trovato questa offerta di lavoro?</Form.Label>
-            <Form.Select className="mb-4">
-              <option>Seleziona</option>
-              <option value="LinkedIn">LinkedIn</option>
-              <option value="Sito Web dell'azienda">Sito Web dell&apos;azienda</option>
-              <option value="Indeed">Indeed</option>
-              <option value="Altri siti di offerte di lavoro">Altri siti di offerte di lavoro</option>
-              <option value="Segnalazione">Segnalazione</option>
-              <option value="Contattati dal Recruiter">Contattati dal Recruiter</option>
-              <option value="Agenzia di selezione del personale">Agenzia di selezione del personale</option>
-              <option value="Altro">Altro</option>
-            </Form.Select>
-            <p>Queste informazioni verranno usate per migliorare la ricerca di lavoro su LinkedIn.</p>
+            <Form.Control className="mb-4" as="textarea" maxLength={1000}></Form.Control>
+
             <Container fluid className="px-0 py-3">
               <h3>Competenze</h3>
               <p>
@@ -177,4 +150,4 @@ function EsperienzeModal(props) {
     </Modal>
   );
 }
-export default EsperienzeModal;
+export default FormazioneModal;

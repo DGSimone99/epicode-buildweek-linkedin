@@ -5,6 +5,8 @@ import Analisi from "./Analisi";
 import Persone from "./Persone";
 import Language from "./Language";
 import Esperienza from "../Esperienze/Esperienza";
+import Formazione from "../Esperienze/Formazione";
+import Competenze from "../Esperienze/Competenze";
 
 const ProfiloPrincipale = () => {
   return (
@@ -14,6 +16,8 @@ const ProfiloPrincipale = () => {
         <Consigliato />
         <Analisi />
         <Esperienza />
+        <Formazione />
+        <Competenze />
       </Col>
       <Col md={5} lg={5} xl={4} xxl={3}>
         <Language />
