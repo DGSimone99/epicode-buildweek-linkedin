@@ -7,6 +7,7 @@ import CustomNav from "./Component/Nav_Footer/CustomNav";
 import MyHome from "./Component/Home/MyHome";
 import { BrowserRouter, Route, Routes } from "react-router";
 import CustomFooter from "./Component/Nav_Footer/CustomFooter";
+import MainUtente from "./Component/Utenti/MainUtente";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Routes>
             <Route path="/" element={<MyHome />} />
             <Route path="/me" element={<ProfiloPrincipale />} />
+            <Route path="/:id" element={<MainUtente />} />
           </Routes>
         </Container>
       </Container>

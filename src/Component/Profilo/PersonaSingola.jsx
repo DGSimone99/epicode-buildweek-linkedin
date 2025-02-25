@@ -1,11 +1,17 @@
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { PersonPlusFill } from "react-bootstrap-icons";
+import { useNavigate } from "react-router";
 
 const PersonaSingola = (props) => {
+  const navigate = useNavigate();
   return (
     <>
-      <Container fluid className="px-0">
-        <Row>
+      <Container fluid className="px-0 pointer">
+        <Row
+          onClick={() => {
+            navigate("/" + props.profile._id);
+          }}
+        >
           <Col xs={3}>
             <img
               src={props.profile.image}
@@ -18,7 +24,7 @@ const PersonaSingola = (props) => {
           </Col>
           <Col xs={9} className="d-flex flex-column">
             <p className="mb-1">
-              <strong>
+              <strong className="fw-semibold">
                 {props.profile.name} {props.profile.surname}
               </strong>
             </p>
