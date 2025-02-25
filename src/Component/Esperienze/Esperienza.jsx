@@ -7,7 +7,7 @@ const Esperienza = () => {
   return (
     <Container fluid className="border border-1 border-tertiary bg-white rounded-3 pt-3 mt-3 pb-3">
       <Container>
-        <h3>Esperienza</h3>
+        <h5 className="fw-bold">Esperienza</h5>
         <p className="text-secondary">
           Metti in risalto i risultati raggiunti e ottieni fino a 2 volte più visualizzazioni del profilo e collegamenti
         </p>
