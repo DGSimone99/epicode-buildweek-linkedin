@@ -14,7 +14,7 @@ const CreaPost = () => {
           </div>
         </Col>
         <Col xs={10}>
-          <div className="border rounded-5 p-3">Crea un post</div>
+          <div className="border rounded-5 p-3 mx-3">Crea un post</div>
         </Col>
       </Row>
       <div className="d-flex justify-content-between mt-3">
