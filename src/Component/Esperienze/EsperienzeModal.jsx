@@ -7,16 +7,81 @@ import { Link } from "react-router";
 
 function EsperienzeModal(props) {
   const [stillInJob, setStillinJob] = useState(true);
+  const [role, setRole] = useState("");
+  const [company, setCompany] = useState("");
+  const [startMonth, setStartMonth] = useState("");
+  const [startYear, setStartYear] = useState("");
+  const [endMonth, setEndMonth] = useState("");
+  const [endYear, setEndYear] = useState("");
+  const [description, setDescription] = useState("");
+  const [area, setArea] = useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    fetchEsperienza();
+  };
+  const fetchEsperienza = async () => {
+    try {
+      const resp = await fetch("https://striveschool-api.herokuapp.com/api/profile/:userId/experiences", {
+        method: "POST",
+        headers: {
+          Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2JjNGRjY2U3MDMzNzAwMTUzMTZkYjEiLCJpYXQiOjE3NDAzOTM5MzIsImV4cCI6MTc0MTYwMzUzMn0.1t8kxCm5d0UPnuFQqZs9G6-VZkPjsGpIMIhIadrrE4Q",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          role: role,
+          startDate: `${startYear}-${startMonth}-01`,
+          company: company,
+          endDate: endMonth !== "" && endYear !== "" ? `${endYear}-${endMonth}-01` : null,
+          description: description,
+          area: area,
+        }),
+      });
+      if (resp.ok) {
+        alert("esperienza aggiunta con successo");
+      } else {
+        throw new Error("Errore");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("errore nell'aggiunta dell'esperienza");
+    }
+  };
+
+  const handleJobRole = (e) => {
+    setRole(e.target.value);
+  };
+  const handleCompany = (e) => {
+    setCompany(e.target.value);
+  };
+  const handleStartMonth = (e) => {
+    setStartMonth(e.target.value);
+  };
+  const handleStartYear = (e) => {
+    setStartYear(e.target.value);
+  };
+  const handleEndMonth = (e) => {
+    setEndMonth(e.target.value);
+  };
+  const handleEndYear = (e) => {
+    setEndYear(e.target.value);
+  };
+  const handleDescription = (e) => {
+    setDescription(e.target.value);
+  };
+  const handleArea = (e) => {
+    setArea(e.target.value);
+  };
+
   const handleCheck = (e) => {
     setStillinJob(e.target.checked);
-    console.log(e.target.checked);
   };
   return (
     <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">Aggiungi esperienza</Modal.Title>
       </Modal.Header>
-      <Form>
+      <Form onSubmit={(e) => handleSubmit(e)}>
         <Modal.Body className="p-0" style={{ maxHeight: "70vh", overflowY: "auto" }}>
           <div className="px-5 py-3" style={{ backgroundColor: "#EDF3F8" }}>
             <h3 className="fs-6">
@@ -42,7 +107,13 @@ function EsperienzeModal(props) {
           <Container className="px-5 py-3">
             <p className="text-secondary">* Indica che è obbligatorio</p>
             <Form.Label>Qualifica*</Form.Label>
-            <Form.Control type="text" placeholder="Esempio: Backend Developer" required />
+            <Form.Control
+              type="text"
+              placeholder="Esempio: Backend Developer"
+              required
+              value={role}
+              onChange={(e) => handleJobRole(e)}
+            />
             <Form.Label>Tipo di impiego</Form.Label>
             <Form.Select>
               <option>Seleziona</option>
@@ -55,8 +126,14 @@ function EsperienzeModal(props) {
               <option value="Apprendistato">Apprendistato</option>
               <option value="Stagionale">Stagionale</option>
             </Form.Select>
-            <Form.Label>Azienda o organizzazione</Form.Label>
-            <Form.Control type="text" placeholder="Esempio: Microsoft" />
+            <Form.Label>Azienda o organizzazione*</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Esempio: Microsoft"
+              required
+              value={company}
+              onChange={(e) => handleCompany(e)}
+            />
             <Form.Label>Attualmente Ricopro questo ruolo</Form.Label>
             <Form.Check
               checked={stillInJob}
@@ -67,24 +144,24 @@ function EsperienzeModal(props) {
             <Form.Label>Data di inizio*</Form.Label>
             <Row>
               <Col>
-                <Form.Select required>
+                <Form.Select required value={startMonth} onChange={(e) => handleStartMonth(e)}>
                   <option disabled>Mese</option>
-                  <option value="1">Gennaio</option>
-                  <option value="2">Febbraio</option>
-                  <option value="3">Marzo</option>
-                  <option value="4">Aprile</option>
-                  <option value="5">Maggio</option>
-                  <option value="6">Giugno</option>
-                  <option value="7">Luglio</option>
-                  <option value="8">Agosto</option>
-                  <option value="9">Settembre</option>
+                  <option value="01">Gennaio</option>
+                  <option value="02">Febbraio</option>
+                  <option value="03">Marzo</option>
+                  <option value="04">Aprile</option>
+                  <option value="05">Maggio</option>
+                  <option value="06">Giugno</option>
+                  <option value="07">Luglio</option>
+                  <option value="08">Agosto</option>
+                  <option value="09">Settembre</option>
                   <option value="10">Ottobre</option>
                   <option value="11">Novembre</option>
                   <option value="12">Dicembre</option>
                 </Form.Select>
               </Col>
               <Col>
-                <Form.Select required>
+                <Form.Select required value={startYear} onChange={(e) => handleStartYear(e)}>
                   <option disabled>Anno</option>
                   {Array.from({ length: 101 }, (_, i) => 2025 - i).map((year) => (
                     <option key={year} value={year}>
@@ -97,24 +174,34 @@ function EsperienzeModal(props) {
             <Form.Label>Data di fine*</Form.Label>
             <Row>
               <Col>
-                <Form.Select disabled={stillInJob} required={!stillInJob}>
+                <Form.Select
+                  disabled={stillInJob}
+                  required={!stillInJob}
+                  value={endMonth}
+                  onChange={(e) => handleEndMonth(e)}
+                >
                   <option disabled>Mese</option>
-                  <option value="1">Gennaio</option>
-                  <option value="2">Febbraio</option>
-                  <option value="3">Marzo</option>
-                  <option value="4">Aprile</option>
-                  <option value="5">Maggio</option>
-                  <option value="6">Giugno</option>
-                  <option value="7">Luglio</option>
-                  <option value="8">Agosto</option>
-                  <option value="9">Settembre</option>
+                  <option value="01">Gennaio</option>
+                  <option value="02">Febbraio</option>
+                  <option value="03">Marzo</option>
+                  <option value="04">Aprile</option>
+                  <option value="05">Maggio</option>
+                  <option value="06">Giugno</option>
+                  <option value="07">Luglio</option>
+                  <option value="08">Agosto</option>
+                  <option value="09">Settembre</option>
                   <option value="10">Ottobre</option>
                   <option value="11">Novembre</option>
                   <option value="12">Dicembre</option>
                 </Form.Select>
               </Col>
               <Col>
-                <Form.Select disabled={stillInJob} required={!stillInJob}>
+                <Form.Select
+                  disabled={stillInJob}
+                  required={!stillInJob}
+                  value={endYear}
+                  onChange={(e) => handleEndYear(e)}
+                >
                   <option disabled>Anno</option>
                   {Array.from({ length: 101 }, (_, i) => 2025 - i).map((year) => (
                     <option key={year} value={year}>
@@ -124,18 +211,30 @@ function EsperienzeModal(props) {
                 </Form.Select>
               </Col>
             </Row>
-            <Form.Label>Località</Form.Label>
-            <Form.Control type="text" placeholder="Esempio: Roma, Italia" />
+            <Form.Label>Località*</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Esempio: Roma, Italia"
+              required
+              value={area}
+              onChange={(e) => handleArea(e)}
+            />
             <Form.Label>Tipo di località</Form.Label>
-            <Form.Select type="text" placeholder="Esempio: Roma, Italia">
+            <Form.Select>
               <option>Seleziona</option>
               <option value="In sede">In sede</option>
               <option value="Ibrida">Ibrida</option>
               <option value="Da remoto">Da Remoto</option>
             </Form.Select>
             <p className="text-secondary">Scegli un tipo di località</p>
-            <Form.Label>Descrizione</Form.Label>
-            <Form.Control as="textarea" maxLength={2000}></Form.Control>
+            <Form.Label>Descrizione*</Form.Label>
+            <Form.Control
+              as="textarea"
+              maxLength={2000}
+              required
+              value={description}
+              onChange={(e) => handleDescription(e)}
+            ></Form.Control>
             <Form.Label>Sommario del profilo</Form.Label>
             <Form.Control type="text" />
             <p className="text-secondary">Compare sotto il tuo nome nella parte superiore del profilo</p>
@@ -183,7 +282,7 @@ function EsperienzeModal(props) {
           </Container>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={props.onHide}>Close</Button>
+          <Button type="submit">Salva</Button>
         </Modal.Footer>
       </Form>
     </Modal>
