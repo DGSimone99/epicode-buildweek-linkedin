@@ -1,5 +1,17 @@
 import { useEffect } from "react";
-import { Navbar, Nav, Form, FormControl, Image, Container, Dropdown, InputGroup, Button } from "react-bootstrap";
+import {
+  Navbar,
+  Nav,
+  Form,
+  FormControl,
+  Image,
+  Container,
+  Dropdown,
+  InputGroup,
+  Button,
+  Col,
+  Row,
+} from "react-bootstrap";
 import {
   HouseDoorFill,
   PeopleFill,
@@ -9,11 +21,17 @@ import {
   Grid3x3GapFill,
   Search,
   SquareFill,
+  CompassFill,
+  FileEarmarkBarGraphFill,
+  LaptopFill,
+  InfoCircleFill,
+  Bullseye,
+  PlayBtnFill,
 } from "react-bootstrap-icons";
 
 import { fetchUser } from "../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, NavLink } from "react-router";
+import { Link, NavLink, useLocation } from "react-router";
 
 const CustomNav = () => {
   const user = useSelector((state) => state.user.content);
@@ -21,6 +39,7 @@ const CustomNav = () => {
   useEffect(() => {
     dispatch(fetchUser());
   }, []);
+  const location = useLocation();
 
   return (
     <Navbar bg="white" expand="lg" className="px-3 shadow-sm container-fluid sticky-top ">
@@ -44,35 +63,35 @@ const CustomNav = () => {
           </Form>
         </div>
         <Nav className="d-flex align-items-center">
-          <NavLink to="/" className="text-secondary text-center nav-link">
+          <NavLink to="/" className={`text-center nav-link ${location.pathname === "/" ? "navActive" : ""}`}>
             <HouseDoorFill size={20} className="mb-1 mx-4" />
             <div>Home</div>
           </NavLink>
-          <Nav.Link href="#" className="text-secondary text-center">
+          <Nav.Link to="" className={`text-center nav-link ${location.pathname === "" ? "navActive" : ""}`}>
             <PeopleFill size={20} className="mb-1 mx-4" />
             <div>Rete</div>
           </Nav.Link>
-          <Nav.Link href="#" className="text-secondary text-center">
+          <Nav.Link to="" className={`text-center nav-link ${location.pathname === "" ? "navActive" : ""}`}>
             <BriefcaseFill size={20} className="mb-1 mx-4" />
             <div>Lavoro</div>
           </Nav.Link>
-          <Nav.Link href="#" className="text-secondary text-center">
+          <Nav.Link to="" className={`text-center nav-link ${location.pathname === "" ? "navActive" : ""}`}>
             <ChatDotsFill size={20} className="mb-1 mx-4" />
             <div>Messaggistica</div>
           </Nav.Link>
-          <Nav.Link href="#" className="text-secondary text-center">
+          <Nav.Link to="" className={`text-center nav-link ${location.pathname === "" ? "navActive" : ""}`}>
             <BellFill size={20} className="mb-1 mx-4" />
             <div>Notifiche</div>
           </Nav.Link>
 
-          <Dropdown>
+          <Dropdown className="border-end ">
             <Dropdown.Toggle variant="white" className="text-dark border-0">
-              <Image src={user.image} roundedCircle width="24" height="24" className="me-1 d-block" />
+              <Image src={user.image} roundedCircle width="24" height="24" className=" d-block" />
               <span>Tu</span>
             </Dropdown.Toggle>
-            <Dropdown.Menu>
-              <Dropdown>
-                <Button as={Link} to="/me" className="bg-transparent border-0 text-black">
+            <Dropdown.Menu className="dropdown-menu-end mt-2">
+              <Dropdown.Item href="#">
+                <NavLink className="nav-link" to="/me">
                   <div className="d-flex aling-items-center">
                     <div>
                       <Image src={user.image} roundedCircle width="50" height="50" className="me-1 d-block" />
@@ -82,16 +101,16 @@ const CustomNav = () => {
                       <p className="m-0 mt-1">{user.title}</p>
                     </div>
                   </div>
-                </Button>
+                </NavLink>
                 <Button
                   as={Link}
                   to="/me"
                   variant="outline-primary"
-                  className="rounded-pill fw-semibold px-5 py-0 my-2 mx-3"
+                  className="rounded-pill fw-semibold px-5 py-0 my-2"
                 >
                   Visualizza profilo
                 </Button>
-              </Dropdown>
+              </Dropdown.Item>
               <Dropdown.Item href="#">
                 <h6>Account</h6>
                 <p className="fw-semibold text-secondary">
@@ -115,16 +134,67 @@ const CustomNav = () => {
             </Dropdown.Menu>
           </Dropdown>
 
-          <div className="vr mx-2"></div>
-
           <Dropdown>
             <Dropdown.Toggle variant="white" className="text-dark border-0">
               <Grid3x3GapFill size={20} className="mb-1 mx-4 d-block" />
               <span>Per le aziende</span>
             </Dropdown.Toggle>
-            <Dropdown.Menu>
-              <Dropdown.Item href="#">Le mie App</Dropdown.Item>
-              <Dropdown.Item href="#">Scopri altro per il business</Dropdown.Item>
+            <Dropdown.Menu className="dropdown-menu-end mt-2" style={{ width: "680px" }}>
+              <Container className="p-4">
+                <Row xs={1} md={2}>
+                  <Col className="border-end">
+                    <div href="#">
+                      <h5>Le mie App</h5>
+                      <p className="mt-4 fw-semibold">
+                        <CompassFill /> Trova lead
+                      </p>
+                      <p className="my-4 fw-semibold">
+                        <PeopleFill /> Gruppi
+                      </p>
+                      <p className="fw-semibold text-secondary mt-4">Talent</p>
+                      <p className="my-4 fw-semibold">
+                        <FileEarmarkBarGraphFill />
+                        Talent Insights
+                      </p>
+                      <p className="my-4 fw-semibold">
+                        <LaptopFill /> Pubblica un&apos; offerta di lavoro
+                      </p>
+                      <p className="fw-semibold text-secondary mt-4">Vendite</p>
+                      <p className="my-4 fw-semibold">
+                        <InfoCircleFill /> Marketplace dei servizi
+                      </p>
+                      <p className="fw-semibold text-secondary mt-4">Marketing</p>
+                      <p className="my-4 fw-semibold">
+                        <Bullseye /> Pubblicizza
+                      </p>
+                      <p className="fw-semibold text-secondary mt-4">Learning</p>
+                      <p className="my-4 fw-semibold">
+                        <PlayBtnFill /> Learning
+                      </p>
+                    </div>
+                  </Col>
+                  <Col className="ps-4">
+                    <div href="#">
+                      <h5>Scopri altro per il business</h5>
+                      <p className="mt-4 mb-1 fw-semibold">Assumi su Linkedin</p>
+                      <p className="pAziende">Trova, attrai e assumi</p>
+                      <p className="mt-4 mb-1 fw-semibold">Vendi con Linkedin</p>
+                      <p className="pAziende">Sblocca nuove opportunità di vendita</p>
+                      <p className="mt-4 mb-1 fw-semibold">Offerta di lavoro gratuita</p>
+                      <p className="pAziende">Ottieni rapidamente candidati qualificati</p>
+                      <p className="mt-4 mb-1 fw-semibold">Fai pubblicità su Linkedin</p>
+                      <p className="pAziende">Acquisisci clienti e fai crescere la tua azienda</p>
+                      <p className="mt-4 mb-1 fw-semibold">Inizia con Premium</p>
+                      <p className="pAziende">Amplia e sfrutta la tua rete</p>
+                      <p className="mt-4 mb-1 fw-semibold">Impara con Linkedin</p>
+                      <p className="pAziende">Corsi per formare i tuoi dipendenti</p>
+                      <p className="mt-4 mb-1 fw-semibold">Admin Center</p>
+                      <p className="pAziende">Gestisci i dettagli di fatturazione e account</p>
+                      <p className="mt-4 mb-1 fw-semibold">Crea una pagina aziendale +</p>
+                    </div>
+                  </Col>
+                </Row>
+              </Container>
             </Dropdown.Menu>
           </Dropdown>
           <Nav.Link

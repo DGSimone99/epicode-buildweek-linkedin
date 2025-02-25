@@ -145,11 +145,3 @@ span {
     display: none;
   }
 }
-
-.dropdown-toggle::after {
-  display: none !important;
-}
-
-#input-group-dropdown {
-  background-color: lightgray !important;
-}
