@@ -1,6 +1,7 @@
 import { Button, Col, Container, Row } from "react-bootstrap";
 import EsperienzeModal from "./EsperienzeModal";
 import React from "react";
+import { Bag } from "react-bootstrap-icons";
 
 const Esperienza = () => {
   const [modalShow, setModalShow] = React.useState(false);
@@ -15,7 +16,14 @@ const Esperienza = () => {
         <p className="text-secondary">
           Metti in risalto i risultati raggiunti e ottieni fino a 2 volte più visualizzazioni del profilo e collegamenti
         </p>
-        <p>PLACEHOLDER PER ESPERIENZE SINGOLE</p>
+        <Row>
+          <Col className="d-flex">
+            <div className="d-flex justify-content-center align-items-center p-3 border border-secondary rounded-3 me-auto my-2">
+              <Bag className="m-0"></Bag>
+            </div>
+          </Col>
+          <Col></Col>
+        </Row>
         <Button
           variant="light"
           className="rounded-pill border border-primary fw-bold d-flex align-items-center justify-content-center me-auto text-primary"

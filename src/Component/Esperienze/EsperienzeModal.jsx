@@ -96,11 +96,14 @@ function EsperienzeModal(props) {
                 </p>
               </Col>
               <Col xs={2}>
-                <Form.Label>Sì</Form.Label>
-                <Form.Check // prettier-ignore
-                  type="switch"
-                  id="custom-switch"
-                />
+                <Row>
+                  <Col>
+                    <Form.Label>Sì</Form.Label>
+                  </Col>
+                  <Col>
+                    <Form.Check type="switch" id="custom-switch-esperienze" />
+                  </Col>
+                </Row>
               </Col>
             </Row>
           </div>
