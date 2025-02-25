@@ -80,7 +80,7 @@ function EditProfilo(props) {
                 dispatch(editUser(newData));
               }}
             >
-              Submit
+              Modifica
             </Button>
           </Form>
         ) : (
