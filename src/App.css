@@ -159,3 +159,17 @@ span {
     display: none;
   }
 }
+
+/* CHAT */
+#input-group-dropdown {
+  background-color: lightgray !important;
+}
+
+#input-group-dropdown::after {
+  display: none !important;
+}
+
+/* FOOTER */
+footer a {
+  text-decoration: none;
+}
