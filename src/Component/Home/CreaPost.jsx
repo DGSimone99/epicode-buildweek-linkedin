@@ -1,29 +1,35 @@
+import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Calendar3, Image, TextIndentLeft } from "react-bootstrap-icons";
 import { useSelector } from "react-redux";
+import ModalePost from "./ModalePost";
 
 const CreaPost = () => {
   const user = useSelector((state) => state.user.content);
+  const [modalShow, setModalShow] = React.useState(false);
 
   return (
     <Container className="bg-white rounded-3 p-3 border">
       <Row className="d-flex border-secondary align-items-center">
-        <Col xs={2}>
+        <Col xs={1}>
           <div>
             <img
               className="rounded-circle"
               src={user.image}
               alt=""
               style={{
-                width: "80px",
-                height: "80px",
+                width: "50px",
+                height: "50px",
                 objectFit: "cover",
               }}
             />
           </div>
         </Col>
         <Col xs={10}>
-          <div className="border rounded-5 p-3 mx-1">Crea un post</div>
+          <div className="border rounded-5 p-3 mx-1" onClick={() => setModalShow(true)}>
+            Crea un post
+          </div>
+          <ModalePost show={modalShow} onHide={() => setModalShow(false)} />
         </Col>
       </Row>
       <div className="d-flex justify-content-between mt-3">
