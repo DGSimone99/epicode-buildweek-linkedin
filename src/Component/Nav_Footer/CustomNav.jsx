@@ -90,18 +90,18 @@ const CustomNav = () => {
               <span>Tu</span>
             </Dropdown.Toggle>
             <Dropdown.Menu className="dropdown-menu-end mt-2">
-              <Dropdown.Item href="#">
-                <NavLink className="nav-link" to="/me">
+              <Dropdown href="#" className="mx-3">
+                <Button className="nav-link p-0" to="/me" variant="white">
                   <div className="d-flex aling-items-center">
                     <div>
                       <Image src={user.image} roundedCircle width="50" height="50" className="me-1 d-block" />
                     </div>
                     <div className="align-content-center">
-                      <h6 className="m-0">{user.name + " " + user.surname}</h6>
+                      <h6 className="m-0 text-black">{user.name + " " + user.surname}</h6>
                       <p className="m-0 mt-1">{user.title}</p>
                     </div>
                   </div>
-                </NavLink>
+                </Button>
                 <Button
                   as={Link}
                   to="/me"
@@ -110,7 +110,7 @@ const CustomNav = () => {
                 >
                   Visualizza profilo
                 </Button>
-              </Dropdown.Item>
+              </Dropdown>
               <Dropdown.Item href="#">
                 <h6>Account</h6>
                 <p className="fw-semibold text-secondary">

@@ -101,8 +101,22 @@ span,
   height: 60px;
 }
 
+#dropAziende {
+  width: 300px !important;
+}
+
 .nav-link div,
 span {
+  font-size: 0.7rem;
+}
+
+.col .bi {
+  color: #0a66c2;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+.pAziende {
   font-size: 0.7rem;
 }
 
