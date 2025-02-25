@@ -10,8 +10,10 @@ import {
   Search,
   SquareFill,
 } from "react-bootstrap-icons";
+
+import { fetchUser } from "../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchUser } from "./redux/actions";
+import { Link, NavLink } from "react-router";
 
 const CustomNav = () => {
   const user = useSelector((state) => state.user.content);
@@ -24,7 +26,7 @@ const CustomNav = () => {
     <Navbar bg="white" expand="lg" className="px-3 shadow-sm container-fluid sticky-top ">
       <Container>
         <div className="d-flex align-items-center">
-          <Navbar.Brand href="#">
+          <Navbar.Brand as={Link} to="/">
             <Image
               src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
               width="34"
@@ -42,10 +44,10 @@ const CustomNav = () => {
           </Form>
         </div>
         <Nav className="d-flex align-items-center">
-          <Nav.Link href="#" className="text-secondary text-center">
+          <NavLink to="/" className="text-secondary text-center nav-link">
             <HouseDoorFill size={20} className="mb-1 mx-4" />
             <div>Home</div>
-          </Nav.Link>
+          </NavLink>
           <Nav.Link href="#" className="text-secondary text-center">
             <PeopleFill size={20} className="mb-1 mx-4" />
             <div>Rete</div>
@@ -69,20 +71,27 @@ const CustomNav = () => {
               <span>Tu</span>
             </Dropdown.Toggle>
             <Dropdown.Menu>
-              <Dropdown.Item href="#">
-                <div className="d-flex aling-items-center">
-                  <div>
-                    <Image src={user.image} roundedCircle width="50" height="50" className="me-1 d-block" />
+              <Dropdown>
+                <Button as={Link} to="/me" className="bg-transparent border-0 text-black">
+                  <div className="d-flex aling-items-center">
+                    <div>
+                      <Image src={user.image} roundedCircle width="50" height="50" className="me-1 d-block" />
+                    </div>
+                    <div className="align-content-center">
+                      <h6 className="m-0">{user.name + " " + user.surname}</h6>
+                      <p className="m-0 mt-1">{user.title}</p>
+                    </div>
                   </div>
-                  <div className="align-content-center">
-                    <h6 className="m-0">{user.name + " " + user.surname}</h6>
-                    <p className="m-0 mt-1">{user.title}</p>
-                  </div>
-                </div>
-                <Button variant="outline-primary" className="rounded-pill fw-semibold px-5 py-0 my-2">
+                </Button>
+                <Button
+                  as={Link}
+                  to="/me"
+                  variant="outline-primary"
+                  className="rounded-pill fw-semibold px-5 py-0 my-2 mx-3"
+                >
                   Visualizza profilo
                 </Button>
-              </Dropdown.Item>
+              </Dropdown>
               <Dropdown.Item href="#">
                 <h6>Account</h6>
                 <p className="fw-semibold text-secondary">

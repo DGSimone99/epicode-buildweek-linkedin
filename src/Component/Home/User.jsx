@@ -3,13 +3,14 @@ import { PeopleFill, PersonPlusFill } from "react-bootstrap-icons";
 import { BiCalendarAlt } from "react-icons/bi";
 import { BsFillBookmarkFill, BsFillSlashSquareFill, BsPlus } from "react-icons/bs";
 import { useSelector } from "react-redux";
+import { Link } from "react-router";
 
 const User = () => {
   const user = useSelector((state) => state.user.content);
   return (
     <Col xs={3}>
-      <Container className="cardBox rounded-3 px-0 my-2">
-        <Card>
+      <Container className="cardBox rounded-3 px-0 mb-2">
+        <Card as={Link} to="/me" className="nav-link">
           <Card.Img
             variant="top"
             src="https://www.reliant-rehab.com/wp-content/uploads/2019/02/reliant-generic-background-1.jpg"

@@ -17,7 +17,7 @@ const PersonaSingola = (props) => {
             />
           </Col>
           <Col xs={9} className="d-flex flex-column">
-            <p>
+            <p className="mb-1">
               <strong>
                 {props.profile.name} {props.profile.surname}
               </strong>
