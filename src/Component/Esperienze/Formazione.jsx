@@ -7,7 +7,7 @@ const Formazione = () => {
   return (
     <Container fluid className="border border-1 border-tertiary bg-white rounded-3 pt-3 mt-3 pb-3">
       <Container>
-        <h3>Formazione</h3>
+        <h5 className="fw-bold">Formazione</h5>
         <p className="text-secondary">
           Mostrando le tue qualifiche avrai fino a 2 volte più probabilità di ricevere un messaggio InMail da un
           recruiter

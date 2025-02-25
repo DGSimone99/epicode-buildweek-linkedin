@@ -7,7 +7,7 @@ const Competenze = () => {
   return (
     <Container fluid className="border border-1 border-tertiary bg-white rounded-3 pt-3 mt-3 pb-3">
       <Container>
-        <h3>Competenze</h3>
+        <h5 className="fw-bold">Competenze</h5>
         <p className="text-secondary">
           Fai capire se hai un profilo adatto per le nuove opportunità: il 50% dei recruiter usa i dati sulle competenze
           per coprire le posizioni aperte

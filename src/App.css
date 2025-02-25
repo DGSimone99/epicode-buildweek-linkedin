@@ -167,6 +167,10 @@ span {
   outline: 1px solid black;
 }
 
+p {
+  font-size: 0.9rem;
+}
+
 /*RESPONSIVE - NAVBAR*/
 
 @media screen and (max-width: 1024px) {
