@@ -1,4 +1,4 @@
-import { Card, Col, Container, Image, NavLink } from "react-bootstrap";
+import { Card, Container, Image, NavLink } from "react-bootstrap";
 import { PeopleFill, PersonPlusFill } from "react-bootstrap-icons";
 import { BiCalendarAlt } from "react-icons/bi";
 import { BsFillBookmarkFill, BsFillSlashSquareFill, BsPlus } from "react-icons/bs";
@@ -8,7 +8,7 @@ import { Link } from "react-router";
 const User = () => {
   const user = useSelector((state) => state.user.content);
   return (
-    <Col xs={3}>
+    <div>
       <Container className="cardBox rounded-3 px-0 mb-2">
         <Card as={Link} to="/me" className="nav-link">
           <Card.Img
@@ -95,7 +95,7 @@ const User = () => {
           </Card.Body>
         </Card>
       </Container>
-    </Col>
+    </div>
   );
 };
 

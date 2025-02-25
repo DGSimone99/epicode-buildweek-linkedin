@@ -7,13 +7,13 @@ import Language from "./Language";
 
 const ProfiloPrincipale = () => {
   return (
-    <Row xs={1} sm={2}>
-      <Col sm={9}>
+    <Row md={1} lg={2}>
+      <Col md={7} lg={7} xl={8} xxl={9}>
         <Team />
         <Consigliato />
         <Analisi />
       </Col>
-      <Col sm={3}>
+      <Col md={5} lg={5} xl={4} xxl={3}>
         <Language />
         <Persone />
       </Col>

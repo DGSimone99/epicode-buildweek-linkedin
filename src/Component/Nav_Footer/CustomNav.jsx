@@ -38,6 +38,7 @@ const CustomNav = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchUser());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const location = useLocation();
 

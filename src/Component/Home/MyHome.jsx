@@ -6,13 +6,14 @@ import User from "./User";
 const MyHome = () => {
   return (
     <>
-      <Row>
-        <User />
-
-        <Col xs={6}>
+      <Row xs={1} md={2} lg={3}>
+        <Col md={4} lg={3}>
+          <User />
+        </Col>
+        <Col md={8} lg={6}>
           <CreaPost />
         </Col>
-        <Col xs={3}>
+        <Col lg={3}>
           <PrimoPiano />
         </Col>
       </Row>

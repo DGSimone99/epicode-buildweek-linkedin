@@ -11,7 +11,7 @@ const Chat = () => {
   /* const user = useState((state) => state.user.content); */
 
   return (
-    <div className="position-fixed bottom-0 end-0 bg-white border rounded-top" style={{ width: "275px" }}>
+    <div className="position-fixed bottom-0 end-0 bg-white border rounded-top" style={{ width: "275px", zIndex: "3" }}>
       <Button
         onClick={() => setOpen(!open)}
         aria-controls="chat-collapse-content"
