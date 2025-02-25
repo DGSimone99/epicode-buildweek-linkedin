@@ -8,7 +8,7 @@ const MyCollapse = () => {
   return (
     <>
       <Button
-        className="p-1 fw-bold"
+        className="p-1 fw-semibold"
         variant="light"
         onClick={() => setOpen(!open)}
         aria-controls="example-collapse-text"
@@ -19,7 +19,7 @@ const MyCollapse = () => {
       </Button>
       <Collapse in={open}>
         <div id="example-collapse-text">
-          <p className="fw-bold mb-0">I giovani lavoratori sono sempre me...</p>
+          <p className="fw-semibold mb-0">I giovani lavoratori sono sempre me...</p>
           <p className="text-secondary">4 ore fa • 122 lettori</p>
         </div>
       </Collapse>
