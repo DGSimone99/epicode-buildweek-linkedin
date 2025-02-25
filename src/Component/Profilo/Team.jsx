@@ -13,7 +13,7 @@ const Team = () => {
     setIndex(selectedIndex);
   };
   return (
-    <Container className="cardBox rounded-3 px-0">
+    <Container className="cardBox rounded-3 px-0 my-3">
       <Card>
         <Card.Img
           variant="top"
@@ -63,25 +63,20 @@ const Team = () => {
             <Carousel.Item>
               <Row>
                 <Col>
-                  <div className="border border-1 px-3 py-2 rounded-3 position-relative h-100">
+                  <div className="border border-1 px-3 py-2 rounded-3 position-relative">
                     <p className="mb-0 pe-5">
-                      <span className="fw-bold text-black" style={{ fontSize: "16px" }}>
-                        Mostra ai recruiter che sei disponibile a lavorare
-                      </span>
-                      : sei tu che decidi chi può vedere questa informazione.{" "}
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque distinctio voluptates earum
+                      blanditiis amet, tempore.
                     </p>
                     <a href="#">Inizia</a>
-
                     <BsXLg className="position-absolute xCarousel"></BsXLg>
                   </div>
                 </Col>
                 <Col>
-                  <div className="border border-1 px-3 py-2 rounded-3 position-relative h-100">
+                  <div className="border border-1 px-3 py-2 rounded-3 position-relative">
                     <p className="mb-0 pe-5">
-                      <span className="fw-bold text-black" style={{ fontSize: "16px" }}>
-                        Fai sapere che stai facendo selezione&nbsp;
-                      </span>
-                      e attrai candidati qualificati.
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque distinctio voluptates earum
+                      blanditiis amet, tempore.
                     </p>
                     <a href="#">Inizia</a>
                     <BsXLg className="position-absolute xCarousel"></BsXLg>
@@ -92,24 +87,20 @@ const Team = () => {
             <Carousel.Item>
               <Row>
                 <Col>
-                  <div className="border border-1 px-3 py-2 rounded-3 position-relative h-100">
+                  <div className="border border-1 px-3 py-2 rounded-3 position-relative">
                     <p className="mb-0 pe-5">
-                      <span className="fw-bold text-black" style={{ fontSize: "16px" }}>
-                        Metti in risalto i tuoi servizi&nbsp;
-                      </span>
-                      in un’apposita sezione sul tuo profilo, così sarà più facile trovarti.
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque distinctio voluptates earum
+                      blanditiis amet, tempore.
                     </p>
                     <a href="#">Inizia</a>
                     <BsXLg className="position-absolute xCarousel"></BsXLg>
                   </div>
                 </Col>
                 <Col>
-                  <div className="border border-1 px-3 py-2 rounded-3 position-relative h-100">
+                  <div className="border border-1 px-3 py-2 rounded-3 position-relative">
                     <p className="mb-0 pe-5">
-                      <span className="fw-bold text-black" style={{ fontSize: "16px" }}>
-                        Mostra ai recruiter che sei disponibile a lavorare
-                      </span>
-                      : sei tu che decidi chi può vedere questa informazione.{" "}
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque distinctio voluptates earum
+                      blanditiis amet, tempore.
                     </p>
                     <a href="#">Inizia</a>
                     <BsXLg className="position-absolute xCarousel"></BsXLg>
