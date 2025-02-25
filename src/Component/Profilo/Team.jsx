@@ -1,12 +1,14 @@
 import { Button, Card, Col, Container, Image, Row } from "react-bootstrap";
 import Carousel from "react-bootstrap/Carousel";
-import { useState } from "react";
+import React, { useState } from "react";
 import { BsFillCameraFill, BsPlus, BsXLg } from "react-icons/bs";
 import { BiPencil } from "react-icons/bi";
 import { useSelector } from "react-redux";
+import EditProfilo from "./EditProfilo";
 
 const Team = () => {
   const user = useSelector((state) => state.user.content);
+  const [modalShow, setModalShow] = React.useState(false);
 
   const [index, setIndex] = useState(0);
   const handleSelect = (selectedIndex) => {
@@ -28,7 +30,7 @@ const Team = () => {
           <BsPlus className="position-absolute bottom-0 end-0 rounded-circle bg-white plusImg"></BsPlus>
         </div>
         <Card.Body className="mt-5 px-4 position-relative">
-          <BiPencil className="position-absolute pencil"></BiPencil>
+          <BiPencil className="position-absolute pencil" onClick={() => setModalShow(true)}></BiPencil>
           <Row>
             <Col xs={8}>
               <Card.Title className="fs-2 mb-0">{user.name + " " + user.surname}</Card.Title>
@@ -68,7 +70,7 @@ const Team = () => {
                       <span className="fw-bold text-black" style={{ fontSize: "16px" }}>
                         Mostra ai recruiter che sei disponibile a lavorare
                       </span>
-                      : sei tu che decidi chi può vedere questa informazione.{" "}
+                      : sei tu che decidi chi può vedere questa informazione.
                     </p>
                     <a href="#">Inizia</a>
 
@@ -120,6 +122,7 @@ const Team = () => {
           </Carousel>
         </Card.Body>
       </Card>
+      <EditProfilo show={modalShow} onHide={() => setModalShow(false)} />
     </Container>
   );
 };
