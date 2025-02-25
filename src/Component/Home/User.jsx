@@ -17,7 +17,16 @@ const User = () => {
             className="imgTeam2 position-relative"
           />
           <div className="userImg2">
-            <Image src={user.image} fluid className="rounded-circle position-relative" width={68}></Image>
+            <Image
+              src={user.image}
+              fluid
+              className="rounded-circle position-relative"
+              style={{
+                width: "68px",
+                height: "68px",
+                objectFit: "cover",
+              }}
+            ></Image>
             <BsPlus className="position-absolute bottom-0 end-0 rounded-circle plusImg2"></BsPlus>
           </div>
           <Card.Body className="mt-4 px-2">

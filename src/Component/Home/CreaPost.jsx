@@ -10,7 +10,16 @@ const CreaPost = () => {
       <Row className="d-flex border-secondary align-items-center">
         <Col xs={2}>
           <div>
-            <img className="rounded-circle" src={user.image} alt="" width={80} />
+            <img
+              className="rounded-circle"
+              src={user.image}
+              alt=""
+              style={{
+                width: "80px",
+                height: "80px",
+                objectFit: "cover",
+              }}
+            />
           </div>
         </Col>
         <Col xs={10}>
