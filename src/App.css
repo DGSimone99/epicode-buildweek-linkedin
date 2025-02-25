@@ -118,10 +118,30 @@ span {
   -webkit-box-orient: vertical;
 }
 
-.dropdown-toggle::after {
-  display: none !important;
+.dropdown-item p {
+  font-size: 0.8rem;
+  margin: 8px 0;
+}
+
+/*RESPONSIVE - NAVBAR*/
+
+@media screen and (max-width: 1024px) {
+  .navbar {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+  }
+}
+@media screen and (max-width: 769px) {
+  .nav-link div,
+  span {
+    display: none;
+  }
 }
 
 #input-group-dropdown {
   background-color: lightgray !important;
+}
+
+#input-group-dropdown::after {
+  display: none !important;
 }
