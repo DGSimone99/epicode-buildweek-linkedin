@@ -21,23 +21,23 @@ const CustomFooter = () => {
                     </a>
                   </p>
                   <Dropdown drop="up">
-                    <Dropdown.Toggle className="text-secondary p-0 pb-3" variant="" id="dropdown-footer">
+                    <Dropdown.Toggle className="text-secondary p-0 pb-3 border-0" variant="" id="dropdown-footer">
                       Privacy e condizioni
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
-                      <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                      <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                      <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-                      <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                      <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                      <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                      <Dropdown.Item href="#">Informativa sulla privacy</Dropdown.Item>
+                      <Dropdown.Item href="#">Contratto di licenza</Dropdown.Item>
+                      <Dropdown.Item href="#">Termini e condizioni delle pagine</Dropdown.Item>
+                      <Dropdown.Item href="#">Informativa sui cookie</Dropdown.Item>
+                      <Dropdown.Item href="#">Informativa sul copyright</Dropdown.Item>
+                      <Dropdown.Item href="#">Opzioni relative all&lsquo;informativa sulla privacy (Stato della California)</Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
-                  <p>
+                  <small>
                     <a className="link-secondary" href="#">
                       Sales e Solutions
                     </a>
-                  </p>
+                  </small>
                   <p>
                     <a className="link-secondary" href="#">
                       Centro sicurezza
@@ -124,21 +124,27 @@ const CustomFooter = () => {
                 Italiano (Italiano)
               </Dropdown.Toggle>
               <Dropdown.Menu>
-                <Dropdown.Item href="#">Action</Dropdown.Item>
-                <Dropdown.Item href="#">Another action</Dropdown.Item>
-                <Dropdown.Item href="#">Something else</Dropdown.Item>
-                <Dropdown.Item href="#">Action</Dropdown.Item>
-                <Dropdown.Item href="#">Another action</Dropdown.Item>
-                <Dropdown.Item href="#">Something else</Dropdown.Item>
-                <Dropdown.Item href="#">Action</Dropdown.Item>
-                <Dropdown.Item href="#">Another action</Dropdown.Item>
-                <Dropdown.Item href="#">Something else</Dropdown.Item>
+                <Dropdown.Item href="#">عربي (Arabo)</Dropdown.Item>
+                <Dropdown.Item href="#">বাংলা (Bengali)</Dropdown.Item>
+                <Dropdown.Item href="#">čeština (Ceco)</Dropdown.Item>
+                <Dropdown.Item href="#">Dansk (Danese)</Dropdown.Item>
+                <Dropdown.Item href="#">Deutsch (Tedesco)</Dropdown.Item>
+                <Dropdown.Item href="#">ελληνικά (Greco)</Dropdown.Item>
+                <Dropdown.Item href="#">English (Inglese)</Dropdown.Item>
+                <Dropdown.Item href="#">Español (Spagnolo)</Dropdown.Item>
+                <Dropdown.Item href="#">فارسی (Persiano)</Dropdown.Item>
+                <Dropdown.Item href="#">Suomi (Finlandese)</Dropdown.Item>
+                <Dropdown.Item href="#">Français (Francese)</Dropdown.Item>
+                <Dropdown.Item href="#">हिंदी (Hindi)</Dropdown.Item>
+                <Dropdown.Item href="#">Magyar (Ungherese)</Dropdown.Item>
+                <Dropdown.Item href="#">Bahasa Indonesia (Indonesiano)</Dropdown.Item>
+                <Dropdown.Item href="#">Italiano (Italiano)</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </Col>
         </Row>
-        <Row className="mt-4">
-          <Col className="">
+        <Row>
+          <Col>
             <small>LinkedIn Corporation &copy; 2025</small>
           </Col>
         </Row>
