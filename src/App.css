@@ -195,3 +195,9 @@ span {
 footer a {
   text-decoration: none;
 }
+
+.showAll {
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.078) !important;
+  }
+}

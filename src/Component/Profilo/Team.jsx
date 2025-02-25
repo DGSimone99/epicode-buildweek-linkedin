@@ -5,10 +5,12 @@ import { BsFillCameraFill, BsPlus, BsXLg } from "react-icons/bs";
 import { BiPencil } from "react-icons/bi";
 import { useSelector } from "react-redux";
 import EditProfilo from "./EditProfilo";
+import PictureModal from "./PictureModal";
 
 const Team = () => {
   const user = useSelector((state) => state.user.content);
   const [modalShow, setModalShow] = React.useState(false);
+  const [modalPictureShow, setModalPictureShow] = React.useState(false);
 
   const [index, setIndex] = useState(0);
   const handleSelect = (selectedIndex) => {
@@ -26,8 +28,20 @@ const Team = () => {
           <BsFillCameraFill className="camera"></BsFillCameraFill>
         </Button>
         <div className="userImg">
-          <Image src={user.image} fluid className="rounded-circle position-relative" width={152}></Image>
-          <BsPlus className="position-absolute bottom-0 end-0 rounded-circle bg-white plusImg"></BsPlus>
+          <Image
+            src={user.image}
+            fluid
+            className="rounded-circle position-relative"
+            style={{
+              width: "152px",
+              height: "152px",
+              objectFit: "cover",
+            }}
+          ></Image>
+          <BsPlus
+            className="position-absolute bottom-0 end-0 rounded-circle bg-white plusImg"
+            onClick={() => setModalPictureShow(true)}
+          ></BsPlus>
         </div>
         <Card.Body className="mt-5 px-4 position-relative">
           <BiPencil className="position-absolute pencil" onClick={() => setModalShow(true)}></BiPencil>
@@ -123,6 +137,7 @@ const Team = () => {
         </Card.Body>
       </Card>
       <EditProfilo show={modalShow} onHide={() => setModalShow(false)} />
+      <PictureModal show={modalPictureShow} onHide={() => setModalPictureShow(false)} />
     </Container>
   );
 };

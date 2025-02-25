@@ -5,12 +5,12 @@ import MyCollapse from "./MyCollapse";
 
 const PrimoPiano = () => {
   return (
-    <Container className="bg-white border-secondary rounded-3">
+    <Container className="bg-white border rounded-3 p-3">
       <div className="d-flex align-items-center">
-        <h3>In primo piano</h3>
+        <h3 className="mb-1">In primo piano</h3>
         <InfoSquareFill color="black" className="ms-auto" />
       </div>
-      <p>a cura di LinkedIn Notizie</p>
+      <p className="text-secondary fw-semibold">a cura di LinkedIn Notizie</p>
       <NotiziePrimoPiano titolo="I giovani lavoratori sono sempre me..." aggiornamento="4 giorni fa • 1.416 lettori" />
       <NotiziePrimoPiano titolo="Fusione tra Saipem e Subsea7" aggiornamento="5 ore fa • 248 lettori" />
       <NotiziePrimoPiano titolo="Roma ospita la COP16 'bis'" aggiornamento="4 ore fa • 122 lettori" />
@@ -18,7 +18,7 @@ const PrimoPiano = () => {
 
       <MyCollapse />
 
-      <h4 className="text-secondary">I Giochi di oggi</h4>
+      <h5 className="text-secondary mt-4 mb-3">I Giochi di oggi</h5>
 
       <div className="d-flex mb-3 align-items-center">
         <div>

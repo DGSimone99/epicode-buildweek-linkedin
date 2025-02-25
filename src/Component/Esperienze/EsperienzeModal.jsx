@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import { Plus } from "react-bootstrap-icons";
 import Button from "react-bootstrap/Button";
@@ -5,6 +6,11 @@ import Modal from "react-bootstrap/Modal";
 import { Link } from "react-router";
 
 function EsperienzeModal(props) {
+  const [stillInJob, setStillinJob] = useState(true);
+  const handleCheck = (e) => {
+    setStillinJob(e.target.checked);
+    console.log(e.target.checked);
+  };
   return (
     <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
       <Modal.Header closeButton>
@@ -53,28 +59,34 @@ function EsperienzeModal(props) {
             <Form.Control className="mb-4" type="text" placeholder="Esempio: Microsoft" />
             <Form.Check className="d-inline me-2" />
             <Form.Label className="mb-4">Attualmente Ricopro questo ruolo</Form.Label>
-            <br />
+            <br
+              checked={stillInJob}
+              onChange={(e) => {
+                handleCheck(e);
+              }}
+            />
             <Form.Label>Data di inizio*</Form.Label>
             <Row className="mb-4">
               <Col>
-                <Form.Select>
-                  <option>Mese</option>
-                  <option value="Gennaio">Gennaio</option>
-                  <option value="Febbraio">Febbraio</option>
-                  <option value="Marzo">Marzo</option>
-                  <option value="Aprile">Aprile</option>
-                  <option value="Maggio">Maggio</option>
-                  <option value="Giugno">Giugno</option>
-                  <option value="Luglio">Luglio</option>
-                  <option value="Agosto">Agosto</option>
-                  <option value="Settembre">Settembre</option>
-                  <option value="Ottobre">Ottobre</option>
-                  <option value="Novembre">Novembre</option>
-                  <option value="Dicembre">Dicembre</option>
+                <Form.Select required>
+                  <option disabled>Mese</option>
+                  <option value="1">Gennaio</option>
+                  <option value="2">Febbraio</option>
+                  <option value="3">Marzo</option>
+                  <option value="4">Aprile</option>
+                  <option value="5">Maggio</option>
+                  <option value="6">Giugno</option>
+                  <option value="7">Luglio</option>
+                  <option value="8">Agosto</option>
+                  <option value="9">Settembre</option>
+                  <option value="10">Ottobre</option>
+                  <option value="11">Novembre</option>
+                  <option value="12">Dicembre</option>
                 </Form.Select>
               </Col>
               <Col>
-                <Form.Select>
+                <Form.Select required>
+                  <option disabled>Anno</option>
                   {Array.from({ length: 101 }, (_, i) => 2025 - i).map((year) => (
                     <option key={year} value={year}>
                       {year}
@@ -83,27 +95,28 @@ function EsperienzeModal(props) {
                 </Form.Select>
               </Col>
             </Row>
-            <Form.Label>Data di fine</Form.Label>
+            <Form.Label>Data di fine*</Form.Label>
             <Row className="mb-4">
               <Col>
-                <Form.Select>
-                  <option>Mese</option>
-                  <option value="Gennaio">Gennaio</option>
-                  <option value="Febbraio">Febbraio</option>
-                  <option value="Marzo">Marzo</option>
-                  <option value="Aprile">Aprile</option>
-                  <option value="Maggio">Maggio</option>
-                  <option value="Giugno">Giugno</option>
-                  <option value="Luglio">Luglio</option>
-                  <option value="Agosto">Agosto</option>
-                  <option value="Settembre">Settembre</option>
-                  <option value="Ottobre">Ottobre</option>
-                  <option value="Novembre">Novembre</option>
-                  <option value="Dicembre">Dicembre</option>
+                <Form.Select disabled={stillInJob} required={!stillInJob}>
+                  <option disabled>Mese</option>
+                  <option value="1">Gennaio</option>
+                  <option value="2">Febbraio</option>
+                  <option value="3">Marzo</option>
+                  <option value="4">Aprile</option>
+                  <option value="5">Maggio</option>
+                  <option value="6">Giugno</option>
+                  <option value="7">Luglio</option>
+                  <option value="8">Agosto</option>
+                  <option value="9">Settembre</option>
+                  <option value="10">Ottobre</option>
+                  <option value="11">Novembre</option>
+                  <option value="12">Dicembre</option>
                 </Form.Select>
               </Col>
               <Col>
-                <Form.Select>
+                <Form.Select disabled={stillInJob} required={!stillInJob}>
+                  <option disabled>Anno</option>
                   {Array.from({ length: 101 }, (_, i) => 2025 - i).map((year) => (
                     <option key={year} value={year}>
                       {year}

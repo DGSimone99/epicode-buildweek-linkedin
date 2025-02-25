@@ -95,7 +95,16 @@ const CustomNav = () => {
 
           <Dropdown className="border-end ">
             <Dropdown.Toggle variant="white" className="text-dark border-0">
-              <Image src={user.image} roundedCircle width="24" height="24" className=" d-block" />
+              <Image
+                src={user.image}
+                roundedCircle
+                className=" d-block"
+                style={{
+                  width: "24px",
+                  height: "24px",
+                  objectFit: "cover",
+                }}
+              />
               <span>Tu</span>
             </Dropdown.Toggle>
             <Dropdown.Menu className="dropdown-menu-end mt-2">
@@ -103,7 +112,16 @@ const CustomNav = () => {
                 <Button className="nav-link p-0" to="/me" variant="white">
                   <div className="d-flex aling-items-center">
                     <div>
-                      <Image src={user.image} roundedCircle width="50" height="50" className="me-1 d-block" />
+                      <Image
+                        src={user.image}
+                        roundedCircle
+                        className="me-1 d-block"
+                        style={{
+                          width: "50px",
+                          height: "50px",
+                          objectFit: "cover",
+                        }}
+                      />
                     </div>
                     <div className="align-content-center">
                       <h6 className="m-0 text-black">{user.name + " " + user.surname}</h6>
