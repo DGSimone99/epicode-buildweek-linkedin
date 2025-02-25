@@ -116,12 +116,12 @@ span {
   margin-right: 1rem;
 }
 
-.pAziende {
-  font-size: 0.7rem;
+.bi:hover {
+  color: black;
 }
 
-.dropdown-toggle::after {
-  margin-top: 10px;
+.pAziende {
+  font-size: 0.7rem;
 }
 
 .textTruncate {
@@ -145,6 +145,10 @@ span {
   transition: color 0.3s ease-in-out;
 }
 
+.bi-chevron-down {
+  display: none !important;
+}
+
 /*RESPONSIVE - NAVBAR*/
 
 @media screen and (max-width: 1024px) {
@@ -155,8 +159,12 @@ span {
 }
 @media screen and (max-width: 769px) {
   .nav-link div,
-  span {
-    display: none;
+  span,
+  .dropdown-toggle::after {
+    display: none !important;
+  }
+  .search-icon {
+    background-color: transparent !important;
   }
 }
 

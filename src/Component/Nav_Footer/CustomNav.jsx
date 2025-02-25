@@ -54,15 +54,23 @@ const CustomNav = () => {
             />
           </Navbar.Brand>
           <Form>
-            <InputGroup style={{ backgroundColor: "#F4F2EE", borderRadius: "4px", overflow: "hidden" }}>
-              <InputGroup.Text style={{ backgroundColor: "#F4F2EE", border: "none" }}>
+            <InputGroup className="custom-input-group">
+              <InputGroup.Text
+                className="search-icon d-flex align-items-center"
+                style={{ backgroundColor: "#F4F2EE", border: "none" }}
+              >
                 <Search />
               </InputGroup.Text>
-              <FormControl type="search" placeholder="Cerca" style={{ backgroundColor: "#F4F2EE", border: "none" }} />
+              <FormControl
+                type="search"
+                placeholder="Cerca"
+                className="d-none d-md-block"
+                style={{ backgroundColor: "#F4F2EE", border: "none" }}
+              />
             </InputGroup>
           </Form>
         </div>
-        <Nav className="d-flex align-items-center">
+        <Nav className="d-flex flex-row align-items-center">
           <NavLink to="/" className={`text-center nav-link ${location.pathname === "/" ? "navActive" : ""}`}>
             <HouseDoorFill size={20} className="mb-1 mx-4" />
             <div>Home</div>
