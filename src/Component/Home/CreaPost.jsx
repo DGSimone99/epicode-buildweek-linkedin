@@ -11,7 +11,7 @@ const CreaPost = () => {
   return (
     <Container className="bg-white rounded-3 p-3 border">
       <Row className="d-flex border-secondary align-items-center">
-        <Col xs={1}>
+        <Col xs={2}>
           <div>
             <img
               className="rounded-circle"
