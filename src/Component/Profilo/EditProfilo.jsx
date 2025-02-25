@@ -72,23 +72,22 @@ function EditProfilo(props) {
               <Form.Label>Area*</Form.Label>
               <Form.Control type="text" value={newData.area} name="area" onChange={handleChange} required />
             </Form.Group>
-            <Button
-              variant="primary"
-              type="submit"
-              onClick={(e) => {
-                e.preventDefault();
-                dispatch(editUser(newData));
-              }}
-            >
-              Modifica
-            </Button>
           </Form>
         ) : (
           <Spinner animation="grow" />
         )}
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
+        <Button
+          variant="primary"
+          type="submit"
+          onClick={(e) => {
+            e.preventDefault();
+            dispatch(editUser(newData));
+          }}
+        >
+          Salva
+        </Button>
       </Modal.Footer>
     </Modal>
   );
