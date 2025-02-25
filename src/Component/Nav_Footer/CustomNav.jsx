@@ -80,7 +80,11 @@ const CustomNav = () => {
             <PeopleFill size={20} className="mb-1 mx-4" />
             <div>Rete</div>
           </Nav.Link>
-          <Nav.Link to="" className={`text-center nav-link ${location.pathname === "" ? "navActive" : ""}`}>
+          <Nav.Link
+            as={Link}
+            to="/jobs"
+            className={`text-center nav-link ${location.pathname === "/jobs" ? "navActive" : ""}`}
+          >
             <BriefcaseFill size={20} className="mb-1 mx-4" />
             <div>Lavoro</div>
           </Nav.Link>

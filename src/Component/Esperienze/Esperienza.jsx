@@ -5,7 +5,7 @@ import React from "react";
 const Esperienza = () => {
   const [modalShow, setModalShow] = React.useState(false);
   return (
-    <Container fluid className="border border-1 border-tertiary bg-white rounded-3 pt-3 mt-3 pb-3">
+    <Container fluid className="border border-1 border-tertiary bg-white rounded-3 py-3 mt-3">
       <Container>
         <h5 className="fw-bold">Esperienza</h5>
         <p className="text-secondary">

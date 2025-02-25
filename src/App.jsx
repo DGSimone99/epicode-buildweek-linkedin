@@ -8,6 +8,7 @@ import MyHome from "./Component/Home/MyHome";
 import { BrowserRouter, Route, Routes } from "react-router";
 import CustomFooter from "./Component/Nav_Footer/CustomFooter";
 import MainUtente from "./Component/Utenti/MainUtente";
+import PageLavoro from "./Component/Lavoro/PageLavoro";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/" element={<MyHome />} />
             <Route path="/me" element={<ProfiloPrincipale />} />
             <Route path="/:id" element={<MainUtente />} />
+            <Route path="/jobs" element={<PageLavoro />} />
           </Routes>
         </Container>
       </Container>

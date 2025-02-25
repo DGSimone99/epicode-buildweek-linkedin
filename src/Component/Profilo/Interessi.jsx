@@ -3,9 +3,9 @@ import { Check } from "react-bootstrap-icons";
 
 const Interessi = () => {
   return (
-    <Container fluid className="border border-1 border-tertiary bg-white rounded-3 pt-3 mt-3 pb-3">
+    <Container fluid className="border border-1 border-tertiary bg-white rounded-3 py-3 mt-3">
       <Container>
-        <h3>Interessi</h3>
+        <h5 className="fw-bold">Interessi</h5>
         <Nav variant="underline" defaultActiveKey="/home">
           <Nav.Item>
             <Nav.Link eventKey="link-1" className="text-success active">
