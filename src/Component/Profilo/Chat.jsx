@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Collapse from "react-bootstrap/Collapse";
-import { PencilSquare, PersonCircle, ThreeDots, ChevronDown, Search, Sliders2 } from "react-bootstrap-icons";
+import { PencilSquare, ThreeDots, ChevronDown, Search, Sliders2, PersonCircle } from "react-bootstrap-icons";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Dropdown, DropdownButton, Form, InputGroup } from "react-bootstrap";
 
@@ -20,6 +20,7 @@ const Chat = () => {
         className="w-100 p-0 border-0"
       >
         <div className="d-flex align-items-center justify-content-between p-2 border">
+          <PersonCircle size={25} />
           {/*   <Image src={user.image} /> */}
           <span className="fw-bold fs-6 ms-2">Messaggistica</span>
           <div className="d-flex gap-2 ms-auto">
