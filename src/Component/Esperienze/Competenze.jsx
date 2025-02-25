@@ -12,9 +12,9 @@ const Competenze = () => {
           Fai capire se hai un profilo adatto per le nuove opportunità: il 50% dei recruiter usa i dati sulle competenze
           per coprire le posizioni aperte
         </p>
-        <p className="mb-0">Soft skill</p>
+        <p className="mb-0 text-secondary">Soft skill</p>
         <hr className="my-1" />
-        <p>Competenze tecniche</p>
+        <p className=" text-secondary">Competenze tecniche</p>
         <Button
           variant="light"
           className="rounded-pill border border-primary fw-bold d-flex align-items-center justify-content-center me-auto text-primary"
