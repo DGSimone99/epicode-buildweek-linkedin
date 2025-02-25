@@ -6,6 +6,7 @@ import { Container } from "react-bootstrap";
 import CustomNav from "./Component/Nav_Footer/CustomNav";
 import MyHome from "./Component/Home/MyHome";
 import { BrowserRouter, Route, Routes } from "react-router";
+import CustomFooter from "./Component/Nav_Footer/CustomFooter";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         </Container>
       </Container>
       <Chat />
+      <CustomFooter />
     </BrowserRouter>
   );
 }

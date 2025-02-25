@@ -138,10 +138,16 @@ span {
   }
 }
 
-.dropdown-toggle::after {
+/* CHAT */
+#input-group-dropdown {
+  background-color: lightgray !important;
+}
+
+#input-group-dropdown::after {
   display: none !important;
 }
 
-#input-group-dropdown {
-  background-color: lightgray !important;
+/* FOOTER */
+footer a {
+  text-decoration: none;
 }
