@@ -137,6 +137,14 @@ span {
   margin: 8px 0;
 }
 
+.navActive,
+.navActive .bi {
+  color: black !important;
+  text-decoration: underline 2px !important;
+  text-underline-offset: 11px;
+  transition: color 0.3s ease-in-out;
+}
+
 /*RESPONSIVE - NAVBAR*/
 
 @media screen and (max-width: 1024px) {

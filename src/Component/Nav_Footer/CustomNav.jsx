@@ -31,7 +31,7 @@ import {
 
 import { fetchUser } from "../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, NavLink } from "react-router";
+import { Link, NavLink, useLocation } from "react-router";
 
 const CustomNav = () => {
   const user = useSelector((state) => state.user.content);
@@ -39,6 +39,7 @@ const CustomNav = () => {
   useEffect(() => {
     dispatch(fetchUser());
   }, []);
+  const location = useLocation();
 
   return (
     <Navbar bg="white" expand="lg" className="px-3 shadow-sm container-fluid sticky-top ">
@@ -62,23 +63,23 @@ const CustomNav = () => {
           </Form>
         </div>
         <Nav className="d-flex align-items-center">
-          <NavLink to="/" className="text-secondary text-center nav-link">
+          <NavLink to="/" className={`text-center nav-link ${location.pathname === "/" ? "navActive" : ""}`}>
             <HouseDoorFill size={20} className="mb-1 mx-4" />
             <div>Home</div>
           </NavLink>
-          <Nav.Link href="#" className="text-secondary text-center">
+          <Nav.Link to="" className={`text-center nav-link ${location.pathname === "" ? "navActive" : ""}`}>
             <PeopleFill size={20} className="mb-1 mx-4" />
             <div>Rete</div>
           </Nav.Link>
-          <Nav.Link href="#" className="text-secondary text-center">
+          <Nav.Link to="" className={`text-center nav-link ${location.pathname === "" ? "navActive" : ""}`}>
             <BriefcaseFill size={20} className="mb-1 mx-4" />
             <div>Lavoro</div>
           </Nav.Link>
-          <Nav.Link href="#" className="text-secondary text-center">
+          <Nav.Link to="" className={`text-center nav-link ${location.pathname === "" ? "navActive" : ""}`}>
             <ChatDotsFill size={20} className="mb-1 mx-4" />
             <div>Messaggistica</div>
           </Nav.Link>
-          <Nav.Link href="#" className="text-secondary text-center">
+          <Nav.Link to="" className={`text-center nav-link ${location.pathname === "" ? "navActive" : ""}`}>
             <BellFill size={20} className="mb-1 mx-4" />
             <div>Notifiche</div>
           </Nav.Link>
@@ -156,7 +157,7 @@ const CustomNav = () => {
                         Talent Insights
                       </p>
                       <p className="my-4 fw-semibold">
-                        <LaptopFill /> Pubblica un'offerta di lavoro
+                        <LaptopFill /> Pubblica un&apos; offerta di lavoro
                       </p>
                       <p className="fw-semibold text-secondary mt-4">Vendite</p>
                       <p className="my-4 fw-semibold">
