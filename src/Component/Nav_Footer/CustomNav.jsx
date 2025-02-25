@@ -89,27 +89,27 @@ const CustomNav = () => {
               <span>Tu</span>
             </Dropdown.Toggle>
             <Dropdown.Menu className="dropdown-menu-end mt-2">
-              <Dropdown.Item href="#">
-                <NavLink className="nav-link" to="/me">
-                  <div className="d-flex aling-items-center">
-                    <div>
-                      <Image src={user.image} roundedCircle width="50" height="50" className="me-1 d-block" />
-                    </div>
-                    <div className="align-content-center">
-                      <h6 className="m-0">{user.name + " " + user.surname}</h6>
-                      <p className="m-0 mt-1">{user.title}</p>
-                    </div>
+              <Dropdown>
+                <Button className="d-flex aling-items-center bg-transparent text-black border-0" as={Link} to="/me">
+                  <div>
+                    <Image src={user.image} roundedCircle width="50" height="50" className="me-1 d-block" />
                   </div>
-                </NavLink>
-                <Button
-                  as={Link}
-                  to="/me"
-                  variant="outline-primary"
-                  className="rounded-pill fw-semibold px-5 py-0 my-2"
-                >
-                  Visualizza profilo
+                  <div className="align-content-center">
+                    <h6 className="m-0">{user.name + " " + user.surname}</h6>
+                    <p className="m-0 mt-1">{user.title}</p>
+                  </div>
                 </Button>
-              </Dropdown.Item>
+                <div className=" ms-auto">
+                  <Button
+                    as={Link}
+                    to="/me"
+                    variant="outline-primary"
+                    className="rounded-pill fw-semibold px-5 py-0 my-2 mx-3"
+                  >
+                    Visualizza profilo
+                  </Button>
+                </div>
+              </Dropdown>
               <Dropdown.Item href="#">
                 <h6>Account</h6>
                 <p className="fw-semibold text-secondary">
