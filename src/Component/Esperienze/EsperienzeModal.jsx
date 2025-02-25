@@ -136,14 +136,15 @@ function EsperienzeModal(props) {
               value={company}
               onChange={(e) => handleCompany(e)}
             />
-            <Form.Check className="d-inline me-2" />
-            <Form.Label className="mb-4">Attualmente Ricopro questo ruolo</Form.Label>
-            <br
+            <Form.Check
+              className="d-inline me-2"
               checked={stillInJob}
               onChange={(e) => {
                 handleCheck(e);
               }}
             />
+            <Form.Label className="mb-4">Attualmente Ricopro questo ruolo</Form.Label>
+            <br />
             <Form.Label>Data di inizio*</Form.Label>
             <Row className="mb-4">
               <Col>
