@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Collapse from "react-bootstrap/Collapse";
-import { PencilSquare, PersonCircle, ThreeDots, ChevronDown, Search, Sliders2 } from "react-bootstrap-icons";
+import { PencilSquare, ThreeDots, ChevronDown, Search, Sliders2 } from "react-bootstrap-icons";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Dropdown, DropdownButton, Form, InputGroup } from "react-bootstrap";
 
