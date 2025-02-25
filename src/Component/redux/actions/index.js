@@ -2,6 +2,7 @@ export const SET_PROFILES = "SET_PROFILES";
 export const SET_USER = "SET_USER";
 export const EDIT_USER = "EDIT_USER";
 export const EDIT_USERIMAGE = "EDIT_USERIMAGE";
+export const SET_OTHERUSER = "SET_OTHERUSER";
 export const setProfilesAction = (data) => ({ type: SET_PROFILES, payload: data });
 export const setUserAction = (data) => ({ type: SET_USER, payload: data });
 
@@ -94,5 +95,26 @@ export const editUserImage = (file) => {
     } catch (error) {
       console.error(error);
     }
+  };
+};
+
+export const fetchOtherUser = (id) => {
+  return (dispatch) => {
+    fetch("https://striveschool-api.herokuapp.com/api/profile/" + id, {
+      method: "GET",
+      headers: {
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2JjNGRjY2U3MDMzNzAwMTUzMTZkYjEiLCJpYXQiOjE3NDAzOTM5MzIsImV4cCI6MTc0MTYwMzUzMn0.1t8kxCm5d0UPnuFQqZs9G6-VZkPjsGpIMIhIadrrE4Q",
+      },
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        if (data) {
+          dispatch({ type: SET_OTHERUSER, payload: data });
+        } else {
+          alert("nessun profilo trovato");
+        }
+      })
+      .catch((err) => console.error(err));
   };
 };
