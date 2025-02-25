@@ -1,4 +1,4 @@
-import { Button, Container } from "react-bootstrap";
+import { Button, Col, Container, Row } from "react-bootstrap";
 import EsperienzeModal from "./EsperienzeModal";
 import React from "react";
 
@@ -7,7 +7,11 @@ const Esperienza = () => {
   return (
     <Container fluid className="border border-1 border-tertiary bg-white rounded-3 pt-3 mt-3 pb-3">
       <Container>
-        <h5 className="fw-bold">Esperienza</h5>
+        <Row>
+          <Col>
+            <h5 className="fw-bold">Esperienza</h5>
+          </Col>
+        </Row>
         <p className="text-secondary">
           Metti in risalto i risultati raggiunti e ottieni fino a 2 volte più visualizzazioni del profilo e collegamenti
         </p>
