@@ -6,7 +6,7 @@ const CreaPost = () => {
   const user = useSelector((state) => state.user.content);
 
   return (
-    <Container className="bg-white rounded-3 p-3">
+    <Container className="bg-white rounded-3 p-3 border">
       <Row className="d-flex border-secondary align-items-center">
         <Col xs={2}>
           <div>
@@ -14,7 +14,7 @@ const CreaPost = () => {
           </div>
         </Col>
         <Col xs={10}>
-          <div className="border rounded-5 p-3 mx-3">Crea un post</div>
+          <div className="border rounded-5 p-3 mx-1">Crea un post</div>
         </Col>
       </Row>
       <div className="d-flex justify-content-between mt-3">

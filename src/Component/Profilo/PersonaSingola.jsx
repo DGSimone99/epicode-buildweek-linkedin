@@ -11,8 +11,8 @@ const PersonaSingola = (props) => {
               src={props.profile.image}
               alt={props.profile.name + " propic"}
               className="rounded-circle"
-              width="60rem"
-              height="60rem"
+              width="50rem"
+              height="50rem"
               style={{ objectFit: "cover", objectPosition: "center" }}
             />
           </Col>

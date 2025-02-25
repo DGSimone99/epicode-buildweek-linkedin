@@ -1,4 +1,4 @@
-import { Container, Spinner } from "react-bootstrap";
+import { Button, Container, Spinner } from "react-bootstrap";
 import PersonaSingola from "./PersonaSingola";
 import React, { useEffect } from "react";
 import { fetchProfiles } from "../redux/actions";
@@ -16,10 +16,10 @@ const Persone = () => {
   return (
     <Container className="bg-white border rounded-3 d-flex flex-column px-0">
       <Container className="px-4 pt-4">
-        <h4>
-          <strong>Persone che potresti conoscere</strong>
-        </h4>
-        <h5 className="text-secondary">Dalla tua scuola o università</h5>
+        <h5>
+          <strong className="fw-semibold">Persone che potresti conoscere</strong>
+        </h5>
+        <h6 className="text-secondary">Dalla tua scuola o università</h6>
       </Container>
       <Container className="px-4">
         {profiles.length > 0 ? (
@@ -35,10 +35,10 @@ const Persone = () => {
           <Spinner animation="grow" />
         )}
       </Container>
-      <hr />
-      <p className="text-center" onClick={() => setModalShow(true)}>
-        <strong>Mostra tutto</strong>
-      </p>
+      <hr className="mb-0" />
+      <Button className="text-center bg-transparent border-0 py-2 showAll" onClick={() => setModalShow(true)}>
+        <strong className="text-secondary">Mostra tutto</strong>
+      </Button>
       <PersoneModal show={modalShow} onHide={() => setModalShow(false)} profiles={profiles} />
     </Container>
   );
