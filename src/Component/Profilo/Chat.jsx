@@ -1,14 +1,14 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Collapse from "react-bootstrap/Collapse";
-import { PencilSquare, ThreeDots, ChevronDown, Search, Sliders2, PersonCircle } from "react-bootstrap-icons";
+import { PencilSquare, ThreeDots, ChevronDown, Search, Sliders2 } from "react-bootstrap-icons";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Dropdown, DropdownButton, Form, InputGroup } from "react-bootstrap";
+import { Dropdown, DropdownButton, Form, Image, InputGroup } from "react-bootstrap";
+import { useSelector } from "react-redux";
 
 const Chat = () => {
   const [open, setOpen] = useState(false);
-
-  /* const user = useState((state) => state.user.content); */
+  const user = useSelector((state) => state.user.content);
 
   return (
     <div className="position-fixed bottom-0 end-0 bg-white border rounded-top" style={{ width: "275px", zIndex: "3" }}>
@@ -20,12 +20,20 @@ const Chat = () => {
         className="w-100 p-0 border-0"
       >
         <div className="d-flex align-items-center justify-content-between p-2 border">
-          <PersonCircle size={25} />
-          {/*   <Image src={user.image} /> */}
-          <span className="fw-bold fs-6 ms-2">Messaggistica</span>
+          <Image
+            src={user.image}
+            roundedCircle
+            className=" d-block"
+            style={{
+              width: "24px",
+              height: "24px",
+              objectFit: "cover",
+            }}
+          />
+          <p className="fw-semibold ms-2 mb-0">Messaggistica</p>
           <div className="d-flex gap-2 ms-auto">
-            <ThreeDots size={17} className="ms-1" />
-            <PencilSquare size={17} className="ms-1" />
+            <ThreeDots size={17} className="ms-1 text-dark" />
+            <PencilSquare size={17} className="ms-1 text-dark" />
             <ChevronDown size={17} className="mx-1" />
           </div>
         </div>
