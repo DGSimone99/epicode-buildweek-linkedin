@@ -7,6 +7,7 @@ import Language from "./Language";
 import Esperienza from "../Esperienze/Esperienza";
 import Formazione from "../Esperienze/Formazione";
 import Competenze from "../Esperienze/Competenze";
+import Interessi from "./Interessi";
 
 const ProfiloPrincipale = () => {
   return (
@@ -18,6 +19,7 @@ const ProfiloPrincipale = () => {
         <Esperienza />
         <Formazione />
         <Competenze />
+        <Interessi />
       </Col>
       <Col md={5} lg={5} xl={4} xxl={3}>
         <Language />
