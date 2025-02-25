@@ -8,7 +8,20 @@ import { editUser } from "../redux/actions";
 
 function EditProfilo(props) {
   const user = useSelector((state) => state.user.content);
-  const [newData, setNewData] = useState(user);
+  const [newData, setNewData] = useState({
+    _id: user.id,
+    name: user.name,
+    surname: user.surname,
+    email: user.email,
+    username: user.username,
+    title: user.title,
+    bio: user.bio,
+    area: user.area,
+    image: user.image,
+    createdAt: user.createdAt,
+    updatedAt: user.updatedAt,
+    __v: user.__v,
+  });
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
@@ -18,6 +31,9 @@ function EditProfilo(props) {
       [name]: value,
     }));
   };
+
+  console.log(newData);
+  console.log(user);
 
   useEffect(() => {
     setNewData(user);
@@ -64,7 +80,7 @@ function EditProfilo(props) {
                 dispatch(editUser(newData));
               }}
             >
-              Submit
+              Modifica
             </Button>
           </Form>
         ) : (

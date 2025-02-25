@@ -4,6 +4,7 @@ import Consigliato from "./Consigliato";
 import Analisi from "./Analisi";
 import Persone from "./Persone";
 import Language from "./Language";
+import Esperienza from "../Esperienze/Esperienza";
 
 const ProfiloPrincipale = () => {
   return (
@@ -12,6 +13,7 @@ const ProfiloPrincipale = () => {
         <Team />
         <Consigliato />
         <Analisi />
+        <Esperienza />
       </Col>
       <Col md={5} lg={5} xl={4} xxl={3}>
         <Language />
