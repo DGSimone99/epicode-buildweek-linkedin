@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Calendar, CaretDownFill, Clock, Image, Plus, PlusLg } from "react-bootstrap-icons";
+import { Calendar, CaretDownFill, Clock, Image, PlusLg } from "react-bootstrap-icons";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { useDispatch, useSelector } from "react-redux";
@@ -14,6 +14,11 @@ function ModalePost(props) {
 
   const handleChange = (event) => {
     setPostText(event.target.value);
+  };
+
+  const newPost = () => {
+    dispatch(fetchSharePost(postText));
+    dispatch(fetchGetPost());
   };
 
   return (
@@ -66,7 +71,7 @@ function ModalePost(props) {
             variant="light"
             className="rounded-pill mx-2"
             onClick={() => {
-              dispatch(fetchSharePost(postText)), dispatch(fetchGetPost());
+              newPost(), props.onHide;
             }}
           >
             Pubblica
