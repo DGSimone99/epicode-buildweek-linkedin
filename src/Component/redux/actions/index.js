@@ -145,14 +145,15 @@ export const fetchGetPost = () => {
   };
 };
 
-export const fetchSharePost = () => {
+export const fetchSharePost = (mamma) => {
   return (dispatch) => {
-    fetch("https://striveschool-api.herokuapp.com/api/posts/67bc4dcce703370015316db1", {
+    fetch("https://striveschool-api.herokuapp.com/api/posts/", {
       method: "POST",
       headers: {
         Authorization:
           "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2JjNGRjY2U3MDMzNzAwMTUzMTZkYjEiLCJpYXQiOjE3NDAzOTM5MzIsImV4cCI6MTc0MTYwMzUzMn0.1t8kxCm5d0UPnuFQqZs9G6-VZkPjsGpIMIhIadrrE4Q",
       },
+      body: JSON.stringify(mamma),
     })
       .then((resp) => resp.json())
       .then((data) => {
