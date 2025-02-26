@@ -5,11 +5,16 @@ import Modal from "react-bootstrap/Modal";
 import { useDispatch, useSelector } from "react-redux";
 import Emoji from "./Emoji";
 import { fetchSharePost } from "../redux/actions";
+import { Form } from "react-bootstrap";
 
 function ModalePost(props) {
   const user = useSelector((state) => state.user.content);
   const [postText, setPostText] = useState("");
   const dispatch = useDispatch();
+
+  const handleChange = (event) => {
+    setPostText(event.target.value);
+  };
 
   return (
     <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
@@ -36,7 +41,16 @@ function ModalePost(props) {
           </div>
         </div>
       </Modal.Header>
-      <Emoji value={postText} onChange={setPostText} />
+      <div className="mb-5">
+        <Form.Control
+          type="text"
+          className="border-0 shadow-none me-2"
+          placeholder="Di cosa vorresti parlare?"
+          value={postText}
+          onChange={handleChange}
+        />
+      </div>
+      {/*   <Emoji value={postText} onChange={setPostText} /> */}
       <div className="d-flex ms-3 mb-3">
         <Image />
         <Calendar className=" ms-4" />
