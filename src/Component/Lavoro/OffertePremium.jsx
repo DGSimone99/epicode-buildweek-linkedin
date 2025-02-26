@@ -1,14 +1,16 @@
 import { Container, Image } from "react-bootstrap";
 import { ArrowRight, XLg } from "react-bootstrap-icons";
+import { BsFillSlashSquareFill } from "react-icons/bs";
 
-const OffertePrincipali = () => {
+const OffertePremium = () => {
   return (
-    <Container fluid className="border border-1 border-tertiary bg-white rounded-3 p-0">
-      <Container className="p-4">
-        <h5 className="fw-bold">Le principali offerte di lavoro per te</h5>
-        <p className="text-secondary">
-          In base al tuo profilo, alle tue preferenze e ad attività come candidature, ricerche e salvataggi
+    <Container fluid className="border border-1 border-tertiary bg-white rounded-3 p-0 mt-3">
+      <Container className="p-4 border-top border-4 border-warning rounded-3">
+        <p className="fw-semibold text-secondary">
+          <BsFillSlashSquareFill className="me-2" style={{ color: "#E7A33E" }}></BsFillSlashSquareFill> PREMIUM
         </p>
+        <h5 className="fw-bold">Offerte di lavoro per cui hai più chance di ricevere un riscontro</h5>
+        <p className="text-secondary">In base alle tue probabilità di ricevere una risposta</p>
         <div className="d-flex align-items-center justify-content-between mt-3">
           <div className="d-flex align-items-center">
             <Image
@@ -53,4 +55,4 @@ const OffertePrincipali = () => {
     </Container>
   );
 };
-export default OffertePrincipali;
+export default OffertePremium;
