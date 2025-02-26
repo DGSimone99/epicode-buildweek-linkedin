@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import { Bag, PencilFill, Plus, XLg } from "react-bootstrap-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchExperience } from "../redux/actions";
+import { Link } from "react-router";
 
 const Esperienza = () => {
   const dispatch = useDispatch();
@@ -11,16 +12,21 @@ const Esperienza = () => {
   const [modalShow, setModalShow] = React.useState(false);
   useEffect(() => {
     dispatch(fetchExperience());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
   return (
     <Container fluid className="border border-1 border-tertiary bg-white rounded-3 py-3 mt-3">
       <Container>
         <Row>
           <Col className="d-flex justify-content-between">
             <h5 className="fw-bold">Esperienza</h5>
-            {experiences ? (
+            {experiences.length > 0 ? (
               <div>
-                <Plus onClick={() => setModalShow(true)} /> <PencilFill />
+                <Plus onClick={() => setModalShow(true)} />
+                <Link to={"/editexperiences"}>
+                  <PencilFill />
+                </Link>
               </div>
             ) : (
               <XLg className="text-dark" />
@@ -30,7 +36,7 @@ const Esperienza = () => {
         <p className="text-secondary">
           Metti in risalto i risultati raggiunti e ottieni fino a 2 volte più visualizzazioni del profilo e collegamenti
         </p>
-        {experiences ? (
+        {experiences.length > 0 ? (
           experiences.map((experience) => {
             return (
               <Row key={experience._id}>
@@ -63,14 +69,12 @@ const Esperienza = () => {
         ) : (
           <Row>
             <Col xs={1} className="d-flex">
-              (
               <div
                 className="d-flex justify-content-center align-items-center p-3 border border-secondary rounded-3 me-auto"
                 style={{ width: "50px", height: "50px" }}
               >
                 <Bag className="text-secondary"></Bag>
               </div>
-              )
             </Col>
             <Col className="text-secondary">
               <h3 className="fs-5">Qualifica</h3>

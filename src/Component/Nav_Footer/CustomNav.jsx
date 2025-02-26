@@ -42,9 +42,9 @@ const CustomNav = () => {
     dispatch(fetchUser());
     dispatch(fetchGetPost());
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [dispatch]);
 
-  console.log("SONO FETCHPOST", post);
+  /* console.log("SONO FETCHPOST", post); */
   const location = useLocation();
 
   return (

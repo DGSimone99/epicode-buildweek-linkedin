@@ -7,6 +7,7 @@ export const SET_NEWS = "SET_NEWS";
 export const SET_EXPERIENCES = "SET_EXPERIENCES";
 export const GET_POST = "GET_POST";
 export const POST_POST = "POST_POST";
+export const REMOVE_POST = "REMOVE_POST";
 export const setProfilesAction = (data) => ({ type: SET_PROFILES, payload: data });
 export const setUserAction = (data) => ({ type: SET_USER, payload: data });
 export const setExperiences = (data) => ({ type: SET_EXPERIENCES, payload: data });
@@ -145,6 +146,28 @@ export const fetchGetPost = () => {
   };
 };
 
+export const removePost = (id) => {
+  return (dispatch) => {
+    fetch(`https://striveschool-api.herokuapp.com/api/posts/${id}`, {
+      method: "DELETE",
+      headers: {
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2JjNGRjY2U3MDMzNzAwMTUzMTZkYjEiLCJpYXQiOjE3NDAzOTM5MzIsImV4cCI6MTc0MTYwMzUzMn0.1t8kxCm5d0UPnuFQqZs9G6-VZkPjsGpIMIhIadrrE4Q",
+      },
+    })
+      .then((resp) => {
+        if (resp.ok) {
+          return null;
+        }
+        throw new Error("Errore");
+      })
+      .then(() => {
+        dispatch({ type: REMOVE_POST, payload: id });
+      })
+      .catch((err) => console.error(err));
+  };
+};
+
 export const fetchSharePost = (mamma) => {
   return (dispatch) => {
     fetch("https://striveschool-api.herokuapp.com/api/posts/", {
@@ -152,8 +175,9 @@ export const fetchSharePost = (mamma) => {
       headers: {
         Authorization:
           "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2JjNGRjY2U3MDMzNzAwMTUzMTZkYjEiLCJpYXQiOjE3NDAzOTM5MzIsImV4cCI6MTc0MTYwMzUzMn0.1t8kxCm5d0UPnuFQqZs9G6-VZkPjsGpIMIhIadrrE4Q",
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(mamma),
+      body: JSON.stringify({ text: mamma }),
     })
       .then((resp) => resp.json())
       .then((data) => {

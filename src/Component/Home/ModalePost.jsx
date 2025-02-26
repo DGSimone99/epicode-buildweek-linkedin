@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Calendar, CaretDownFill, Clock, Image, Plus, PlusLg } from "react-bootstrap-icons";
+import { Calendar, CaretDownFill, Clock, Image, PlusLg } from "react-bootstrap-icons";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { useDispatch, useSelector } from "react-redux";
 import Emoji from "./Emoji";
-import { fetchSharePost } from "../redux/actions";
+import { fetchGetPost, fetchSharePost } from "../redux/actions";
 import { Form } from "react-bootstrap";
 
 function ModalePost(props) {
@@ -14,6 +14,11 @@ function ModalePost(props) {
 
   const handleChange = (event) => {
     setPostText(event.target.value);
+  };
+
+  const newPost = () => {
+    dispatch(fetchSharePost(postText));
+    dispatch(fetchGetPost());
   };
 
   return (
@@ -62,7 +67,13 @@ function ModalePost(props) {
           <Button variant="outline-light" className="border-0 rounded-circle ">
             <Clock />
           </Button>
-          <Button variant="light" className="rounded-pill mx-2" onClick={() => dispatch(fetchSharePost(postText))}>
+          <Button
+            variant="light"
+            className="rounded-pill mx-2"
+            onClick={() => {
+              newPost(), props.onHide;
+            }}
+          >
             Pubblica
           </Button>
         </div>

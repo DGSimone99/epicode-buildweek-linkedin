@@ -1,4 +1,4 @@
-import { GET_POST, POST_POST } from "../actions";
+import { GET_POST, POST_POST, REMOVE_POST } from "../actions";
 
 const initialState = {
   content: [],
@@ -13,7 +13,13 @@ const postReducer = (state = initialState, action) => {
     case POST_POST:
       return {
         ...state,
-        content: action.payload,
+        content: [...state.content, action.payload],
+      };
+
+    case REMOVE_POST:
+      return {
+        ...state,
+        content: state.content.filter((_id) => _id !== action.payload),
       };
 
     default:
