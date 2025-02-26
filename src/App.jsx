@@ -9,20 +9,48 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import CustomFooter from "./Component/Nav_Footer/CustomFooter";
 import MainUtente from "./Component/Utenti/MainUtente";
 import PageLavoro from "./Component/Lavoro/PageLavoro";
+import EditExperiences from "./Component/EditExperiences/EditExperiences";
 
 function App() {
   return (
     <BrowserRouter>
       <CustomNav />
       <Container fluid className="pt-3">
-        <Container>
-          <Routes>
-            <Route path="/" element={<MyHome />} />
-            <Route path="/me" element={<ProfiloPrincipale />} />
-            <Route path="/:id" element={<MainUtente />} />
-            <Route path="/jobs" element={<PageLavoro />} />
-          </Routes>
-        </Container>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Container>
+                <MyHome />
+              </Container>
+            }
+          />
+          <Route
+            path="/me"
+            element={
+              <Container>
+                <ProfiloPrincipale />
+              </Container>
+            }
+          />
+          <Route
+            path="/:id"
+            element={
+              <Container>
+                <MainUtente />
+              </Container>
+            }
+          />
+          <Route
+            path="/jobs"
+            element={
+              <Container>
+                <PageLavoro />
+              </Container>
+            }
+          />
+          <Route path="/editexperiences" element={<EditExperiences />} />
+        </Routes>
       </Container>
       <Chat />
       <CustomFooter />

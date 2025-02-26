@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 import { Bag, PencilFill, Plus, XLg } from "react-bootstrap-icons";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchExperience } from "../redux/actions";
+import { Link } from "react-router";
 
 const Esperienza = () => {
   const dispatch = useDispatch();
@@ -11,6 +12,7 @@ const Esperienza = () => {
   const [modalShow, setModalShow] = React.useState(false);
   useEffect(() => {
     dispatch(fetchExperience());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <Container fluid className="border border-1 border-tertiary bg-white rounded-3 py-3 mt-3">
@@ -20,7 +22,10 @@ const Esperienza = () => {
             <h5 className="fw-bold">Esperienza</h5>
             {experiences ? (
               <div>
-                <Plus onClick={() => setModalShow(true)} /> <PencilFill />
+                <Plus onClick={() => setModalShow(true)} />{" "}
+                <Link to={"/editexperiences"}>
+                  <PencilFill />
+                </Link>
               </div>
             ) : (
               <XLg className="text-dark" />
