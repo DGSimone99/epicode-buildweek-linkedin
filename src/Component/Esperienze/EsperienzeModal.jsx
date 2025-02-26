@@ -1,14 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import { Plus } from "react-bootstrap-icons";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { Link } from "react-router";
 import { fetchExperience } from "../redux/actions";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 function EsperienzeModal(props) {
   const dispatch = useDispatch();
+  const experiences = useSelector((state) => state.experiences.content);
+  const experience = experiences.find((exp) => exp._id === props.experienceid);
   const [stillInJob, setStillinJob] = useState(true);
   const [role, setRole] = useState("");
   const [company, setCompany] = useState("");
@@ -18,6 +20,34 @@ function EsperienzeModal(props) {
   const [endYear, setEndYear] = useState("");
   const [description, setDescription] = useState("");
   const [area, setArea] = useState("");
+  useEffect(() => {
+    setRole("");
+    setCompany("");
+    setDescription("");
+    setArea("");
+    setStartMonth("");
+    setStartYear("");
+    setEndMonth("");
+    setEndYear("");
+    setDescription("");
+  }, [props.experienceid]);
+  useEffect(() => {
+    if (experience) {
+      setRole(experience.role);
+      setCompany(experience.company);
+      setDescription(experience.description);
+      setArea(experience.area);
+      const start = new Date(experience.startDate);
+      setStartMonth(start.getMonth() + 1);
+      setStartYear(start.getFullYear());
+      if (experience.endDate) {
+        const end = new Date(experience.endDate);
+        setEndMonth(end.getMonth);
+        setEndYear(end.getFullYear);
+      }
+    }
+  }, [experience]);
+
   const handleDelete = () => {
     fetch(
       "https://striveschool-api.herokuapp.com/api/profile/67bc4dcce703370015316db1/experiences/" + props.experienceid,
