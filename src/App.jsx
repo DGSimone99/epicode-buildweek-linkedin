@@ -6,7 +6,6 @@ import { Container } from "react-bootstrap";
 import CustomNav from "./Component/Nav_Footer/CustomNav";
 import MyHome from "./Component/Home/MyHome";
 import { BrowserRouter, Route, Routes } from "react-router";
-import CustomFooter from "./Component/Nav_Footer/CustomFooter";
 import MainUtente from "./Component/Utenti/MainUtente";
 import PageLavoro from "./Component/Lavoro/PageLavoro";
 
@@ -25,7 +24,6 @@ function App() {
         </Container>
       </Container>
       <Chat />
-      <CustomFooter />
     </BrowserRouter>
   );
 }

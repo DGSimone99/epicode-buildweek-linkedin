@@ -30,7 +30,9 @@ const CustomFooter = () => {
                       <Dropdown.Item href="#">Termini e condizioni delle pagine</Dropdown.Item>
                       <Dropdown.Item href="#">Informativa sui cookie</Dropdown.Item>
                       <Dropdown.Item href="#">Informativa sul copyright</Dropdown.Item>
-                      <Dropdown.Item href="#">Opzioni relative all&lsquo;informativa sulla privacy (Stato della California)</Dropdown.Item>
+                      <Dropdown.Item href="#">
+                        Opzioni relative all&lsquo;informativa sulla privacy (Stato della California)
+                      </Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
                   <small>

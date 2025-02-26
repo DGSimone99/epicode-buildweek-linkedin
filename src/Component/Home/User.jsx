@@ -71,7 +71,7 @@ const User = () => {
         </Card>
       </Container>
 
-      <Container className="cardBox rounded-3 px-0">
+      <Container id="accedi" className="cardBox rounded-3 px-0">
         <Card>
           <Card.Body className="px-2">
             <Container>
@@ -87,7 +87,7 @@ const User = () => {
         </Card>
       </Container>
 
-      <Container className="cardBox rounded-3 px-0 mt-2">
+      <Container id="elementi" className="cardBox rounded-3 px-0 mt-2">
         <Card>
           <Card.Body className="px-2">
             <Container className="d-flex flex-column align-items-start">

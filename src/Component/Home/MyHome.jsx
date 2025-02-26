@@ -4,6 +4,7 @@ import PrimoPiano from "./PrimoPiano";
 import User from "./User";
 import ConsigliPerTe from "./ConsigliPerTe";
 import PostsHome from "./PostsHome";
+import FooterMini from "../Nav_Footer/FooterMini";
 
 const MyHome = () => {
   return (
@@ -12,13 +13,14 @@ const MyHome = () => {
         <Col md={4} lg={3}>
           <User />
         </Col>
-        <Col md={8} lg={6}>
+        <Col md={8} lg={6} className="mb-5">
           <CreaPost />
           <ConsigliPerTe />
           <PostsHome />
         </Col>
-        <Col lg={3}>
+        <Col md={8} lg={3}>
           <PrimoPiano />
+          <FooterMini />
         </Col>
       </Row>
     </>
