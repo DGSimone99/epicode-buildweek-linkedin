@@ -231,3 +231,9 @@ footer a {
 .toggleRemove::after {
   display: none !important;
 }
+
+#thumb-up {
+  &:active {
+    transform: scale(120%);
+  }
+}
