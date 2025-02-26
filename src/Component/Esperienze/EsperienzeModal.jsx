@@ -4,8 +4,11 @@ import { Plus } from "react-bootstrap-icons";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { Link } from "react-router";
+import { fetchExperience } from "../redux/actions";
+import { useDispatch } from "react-redux";
 
 function EsperienzeModal(props) {
+  const dispatch = useDispatch();
   const [stillInJob, setStillinJob] = useState(true);
   const [role, setRole] = useState("");
   const [company, setCompany] = useState("");
@@ -15,30 +18,73 @@ function EsperienzeModal(props) {
   const [endYear, setEndYear] = useState("");
   const [description, setDescription] = useState("");
   const [area, setArea] = useState("");
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    fetchEsperienza();
-  };
-  const fetchEsperienza = async () => {
-    try {
-      const resp = await fetch("https://striveschool-api.herokuapp.com/api/profile/:userId/experiences", {
-        method: "POST",
+  const handleDelete = () => {
+    fetch(
+      "https://striveschool-api.herokuapp.com/api/profile/67bc4dcce703370015316db1/experiences/" + props.experienceid,
+      {
+        method: "DELETE",
         headers: {
           Authorization:
             "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2JjNGRjY2U3MDMzNzAwMTUzMTZkYjEiLCJpYXQiOjE3NDAzOTM5MzIsImV4cCI6MTc0MTYwMzUzMn0.1t8kxCm5d0UPnuFQqZs9G6-VZkPjsGpIMIhIadrrE4Q",
-          "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          role: role,
-          startDate: `${startYear}-${startMonth}-01`,
-          company: company,
-          endDate: endMonth !== "" && endYear !== "" ? `${endYear}-${endMonth}-01` : null,
-          description: description,
-          area: area,
-        }),
-      });
+      }
+    )
+      .then((resp) => {
+        if (resp.ok) {
+          alert("elemento cancellato correttamente");
+          dispatch(fetchExperience());
+        } else {
+          alert("errore nella cancellazione");
+        }
+      })
+      .catch((err) => console.error(err));
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    fetchEsperienza();
+    props.onHide();
+  };
+  const fetchEsperienza = async () => {
+    try {
+      const resp = await fetch(
+        props.experienceid
+          ? "https://striveschool-api.herokuapp.com/api/profile/67bc4dcce703370015316db1/experiences/" +
+              props.experienceid
+          : "https://striveschool-api.herokuapp.com/api/profile/67bc4dcce703370015316db1/experiences",
+        {
+          method: props.experienceid ? "PUT" : "POST",
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2JjNGRjY2U3MDMzNzAwMTUzMTZkYjEiLCJpYXQiOjE3NDAzOTM5MzIsImV4cCI6MTc0MTYwMzUzMn0.1t8kxCm5d0UPnuFQqZs9G6-VZkPjsGpIMIhIadrrE4Q",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            role: role,
+            startDate: `${startYear}-${startMonth}-01`,
+            company: company,
+            endDate: endMonth !== "" && endYear !== "" ? `${endYear}-${endMonth}-01` : null,
+            description: description,
+            area: area,
+          }),
+        }
+      );
       if (resp.ok) {
-        alert("esperienza aggiunta con successo");
+        if (props.experienceid) {
+          alert("esperienza modificata con successo");
+          dispatch(fetchExperience());
+        } else {
+          alert("esperienza aggiunta con successo");
+          dispatch(fetchExperience());
+        }
+        setRole("");
+        setCompany("");
+        setDescription("");
+        setArea("");
+        setStartMonth("");
+        setStartYear("");
+        setEndMonth("");
+        setEndYear("");
+        setDescription("");
       } else {
         throw new Error("Errore");
       }
@@ -152,7 +198,9 @@ function EsperienzeModal(props) {
             <Row className="mb-4">
               <Col>
                 <Form.Select required value={startMonth} onChange={(e) => handleStartMonth(e)}>
-                  <option disabled>Mese</option>
+                  <option disabled value="">
+                    Mese
+                  </option>
                   <option value="01">Gennaio</option>
                   <option value="02">Febbraio</option>
                   <option value="03">Marzo</option>
@@ -169,7 +217,9 @@ function EsperienzeModal(props) {
               </Col>
               <Col>
                 <Form.Select required value={startYear} onChange={(e) => handleStartYear(e)}>
-                  <option disabled>Anno</option>
+                  <option disabled value="">
+                    Anno
+                  </option>
                   {Array.from({ length: 101 }, (_, i) => 2025 - i).map((year) => (
                     <option key={year} value={year}>
                       {year}
@@ -187,7 +237,9 @@ function EsperienzeModal(props) {
                   value={endMonth}
                   onChange={(e) => handleEndMonth(e)}
                 >
-                  <option disabled>Mese</option>
+                  <option disabled value="">
+                    Mese
+                  </option>
                   <option value="01">Gennaio</option>
                   <option value="02">Febbraio</option>
                   <option value="03">Marzo</option>
@@ -209,7 +261,9 @@ function EsperienzeModal(props) {
                   value={endYear}
                   onChange={(e) => handleEndYear(e)}
                 >
-                  <option disabled>Anno</option>
+                  <option disabled value="">
+                    Anno
+                  </option>
                   {Array.from({ length: 101 }, (_, i) => 2025 - i).map((year) => (
                     <option key={year} value={year}>
                       {year}
@@ -290,7 +344,17 @@ function EsperienzeModal(props) {
             </Container>
           </Container>
         </Modal.Body>
-        <Modal.Footer>
+        <Modal.Footer className={props.experienceid ? "justify-content-between" : ""}>
+          {props.experienceid && (
+            <span
+              className="text-secondary fs-5"
+              onClick={() => {
+                handleDelete(), props.onHide();
+              }}
+            >
+              Elimina esperienza
+            </span>
+          )}
           <Button type="submit">Salva</Button>
         </Modal.Footer>
       </Form>

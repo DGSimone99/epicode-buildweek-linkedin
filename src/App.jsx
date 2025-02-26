@@ -15,12 +15,12 @@ function App() {
   return (
     <BrowserRouter>
       <CustomNav />
-      <Container fluid className="pt-3">
+      <Container fluid className="p-0">
         <Routes>
           <Route
             path="/"
             element={
-              <Container>
+              <Container className="pt-3">
                 <MyHome />
               </Container>
             }
@@ -28,7 +28,7 @@ function App() {
           <Route
             path="/me"
             element={
-              <Container>
+              <Container className="pt-3">
                 <ProfiloPrincipale />
               </Container>
             }
@@ -36,7 +36,7 @@ function App() {
           <Route
             path="/:id"
             element={
-              <Container>
+              <Container className="pt-3">
                 <MainUtente />
               </Container>
             }
@@ -44,7 +44,7 @@ function App() {
           <Route
             path="/jobs"
             element={
-              <Container>
+              <Container className="pt-3">
                 <PageLavoro />
               </Container>
             }
