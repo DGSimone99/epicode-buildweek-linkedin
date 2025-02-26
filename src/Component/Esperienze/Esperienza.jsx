@@ -1,37 +1,84 @@
 import { Button, Col, Container, Row } from "react-bootstrap";
 import EsperienzeModal from "./EsperienzeModal";
-import React from "react";
-import { Bag, XLg } from "react-bootstrap-icons";
+import React, { useEffect } from "react";
+import { Bag, PencilFill, Plus, XLg } from "react-bootstrap-icons";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchExperience } from "../redux/actions";
 
 const Esperienza = () => {
+  const dispatch = useDispatch();
+  const experiences = useSelector((state) => state.experiences.content);
   const [modalShow, setModalShow] = React.useState(false);
+  useEffect(() => {
+    dispatch(fetchExperience());
+  }, []);
   return (
     <Container fluid className="border border-1 border-tertiary bg-white rounded-3 py-3 mt-3">
       <Container>
         <Row>
           <Col className="d-flex justify-content-between">
             <h5 className="fw-bold">Esperienza</h5>
-            <XLg className="text-dark" />
+            {experiences ? (
+              <div>
+                <Plus onClick={() => setModalShow(true)} /> <PencilFill />
+              </div>
+            ) : (
+              <XLg className="text-dark" />
+            )}
           </Col>
         </Row>
         <p className="text-secondary">
           Metti in risalto i risultati raggiunti e ottieni fino a 2 volte più visualizzazioni del profilo e collegamenti
         </p>
-        <Row>
-          <Col xs={1} className="d-flex">
-            <div
-              className="d-flex justify-content-center align-items-center p-3 border border-secondary rounded-3 me-auto"
-              style={{ width: "50px", height: "50px" }}
-            >
-              <Bag className="text-secondary"></Bag>
-            </div>
-          </Col>
-          <Col className="text-secondary">
-            <h3 className="fs-5">Qualifica</h3>
-            <p>Organizzazione</p>
-            <p>2023-presente</p>
-          </Col>
-        </Row>
+        {experiences ? (
+          experiences.map((experience) => {
+            return (
+              <Row key={experience._id}>
+                <Col xs={1} className="d-flex">
+                  {experience.image ? (
+                    <img src={experience.image} alt="" width="50px" height="50px" />
+                  ) : (
+                    <div
+                      className="d-flex justify-content-center align-items-center p-3 border border-secondary rounded-3 me-auto"
+                      style={{ width: "50px", height: "50px" }}
+                    >
+                      <Bag className="text-secondary"></Bag>
+                    </div>
+                  )}
+                </Col>
+                <Col>
+                  <h3 className="fs-5">{experience.role}</h3>
+                  <p>{experience.company}</p>
+                  <p>
+                    {experience.endDate
+                      ? `from ${new Date(experience.startDate).toLocaleDateString()} to ${new Date(
+                          experience.endDate
+                        ).toLocaleDateString()}`
+                      : `from ${new Date(experience.startDate).toLocaleDateString()}`}
+                  </p>
+                </Col>
+              </Row>
+            );
+          })
+        ) : (
+          <Row>
+            <Col xs={1} className="d-flex">
+              (
+              <div
+                className="d-flex justify-content-center align-items-center p-3 border border-secondary rounded-3 me-auto"
+                style={{ width: "50px", height: "50px" }}
+              >
+                <Bag className="text-secondary"></Bag>
+              </div>
+              )
+            </Col>
+            <Col className="text-secondary">
+              <h3 className="fs-5">Qualifica</h3>
+              <p>Organizzazione</p>
+              <p>2023-presente</p>
+            </Col>
+          </Row>
+        )}
         <Button
           variant="light"
           className="rounded-pill border border-primary fw-bold d-flex align-items-center justify-content-center me-auto text-primary"
