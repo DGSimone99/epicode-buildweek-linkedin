@@ -11,6 +11,7 @@ import {
   Recycle,
   SendFill,
   ThreeDots,
+  TrashFill,
 } from "react-bootstrap-icons";
 import { BiGlobe, BiX, BiXCircle } from "react-icons/bi";
 import { BsHandThumbsUp, BsHandThumbsUpFill } from "react-icons/bs";
@@ -94,7 +95,7 @@ const PostCard = (props) => {
                         dispatch(removePost(props.postId)), dispatch(fetchGetPost());
                       }}
                     >
-                      <FlagFill className="me-2 text-black"></FlagFill> Cancella Post
+                      <TrashFill className="me-2 text-black"></TrashFill> Cancella Post
                     </Dropdown.Item>
                   ) : (
                     <div></div>
