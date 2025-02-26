@@ -80,7 +80,7 @@ const PostCard = (props) => {
             </Card.Text>
           </div>
           <Card.Text className="mb-0">
-            {Math.floor(Math.random() * 100)} commenti &#8226; {Math.floor(Math.random() * 100)} diffusione post
+            {Math.floor(Math.random() * 100)} commenti &#8226; {Math.floor(Math.random() * 100)} diffusioni post
           </Card.Text>
         </div>
         <hr className="mx-3 pt-0 mt-0"></hr>
