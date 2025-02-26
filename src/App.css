@@ -105,9 +105,10 @@ span,
   width: 300px !important;
 }
 
-.nav-link div,
+#navbar p,
 span {
   font-size: 0.7rem;
+  margin-bottom: 0;
 }
 
 .col .bi {
@@ -132,7 +133,7 @@ span {
   -webkit-box-orient: vertical;
 }
 
-.dropdown-item p {
+.dropdown-item div {
   font-size: 0.8rem;
   margin: 8px 0;
 }
@@ -180,13 +181,17 @@ p {
   }
 }
 @media screen and (max-width: 769px) {
-  .nav-link div,
+  #navbar p,
   span,
-  .dropdown-toggle::after {
+  .dropdown-toggle::after,
+  #dropdownAziende {
     display: none !important;
   }
   .search-icon {
     background-color: transparent !important;
+  }
+  div .border-end {
+    border-right: none !important;
   }
 }
 

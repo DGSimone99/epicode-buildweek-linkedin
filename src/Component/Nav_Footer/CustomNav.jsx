@@ -26,6 +26,7 @@ import {
   InfoCircleFill,
   Bullseye,
   PlayBtnFill,
+  GeoAltFill,
 } from "react-bootstrap-icons";
 
 import { fetchGetPost, fetchUser } from "../redux/actions";
@@ -47,7 +48,7 @@ const CustomNav = () => {
   const location = useLocation();
 
   return (
-    <Navbar bg="white" expand="lg" className="px-3 shadow-sm container-fluid sticky-top ">
+    <Navbar id="navbar" bg="white" expand="lg" className="px-3 shadow-sm container-fluid sticky-top ">
       <Container>
         <div className="d-flex align-items-center">
           <Navbar.Brand as={Link} to="/">
@@ -58,10 +59,10 @@ const CustomNav = () => {
               alt="LinkedIn Logo"
             />
           </Navbar.Brand>
-          <Form>
-            <InputGroup className="custom-input-group">
+          <Form className="d-flex">
+            <InputGroup className="custom-input-group d-flex flex-nowrap">
               <InputGroup.Text
-                className="search-icon d-flex align-items-center"
+                className="search-icon d-flex align-items-center pe-0"
                 style={{ backgroundColor: "#F4F2EE", border: "none" }}
               >
                 <Search />
@@ -73,16 +74,32 @@ const CustomNav = () => {
                 style={{ backgroundColor: "#F4F2EE", border: "none" }}
               />
             </InputGroup>
+            {location.pathname === "/jobs" && (
+              <InputGroup className="custom-input-group ms-3 d-flex flex-nowrap">
+                <InputGroup.Text
+                  className="search-icon d-flex align-items-center pe-0"
+                  style={{ backgroundColor: "#F4F2EE", border: "none" }}
+                >
+                  <GeoAltFill />
+                </InputGroup.Text>
+                <FormControl
+                  type="search"
+                  placeholder="Città, stato o CAP"
+                  className="d-none d-md-block"
+                  style={{ backgroundColor: "#F4F2EE", border: "none" }}
+                />
+              </InputGroup>
+            )}
           </Form>
         </div>
         <Nav className="d-flex flex-row align-items-center">
           <NavLink to="/" className={`text-center nav-link ${location.pathname === "/" ? "navActive" : ""}`}>
             <HouseDoorFill size={20} className="mb-1 mx-4" />
-            <div>Home</div>
+            <p>Home</p>
           </NavLink>
           <Nav.Link to="" className={`text-center nav-link ${location.pathname === "" ? "navActive" : ""}`}>
             <PeopleFill size={20} className="mb-1 mx-4" />
-            <div>Rete</div>
+            <p>Rete</p>
           </Nav.Link>
           <Nav.Link
             as={Link}
@@ -90,15 +107,15 @@ const CustomNav = () => {
             className={`text-center nav-link ${location.pathname === "/jobs" ? "navActive" : ""}`}
           >
             <BriefcaseFill size={20} className="mb-1 mx-4" />
-            <div>Lavoro</div>
+            <p>Lavoro</p>
           </Nav.Link>
           <Nav.Link to="" className={`text-center nav-link ${location.pathname === "" ? "navActive" : ""}`}>
             <ChatDotsFill size={20} className="mb-1 mx-4" />
-            <div>Messaggistica</div>
+            <p>Messaggistica</p>
           </Nav.Link>
           <Nav.Link to="" className={`text-center nav-link ${location.pathname === "" ? "navActive" : ""}`}>
             <BellFill size={20} className="mb-1 mx-4" />
-            <div>Notifiche</div>
+            <p>Notifiche</p>
           </Nav.Link>
 
           <Dropdown className="border-end ">
@@ -123,7 +140,7 @@ const CustomNav = () => {
                       <Image
                         src={user.image}
                         roundedCircle
-                        className="me-1 d-block"
+                        className="me-2 d-block"
                         style={{
                           width: "50px",
                           height: "50px",
@@ -131,9 +148,9 @@ const CustomNav = () => {
                         }}
                       />
                     </div>
-                    <div className="align-content-center">
+                    <div className="d-flex flex-column align-items-start align-content-center">
                       <h6 className="m-0 text-black">{user.name + " " + user.surname}</h6>
-                      <p className="m-0 mt-1">{user.title}</p>
+                      <div className="m-0 mt-1">{user.title}</div>
                     </div>
                   </div>
                 </Button>
@@ -141,35 +158,35 @@ const CustomNav = () => {
                   as={Link}
                   to="/me"
                   variant="outline-primary"
-                  className="rounded-pill fw-semibold px-5 py-0 my-2"
+                  className="rounded-pill fw-semibold w-100 py-0 my-2"
                 >
                   Visualizza profilo
                 </Button>
               </Dropdown>
               <Dropdown.Item href="#">
                 <h6>Account</h6>
-                <p className="fw-semibold text-secondary">
+                <div className="fw-semibold text-secondary">
                   <BsFillSlashSquareFill className="me-2" style={{ color: "#E7A33E" }}></BsFillSlashSquareFill> Prova 1
                   mese di Premium per 0 EUR
-                </p>
-                <p>Impostazioni e privacy</p>
-                <p>Guida</p>
-                <p>Lingua</p>
+                </div>
+                <div>Impostazioni e privacy</div>
+                <div>Guida</div>
+                <div>Lingua</div>
               </Dropdown.Item>
               <Dropdown.Divider />
               <Dropdown.Item href="#">
                 <h6>Gestisci</h6>
-                <p>Post e attività</p>
-                <p>Account per la pubblicazione di of...</p>
+                <div>Post e attività</div>
+                <div>Account per la pubblicazione di of...</div>
               </Dropdown.Item>
               <Dropdown.Divider />
               <Dropdown.Item href="#">
-                <p className="m-0">Esci</p>
+                <div className="m-0">Esci</div>
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
 
-          <Dropdown>
+          <Dropdown id="dropdownAziende">
             <Dropdown.Toggle variant="white" className="text-dark border-0">
               <Grid3x3GapFill size={20} className="mb-1 mx-4 d-block" />
               <span>Per le aziende</span>
@@ -180,52 +197,52 @@ const CustomNav = () => {
                   <Col className="border-end">
                     <div href="#">
                       <h5>Le mie App</h5>
-                      <p className="mt-4 fw-semibold">
+                      <h6 className="mt-4 fw-semibold">
                         <CompassFill /> Trova lead
-                      </p>
-                      <p className="my-4 fw-semibold">
+                      </h6>
+                      <h6 className="my-4 fw-semibold">
                         <PeopleFill /> Gruppi
-                      </p>
-                      <p className="fw-semibold text-secondary mt-4">Talent</p>
-                      <p className="my-4 fw-semibold">
+                      </h6>
+                      <h6 className="fw-semibold text-secondary mt-4">Talent</h6>
+                      <h6 className="my-4 fw-semibold">
                         <FileEarmarkBarGraphFill />
                         Talent Insights
-                      </p>
-                      <p className="my-4 fw-semibold">
+                      </h6>
+                      <h6 className="my-4 fw-semibold">
                         <LaptopFill /> Pubblica un&apos; offerta di lavoro
-                      </p>
-                      <p className="fw-semibold text-secondary mt-4">Vendite</p>
-                      <p className="my-4 fw-semibold">
+                      </h6>
+                      <h6 className="fw-semibold text-secondary mt-4">Vendite</h6>
+                      <h6 className="my-4 fw-semibold">
                         <InfoCircleFill /> Marketplace dei servizi
-                      </p>
-                      <p className="fw-semibold text-secondary mt-4">Marketing</p>
-                      <p className="my-4 fw-semibold">
+                      </h6>
+                      <h6 className="fw-semibold text-secondary mt-4">Marketing</h6>
+                      <h6 className="my-4 fw-semibold">
                         <Bullseye /> Pubblicizza
-                      </p>
-                      <p className="fw-semibold text-secondary mt-4">Learning</p>
-                      <p className="my-4 fw-semibold">
+                      </h6>
+                      <h6 className="fw-semibold text-secondary mt-4">Learning</h6>
+                      <h6 className="my-4 fw-semibold">
                         <PlayBtnFill /> Learning
-                      </p>
+                      </h6>
                     </div>
                   </Col>
                   <Col className="ps-4">
                     <div href="#">
                       <h5>Scopri altro per il business</h5>
-                      <p className="mt-4 mb-1 fw-semibold">Assumi su Linkedin</p>
+                      <h6 className="mt-4 mb-1 fw-semibold">Assumi su Linkedin</h6>
                       <p className="pAziende">Trova, attrai e assumi</p>
-                      <p className="mt-4 mb-1 fw-semibold">Vendi con Linkedin</p>
+                      <h6 className="mt-4 mb-1 fw-semibold">Vendi con Linkedin</h6>
                       <p className="pAziende">Sblocca nuove opportunità di vendita</p>
-                      <p className="mt-4 mb-1 fw-semibold">Offerta di lavoro gratuita</p>
+                      <h6 className="mt-4 mb-1 fw-semibold">Offerta di lavoro gratuita</h6>
                       <p className="pAziende">Ottieni rapidamente candidati qualificati</p>
-                      <p className="mt-4 mb-1 fw-semibold">Fai pubblicità su Linkedin</p>
+                      <h6 className="mt-4 mb-1 fw-semibold">Fai pubblicità su Linkedin</h6>
                       <p className="pAziende">Acquisisci clienti e fai crescere la tua azienda</p>
-                      <p className="mt-4 mb-1 fw-semibold">Inizia con Premium</p>
+                      <h6 className="mt-4 mb-1 fw-semibold">Inizia con Premium</h6>
                       <p className="pAziende">Amplia e sfrutta la tua rete</p>
-                      <p className="mt-4 mb-1 fw-semibold">Impara con Linkedin</p>
+                      <h6 className="mt-4 mb-1 fw-semibold">Impara con Linkedin</h6>
                       <p className="pAziende">Corsi per formare i tuoi dipendenti</p>
-                      <p className="mt-4 mb-1 fw-semibold">Admin Center</p>
+                      <h6 className="mt-4 mb-1 fw-semibold">Admin Center</h6>
                       <p className="pAziende">Gestisci i dettagli di fatturazione e account</p>
-                      <p className="mt-4 mb-1 fw-semibold">Crea una pagina aziendale +</p>
+                      <h6 className="mt-4 mb-1 fw-semibold">Crea una pagina aziendale +</h6>
                     </div>
                   </Col>
                 </Row>
@@ -237,7 +254,7 @@ const CustomNav = () => {
             className="text-center"
             style={{ color: "rgb(131, 97, 24)", textDecorationLine: "underline" }}
           >
-            <div>Prova Premium per 0 EUR</div>
+            <p>Prova Premium per 0 EUR</p>
           </Nav.Link>
         </Nav>
       </Container>
