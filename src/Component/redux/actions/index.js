@@ -3,6 +3,7 @@ export const SET_USER = "SET_USER";
 export const EDIT_USER = "EDIT_USER";
 export const EDIT_USERIMAGE = "EDIT_USERIMAGE";
 export const SET_OTHERUSER = "SET_OTHERUSER";
+export const SET_NEWS = "SET_NEWS";
 export const setProfilesAction = (data) => ({ type: SET_PROFILES, payload: data });
 export const setUserAction = (data) => ({ type: SET_USER, payload: data });
 
@@ -118,3 +119,22 @@ export const fetchOtherUser = (id) => {
       .catch((err) => console.error(err));
   };
 };
+
+/* export const fetchNews = () => {
+  return (dispatch) => {
+    fetch(
+      "https://api.apitube.io/v1/news/everything?per_page=10&language=it&language=it&api_key=api_live_X28Ed0ZXn3jfoc9QFRKQBpR7XGLfV3d7YFBTJpcz7ScMVFZmDod"
+    )
+      .then((resp) => resp.json())
+      .then((news) => {
+        if (news) {
+          console.log("SONO NEWS", news);
+          dispatch({ type: SET_NEWS, payload: news });
+        } else {
+          alert("Nessuna notizia trovata");
+        }
+      })
+      .catch((err) => console.error(err));
+  };
+};
+ */
