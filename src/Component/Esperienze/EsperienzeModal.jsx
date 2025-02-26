@@ -85,7 +85,7 @@ function EsperienzeModal(props) {
         <Modal.Body className="p-0" style={{ maxHeight: "70vh", overflowY: "auto" }}>
           <div className="px-5 py-3" style={{ backgroundColor: "#EDF3F8" }}>
             <h3 className="fs-6">
-              <strong>Informa La rete</strong>
+              <strong>Informa la rete</strong>
             </h3>
             <Row>
               <Col xs={10}>
@@ -96,11 +96,14 @@ function EsperienzeModal(props) {
                 </p>
               </Col>
               <Col xs={2}>
-                <Form.Label>Sì</Form.Label>
-                <Form.Check // prettier-ignore
-                  type="switch"
-                  id="custom-switch"
-                />
+                <Row>
+                  <Col>
+                    <Form.Label>Sì</Form.Label>
+                  </Col>
+                  <Col>
+                    <Form.Check type="switch" id="custom-switch-esperienze" />
+                  </Col>
+                </Row>
               </Col>
             </Row>
           </div>
@@ -143,7 +146,7 @@ function EsperienzeModal(props) {
                 handleCheck(e);
               }}
             />
-            <Form.Label className="mb-4">Attualmente Ricopro questo ruolo</Form.Label>
+            <Form.Label className="mb-4">Attualmente ricopro questo ruolo</Form.Label>
             <br />
             <Form.Label>Data di inizio*</Form.Label>
             <Row className="mb-4">

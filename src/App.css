@@ -219,3 +219,11 @@ footer a {
     }
   }
 }
+#custom-switch-esperienze {
+  height: 2rem;
+  width: 3rem;
+}
+#custom-switch-esperienze:checked {
+  background-color: green;
+  border: green;
+}
