@@ -3,7 +3,7 @@ import CreaPost from "./CreaPost";
 import PrimoPiano from "./PrimoPiano";
 import User from "./User";
 import ConsigliPerTe from "./ConsigliPerTe";
-import PostCard from "./PostCard";
+import PostsHome from "./PostsHome";
 
 const MyHome = () => {
   return (
@@ -15,7 +15,7 @@ const MyHome = () => {
         <Col md={8} lg={6}>
           <CreaPost />
           <ConsigliPerTe />
-          <PostCard />
+          <PostsHome />
         </Col>
         <Col lg={3}>
           <PrimoPiano />

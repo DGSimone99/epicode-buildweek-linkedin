@@ -3,6 +3,7 @@ import profilesReducer from "../reducers/profilesReducer";
 import userReducer from "../reducers/userReducers";
 import newsReducer from "../reducers/newsReducer";
 import otherUserReducer from "../reducers/otherUserReducer";
+import experienceReducer from "../reducers/experienceReducer";
 import postReducer from "../reducers/postReducer";
 
 const mainReducer = combineReducers({
@@ -10,6 +11,7 @@ const mainReducer = combineReducers({
   user: userReducer,
   otherUser: otherUserReducer,
   news: newsReducer,
+  experiences: experienceReducer,
   post: postReducer,
 });
 const store = configureStore({

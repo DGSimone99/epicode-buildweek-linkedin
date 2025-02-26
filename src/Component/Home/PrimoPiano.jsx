@@ -2,19 +2,19 @@ import { Container, Image } from "react-bootstrap";
 import { ChevronCompactRight, InfoSquareFill } from "react-bootstrap-icons";
 import NotiziePrimoPiano from "./NotiziePrimoPiano";
 import MyCollapse from "./MyCollapse";
-import { useEffect } from "react";
+/* import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-/* import { fetchNews } from "../redux/actions"; */
+import { fetchNews } from "../redux/actions"; */
 
 const PrimoPiano = () => {
-  /*  const dispatch = useDispatch();
-  const notizie = useSelector((state) => state.news.content);
+  /*   const dispatch = useDispatch();
+  const notizia = useSelector((state) => state.news.content); */
 
-  useEffect(() => {
+  /* useEffect(() => {
     dispatch(fetchNews());
-  }, [dispatch]); */
-
-  /*   console.log(notizie); */
+  }, []);
+ */
+  /*   console.log("SONO LA NOTIZA", notizia); */
 
   return (
     <Container className="bg-white border rounded-3 p-3">
@@ -24,13 +24,7 @@ const PrimoPiano = () => {
       </div>
       <p className="text-secondary fw-semibold">a cura di LinkedIn Notizie</p>
 
-      {/* {notizie.map((notizia, index) => (
-        <NotiziePrimoPiano
-          key={index}
-          titolo={notizia.titolo}
-          aggiornamento={notizia.aggiornamento}
-        />
-      ))} */}
+      {/*  <NotiziePrimoPiano titolo={notizia.results.title} aggiornamento={notizia.results.pubDate} /> */}
 
       <NotiziePrimoPiano titolo="I giovani lavoratori sono sempre me..." aggiornamento="4 giorni fa • 1.416 lettori" />
       <NotiziePrimoPiano titolo="Fusione tra Saipem e Subsea7" aggiornamento="5 ore fa • 248 lettori" />
@@ -38,9 +32,7 @@ const PrimoPiano = () => {
       <NotiziePrimoPiano titolo="Priorità benessere per i lavoratori" aggiornamento="5 ore fa" />
 
       <MyCollapse />
-
       <h5 className="text-secondary mt-4 mb-3">I Giochi di oggi</h5>
-
       <div className="d-flex mb-3 align-items-center">
         <div>
           <Image src="https://static.licdn.com/aero-v1/sc/h/im5l00imv9odauybfemlfxm6" height={48} />
@@ -51,7 +43,6 @@ const PrimoPiano = () => {
         </div>
         <ChevronCompactRight className="ms-auto" />
       </div>
-
       <div className="d-flex mb-4 align-items-center">
         <div>
           <Image src="https://static.licdn.com/aero-v1/sc/h/25itbd3dpc6ockbgvdhot9qp1" height={48} />

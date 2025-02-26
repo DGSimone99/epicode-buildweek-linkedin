@@ -4,10 +4,12 @@ export const EDIT_USER = "EDIT_USER";
 export const EDIT_USERIMAGE = "EDIT_USERIMAGE";
 export const SET_OTHERUSER = "SET_OTHERUSER";
 export const SET_NEWS = "SET_NEWS";
+export const SET_EXPERIENCES = "SET_EXPERIENCES";
 export const GET_POST = "GET_POST";
 export const POST_POST = "POST_POST";
 export const setProfilesAction = (data) => ({ type: SET_PROFILES, payload: data });
 export const setUserAction = (data) => ({ type: SET_USER, payload: data });
+export const setExperiences = (data) => ({ type: SET_EXPERIENCES, payload: data });
 
 export const fetchProfiles = () => {
   return (dispatch) => {
@@ -166,9 +168,7 @@ export const fetchSharePost = () => {
 
 /* export const fetchNews = () => {
   return (dispatch) => {
-    fetch(
-      "https://api.apitube.io/v1/news/everything?per_page=10&language=it&language=it&api_key=api_live_X28Ed0ZXn3jfoc9QFRKQBpR7XGLfV3d7YFBTJpcz7ScMVFZmDod"
-    )
+    fetch("https://newsdata.io/api/1/latest?apikey=pub_7197279c519a1bafb5c6febea5712936833b7&language=it")
       .then((resp) => resp.json())
       .then((news) => {
         if (news) {
@@ -180,5 +180,25 @@ export const fetchSharePost = () => {
       })
       .catch((err) => console.error(err));
   };
+}; */
+
+export const fetchExperience = () => {
+  return (dispatch) => {
+    fetch("https://striveschool-api.herokuapp.com/api/profile/67bc4dcce703370015316db1/experiences", {
+      method: "GET",
+      headers: {
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2JjNGRjY2U3MDMzNzAwMTUzMTZkYjEiLCJpYXQiOjE3NDAzOTM5MzIsImV4cCI6MTc0MTYwMzUzMn0.1t8kxCm5d0UPnuFQqZs9G6-VZkPjsGpIMIhIadrrE4Q",
+      },
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        if (data) {
+          dispatch(setExperiences(data));
+        } else {
+          alert("errore nella fetch");
+        }
+      })
+      .catch((err) => console.error(err));
+  };
 };
- */
