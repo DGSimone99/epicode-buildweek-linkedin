@@ -12,6 +12,7 @@ const PostsHome = () => {
         image={post.image}
         date={post.createdAt.slice(0, 10)}
         text={post.text}
+        id={post.user._id}
       />
     );
   });

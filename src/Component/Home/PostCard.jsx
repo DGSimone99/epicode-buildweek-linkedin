@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Button, Card, Dropdown, Image } from "react-bootstrap";
 import {
   Bookmark,
-  CaretDown,
   CaretDownFill,
   ChatDots,
   EyeSlashFill,
@@ -14,9 +13,11 @@ import {
   ThreeDots,
 } from "react-bootstrap-icons";
 import { BiGlobe, BiX, BiXCircle } from "react-icons/bi";
-import { BsHandThumbsUp } from "react-icons/bs";
+import { BsHandThumbsUp, BsHandThumbsUpFill } from "react-icons/bs";
+import { useNavigate } from "react-router";
 
 const PostCard = (props) => {
+  const navigate = useNavigate();
   const [like, setLike] = useState(Math.floor(Math.random() * 100));
   const [liked, setLiked] = useState(false);
 
@@ -31,14 +32,17 @@ const PostCard = (props) => {
     setLiked(!liked);
   };
 
-  const displayShow = () => {};
-
   return (
     <Card className="mt-3">
       {display ? (
         <Card.Body className="p-0">
           <div className="d-flex justify-content-between">
-            <Card.Title className="d-flex align-items-center px-3 pt-3">
+            <Card.Title
+              className="d-flex align-items-center px-3 pt-3 pointer"
+              onClick={() => {
+                navigate("/" + props.id);
+              }}
+            >
               <div className="me-2">
                 <Image variant="top" src={props.userImg} height={48} width={48} className="rounded-circle" />
               </div>
@@ -92,16 +96,10 @@ const PostCard = (props) => {
           <div className="d-flex justify-content-between me-3  mb-2">
             <div className="d-flex px-3 align-items-center">
               <div
-                className={`rounded-circle d-flex align-items-center justify-content-center me-2 pointer ${
-                  liked ? "bg-transparent  border border-info" : "bg-info"
-                }`}
+                className="rounded-circle d-flex align-items-center justify-content-center me-2 pointer bg-info"
                 style={{ paddingBlock: "3px", paddingInline: "3px" }}
               >
-                <HandThumbsUpFill
-                  className={liked ? "text-info" : "text-white"}
-                  id="thumb-up"
-                  onClick={likeClick}
-                ></HandThumbsUpFill>
+                <HandThumbsUpFill className="text-white" id="thumb-up" onClick={likeClick}></HandThumbsUpFill>
               </div>
               <div>{like}</div>
               <Card.Text className="d-flex justify-content-between"></Card.Text>
@@ -112,12 +110,19 @@ const PostCard = (props) => {
           </div>
           <hr className="mx-3 pt-0 mt-0"></hr>
           <div className="d-flex px-4 pb-3 justify-content-center">
-            <Button
-              variant="primary"
-              className="bg-transparent border-0 text-dark fw-semibold d-flex align-items-center"
-            >
-              <BsHandThumbsUp className="me-1"></BsHandThumbsUp> Consiglia
-            </Button>
+            <div onClick={likeClick}>
+              <Button
+                variant="primary"
+                className="bg-transparent border-0 text-dark fw-semibold d-flex align-items-center"
+              >
+                {liked ? (
+                  <BsHandThumbsUpFill className="text-info me-1"></BsHandThumbsUpFill>
+                ) : (
+                  <BsHandThumbsUp className="text-black  me-1"></BsHandThumbsUp>
+                )}
+                Consiglia
+              </Button>
+            </div>
             <Button
               variant="primary"
               className="bg-transparent border-0 text-dark fw-semibold d-flex align-items-center ms-3"
