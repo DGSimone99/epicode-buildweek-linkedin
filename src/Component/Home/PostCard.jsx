@@ -1,6 +1,16 @@
 import { Button, Card, Dropdown, Image } from "react-bootstrap";
-import { ChatDots, Recycle, SendFill, ThreeDots } from "react-bootstrap-icons";
-import { BiGlobe, BiX } from "react-icons/bi";
+import {
+  Bookmark,
+  ChatDots,
+  EyeSlashFill,
+  FlagFill,
+  HandThumbsUpFill,
+  Link45deg,
+  Recycle,
+  SendFill,
+  ThreeDots,
+} from "react-bootstrap-icons";
+import { BiGlobe, BiX, BiXCircle } from "react-icons/bi";
 import { BsHandThumbsUp } from "react-icons/bs";
 
 const PostCard = (props) => {
@@ -14,8 +24,8 @@ const PostCard = (props) => {
             </div>
             <div>
               <h5 className="mb-0">{props.userName}</h5>
-              <p className="fw-normal my-0 text-secondary" style={{ fontSize: "0.6em" }}>
-                10.000 follower
+              <p className="fw-normal my-1 text-secondary" style={{ fontSize: "0.6em" }}>
+                {Math.floor(Math.random() * 1000).toLocaleString()} follower
               </p>
               <p className="fw-normal mb-0 d-flex align-items-center text-secondary" style={{ fontSize: "0.6em" }}>
                 {props.date} &#8226;&nbsp;<BiGlobe></BiGlobe>
@@ -24,17 +34,29 @@ const PostCard = (props) => {
           </Card.Title>
           <div className="d-flex pe-3 pt-0 mt-0 align-items-center fs-2">
             <Dropdown className="">
-              <Dropdown.Toggle className="bg-transparent p-0 m-0 border-0 me-2 mb-2">
+              <Dropdown.Toggle className="bg-transparent p-0 m-0 border-0 me-2 mb-2 toggleRemove">
                 <ThreeDots></ThreeDots>
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
-                <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                <Dropdown.Item className="fw-semibold d-flex align-items-center py-3">
+                  <Bookmark className="me-2 text-black"></Bookmark> Salva
+                </Dropdown.Item>
+                <Dropdown.Item className="fw-semibold d-flex align-items-center py-3">
+                  <Link45deg className="me-2 text-black"></Link45deg> Copia link al post
+                </Dropdown.Item>
+                <Dropdown.Item className="fw-semibold d-flex align-items-center py-3">
+                  <EyeSlashFill className="me-2 text-black"></EyeSlashFill> Non mi interessa
+                </Dropdown.Item>
+                <Dropdown.Item className="fw-semibold d-flex align-items-center py-3">
+                  <BiXCircle className="me-2 text-black"></BiXCircle> Smetti di seguire {props.userName}
+                </Dropdown.Item>
+                <Dropdown.Item className="fw-semibold d-flex align-items-center py-3">
+                  <FlagFill className="me-2 text-black"></FlagFill> Segnala post
+                </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
-            <BiX></BiX>
+            <BiX className="pointer"></BiX>
           </div>
         </div>
         <Card.Text className="d-flex align-items-center px-3">{props.text}</Card.Text>
@@ -45,9 +67,21 @@ const PostCard = (props) => {
         ) : (
           <div></div>
         )}
-        <div className="d-flex justify-content-between me-3">
-          <Card.Text className="d-flex justify-content-between px-3 mb-2">8</Card.Text>
-          <Card.Text className="mb-0">3 commenti &#8226; 1 diffusione post</Card.Text>
+        <div className="d-flex justify-content-between me-3  mb-2">
+          <div className="d-flex px-3 align-items-center">
+            <div
+              className=" bg-info rounded-circle d-flex align-items-center justify-content-center me-2 pointer"
+              style={{ paddingBlock: "3px", paddingInline: "3px" }}
+            >
+              <HandThumbsUpFill className="text-white "></HandThumbsUpFill>
+            </div>
+            <Card.Text className="d-flex justify-content-between">
+              {Math.floor(Math.random() * 1000).toLocaleString()}
+            </Card.Text>
+          </div>
+          <Card.Text className="mb-0">
+            {Math.floor(Math.random() * 100)} commenti &#8226; {Math.floor(Math.random() * 100)} diffusione post
+          </Card.Text>
         </div>
         <hr className="mx-3 pt-0 mt-0"></hr>
         <div className="d-flex px-4 pb-3 justify-content-center">

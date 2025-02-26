@@ -227,3 +227,7 @@ footer a {
   background-color: green;
   border: green;
 }
+
+.toggleRemove::after {
+  display: none !important;
+}
