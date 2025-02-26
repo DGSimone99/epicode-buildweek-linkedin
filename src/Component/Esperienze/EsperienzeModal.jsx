@@ -42,8 +42,11 @@ function EsperienzeModal(props) {
       setStartYear(start.getFullYear());
       if (experience.endDate) {
         const end = new Date(experience.endDate);
-        setEndMonth(end.getMonth);
-        setEndYear(end.getFullYear);
+        setEndMonth(end.getMonth() + 1);
+        setEndYear(end.getFullYear());
+        setStillinJob(false);
+      } else {
+        setStillinJob(true);
       }
     }
   }, [experience]);
