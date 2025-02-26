@@ -11,10 +11,10 @@ const CreaPost = () => {
   return (
     <Container className="bg-white rounded-3 p-3 border">
       <Row className="d-flex border-secondary align-items-center">
-        <Col xs={2}>
+        <Col xs={2} className="pe-0">
           <div>
             <img
-              className="rounded-circle"
+              className="rounded-circle fluid"
               src={user.image}
               alt=""
               style={{
@@ -25,7 +25,7 @@ const CreaPost = () => {
             />
           </div>
         </Col>
-        <Col xs={10}>
+        <Col xs={10} className="p-0">
           <div className="border rounded-5 p-3 " onClick={() => setModalShow(true)}>
             Crea un post
           </div>

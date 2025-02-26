@@ -23,6 +23,10 @@ const PostCard = (props) => {
 
   const [display, setDisplay] = useState(true);
 
+  const [followers, setFollowers] = useState(Math.floor(Math.random() * 1000));
+  const [comments, setComments] = useState(Math.floor(Math.random() * 100));
+  const [shares, setShares] = useState(Math.floor(Math.random() * 100));
+
   const likeClick = () => {
     if (liked) {
       setLike(like - 1);
@@ -49,7 +53,7 @@ const PostCard = (props) => {
               <div>
                 <h5 className="mb-0">{props.userName}</h5>
                 <p className="fw-normal my-1 text-secondary" style={{ fontSize: "0.6em" }}>
-                  {Math.floor(Math.random() * 1000).toLocaleString()} follower
+                  {followers} follower
                 </p>
                 <p className="fw-normal mb-0 d-flex align-items-center text-secondary" style={{ fontSize: "0.6em" }}>
                   {props.date} &#8226;&nbsp;<BiGlobe></BiGlobe>
@@ -105,7 +109,7 @@ const PostCard = (props) => {
               <Card.Text className="d-flex justify-content-between"></Card.Text>
             </div>
             <Card.Text className="mb-0">
-              {Math.floor(Math.random() * 100)} commenti &#8226; {Math.floor(Math.random() * 100)} diffusioni post
+              {comments} commenti &#8226; {shares} diffusioni post
             </Card.Text>
           </div>
           <hr className="mx-3 pt-0 mt-0"></hr>

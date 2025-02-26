@@ -131,8 +131,8 @@ const CustomNav = () => {
                         }}
                       />
                     </div>
-                    <div className="align-content-center">
-                      <h6 className="m-0 text-black">{user.name + " " + user.surname}</h6>
+                    <div className="align-content-center ms-2">
+                      <h6 className="m-0 text-black text-start">{user.name + " " + user.surname}</h6>
                       <p className="m-0 mt-1">{user.title}</p>
                     </div>
                   </div>
