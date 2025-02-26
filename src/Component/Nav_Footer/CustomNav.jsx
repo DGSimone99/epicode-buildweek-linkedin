@@ -20,7 +20,6 @@ import {
   BellFill,
   Grid3x3GapFill,
   Search,
-  SquareFill,
   CompassFill,
   FileEarmarkBarGraphFill,
   LaptopFill,
@@ -32,6 +31,7 @@ import {
 import { fetchUser } from "../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink, useLocation } from "react-router";
+import { BsFillSlashSquareFill } from "react-icons/bs";
 
 const CustomNav = () => {
   const user = useSelector((state) => state.user.content);
@@ -145,8 +145,8 @@ const CustomNav = () => {
               <Dropdown.Item href="#">
                 <h6>Account</h6>
                 <p className="fw-semibold text-secondary">
-                  <SquareFill className="me-1" style={{ color: "rgb(173, 131, 51)" }} /> Prova 1 mese di Premium per 0
-                  EUR
+                  <BsFillSlashSquareFill className="me-2" style={{ color: "#E7A33E" }}></BsFillSlashSquareFill> Prova 1
+                  mese di Premium per 0 EUR
                 </p>
                 <p>Impostazioni e privacy</p>
                 <p>Guida</p>

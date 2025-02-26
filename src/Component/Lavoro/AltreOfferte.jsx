@@ -1,11 +1,11 @@
 import { Container, Image } from "react-bootstrap";
 import { ArrowRight, XLg } from "react-bootstrap-icons";
 
-const OffertePrincipali = () => {
+const AltreOfferte = () => {
   return (
-    <Container fluid className="border border-1 border-tertiary bg-white rounded-3 p-0">
+    <Container fluid className="border border-1 border-tertiary bg-white rounded-3 p-0  mt-3">
       <Container className="p-4">
-        <h5 className="fw-bold">Le principali offerte di lavoro per te</h5>
+        <h5 className="fw-bold">Altre offerte di lavoro per te</h5>
         <p className="text-secondary">
           In base al tuo profilo, alle tue preferenze e ad attività come candidature, ricerche e salvataggi
         </p>
@@ -53,4 +53,4 @@ const OffertePrincipali = () => {
     </Container>
   );
 };
-export default OffertePrincipali;
+export default AltreOfferte;
