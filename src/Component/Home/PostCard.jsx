@@ -84,12 +84,12 @@ const PostCard = (props) => {
           <div className="d-flex px-3 align-items-center">
             <div
               className={`rounded-circle d-flex align-items-center justify-content-center me-2 pointer ${
-                liked ? "bg-info" : "bg-transparent  border border-info"
+                liked ? "bg-transparent  border border-info" : "bg-info"
               }`}
               style={{ paddingBlock: "3px", paddingInline: "3px" }}
             >
               <HandThumbsUpFill
-                className={liked ? "text-white" : "text-info"}
+                className={liked ? "text-info" : "text-white"}
                 id="thumb-up"
                 onClick={likeClick}
               ></HandThumbsUpFill>
