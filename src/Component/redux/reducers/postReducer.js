@@ -13,7 +13,7 @@ const postReducer = (state = initialState, action) => {
     case POST_POST:
       return {
         ...state,
-        content: action.payload,
+        content: [...state.content, action.payload],
       };
 
     default:

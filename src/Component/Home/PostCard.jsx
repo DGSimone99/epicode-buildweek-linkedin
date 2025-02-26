@@ -51,7 +51,9 @@ const PostCard = (props) => {
                 <Image variant="top" src={props.userImg} height={48} width={48} className="rounded-circle" />
               </div>
               <div>
-                <h5 className="mb-0">{props.userName}</h5>
+                <h5 className="mb-0">
+                  {props.userName} {props.surname}
+                </h5>
                 <p className="fw-normal my-1 text-secondary" style={{ fontSize: "0.6em" }}>
                   {followers} follower
                 </p>

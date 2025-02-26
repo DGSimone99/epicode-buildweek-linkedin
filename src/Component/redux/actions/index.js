@@ -152,8 +152,9 @@ export const fetchSharePost = (mamma) => {
       headers: {
         Authorization:
           "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2JjNGRjY2U3MDMzNzAwMTUzMTZkYjEiLCJpYXQiOjE3NDAzOTM5MzIsImV4cCI6MTc0MTYwMzUzMn0.1t8kxCm5d0UPnuFQqZs9G6-VZkPjsGpIMIhIadrrE4Q",
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(mamma),
+      body: JSON.stringify({ text: mamma }),
     })
       .then((resp) => resp.json())
       .then((data) => {
