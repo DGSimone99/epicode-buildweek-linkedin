@@ -4,6 +4,8 @@ export const EDIT_USER = "EDIT_USER";
 export const EDIT_USERIMAGE = "EDIT_USERIMAGE";
 export const SET_OTHERUSER = "SET_OTHERUSER";
 export const SET_NEWS = "SET_NEWS";
+export const GET_POST = "GET_POST";
+export const POST_POST = "POST_POST";
 export const setProfilesAction = (data) => ({ type: SET_PROFILES, payload: data });
 export const setUserAction = (data) => ({ type: SET_USER, payload: data });
 
@@ -114,6 +116,48 @@ export const fetchOtherUser = (id) => {
           dispatch({ type: SET_OTHERUSER, payload: data });
         } else {
           alert("nessun profilo trovato");
+        }
+      })
+      .catch((err) => console.error(err));
+  };
+};
+
+export const fetchGetPost = () => {
+  return (dispatch) => {
+    fetch("https://striveschool-api.herokuapp.com/api/posts/", {
+      method: "GET",
+      headers: {
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2JjNGRjY2U3MDMzNzAwMTUzMTZkYjEiLCJpYXQiOjE3NDAzOTM5MzIsImV4cCI6MTc0MTYwMzUzMn0.1t8kxCm5d0UPnuFQqZs9G6-VZkPjsGpIMIhIadrrE4Q",
+      },
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        if (data) {
+          dispatch({ type: GET_POST, payload: data });
+        } else {
+          alert("nessun post trovato");
+        }
+      })
+      .catch((err) => console.error(err));
+  };
+};
+
+export const fetchSharePost = () => {
+  return (dispatch) => {
+    fetch("https://striveschool-api.herokuapp.com/api/posts/67bc4dcce703370015316db1", {
+      method: "POST",
+      headers: {
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2JjNGRjY2U3MDMzNzAwMTUzMTZkYjEiLCJpYXQiOjE3NDAzOTM5MzIsImV4cCI6MTc0MTYwMzUzMn0.1t8kxCm5d0UPnuFQqZs9G6-VZkPjsGpIMIhIadrrE4Q",
+      },
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        if (data) {
+          dispatch({ type: POST_POST, payload: data });
+        } else {
+          alert("il post non è stato pubblicato");
         }
       })
       .catch((err) => console.error(err));
