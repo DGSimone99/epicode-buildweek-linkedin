@@ -168,9 +168,7 @@ export const fetchSharePost = () => {
 
 /* export const fetchNews = () => {
   return (dispatch) => {
-    fetch(
-      "https://api.apitube.io/v1/news/everything?per_page=10&language=it&language=it&api_key=api_live_X28Ed0ZXn3jfoc9QFRKQBpR7XGLfV3d7YFBTJpcz7ScMVFZmDod"
-    )
+    fetch("https://newsdata.io/api/1/latest?apikey=pub_7197279c519a1bafb5c6febea5712936833b7&language=it")
       .then((resp) => resp.json())
       .then((news) => {
         if (news) {
@@ -182,8 +180,8 @@ export const fetchSharePost = () => {
       })
       .catch((err) => console.error(err));
   };
-};
- */
+}; */
+
 export const fetchExperience = () => {
   return (dispatch) => {
     fetch("https://striveschool-api.herokuapp.com/api/profile/67bc4dcce703370015316db1/experiences", {

@@ -1,15 +1,15 @@
 import { useState } from "react";
-import { Col, Container, Form, Row } from "react-bootstrap";
 import { Calendar, CaretDownFill, Clock, Image, Plus, PlusLg } from "react-bootstrap-icons";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import { useSelector } from "react-redux";
-import { Link } from "react-router";
+import { useDispatch, useSelector } from "react-redux";
 import Emoji from "./Emoji";
+import { fetchSharePost } from "../redux/actions";
 
 function ModalePost(props) {
   const user = useSelector((state) => state.user.content);
   const [postText, setPostText] = useState("");
+  const dispatch = useDispatch();
 
   return (
     <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
@@ -48,7 +48,7 @@ function ModalePost(props) {
           <Button variant="outline-light" className="border-0 rounded-circle ">
             <Clock />
           </Button>
-          <Button variant="light" className="rounded-pill mx-2">
+          <Button variant="light" className="rounded-pill mx-2" onClick={() => dispatch(fetchSharePost(postText))}>
             Pubblica
           </Button>
         </div>
