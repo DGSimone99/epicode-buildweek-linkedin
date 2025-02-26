@@ -47,8 +47,8 @@ const PostCard = () => {
         ></Card.Img>
         <hr className="my-1"></hr>
         <Card.Text className="d-flex justify-content-between px-3 mb-2">
-          <p className="mb-0">Numero Mi Piace</p>
-          <p className="mb-0">Numero Commenti &#8226; Numero condivisioni</p>
+          <span className="mb-0">Numero Mi Piace</span>
+          <span className="mb-0">Numero Commenti &#8226; Numero condivisioni</span>
         </Card.Text>
         <hr className="mx-3 pt-0 mt-0"></hr>
         <div className="d-flex px-4 pb-3 justify-content-center">
