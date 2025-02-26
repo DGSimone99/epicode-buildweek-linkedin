@@ -4,7 +4,7 @@ import NotiziePrimoPiano from "./NotiziePrimoPiano";
 import MyCollapse from "./MyCollapse";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchNews } from "../redux/actions";
+/* import { fetchNews } from "../redux/actions"; */
 
 const PrimoPiano = () => {
   /*  const dispatch = useDispatch();
@@ -14,7 +14,7 @@ const PrimoPiano = () => {
     dispatch(fetchNews());
   }, [dispatch]); */
 
-  console.log(notizie);
+  /*   console.log(notizie); */
 
   return (
     <Container className="bg-white border rounded-3 p-3">
