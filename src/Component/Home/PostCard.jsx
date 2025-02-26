@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Button, Card, Dropdown, Image } from "react-bootstrap";
 import {
   Bookmark,
@@ -14,6 +15,18 @@ import { BiGlobe, BiX, BiXCircle } from "react-icons/bi";
 import { BsHandThumbsUp } from "react-icons/bs";
 
 const PostCard = (props) => {
+  const [like, setLike] = useState(Math.floor(Math.random() * 100));
+  const [liked, setLiked] = useState(false);
+
+  const likeClick = () => {
+    if (liked) {
+      setLike(like - 1);
+    } else {
+      setLike(like + 1);
+    }
+    setLiked(!liked);
+  };
+
   return (
     <Card className="mt-3">
       <Card.Body className="p-0">
@@ -70,17 +83,22 @@ const PostCard = (props) => {
         <div className="d-flex justify-content-between me-3  mb-2">
           <div className="d-flex px-3 align-items-center">
             <div
-              className=" bg-info rounded-circle d-flex align-items-center justify-content-center me-2 pointer"
+              className={`rounded-circle d-flex align-items-center justify-content-center me-2 pointer ${
+                liked ? "bg-info" : "bg-transparent  border border-info"
+              }`}
               style={{ paddingBlock: "3px", paddingInline: "3px" }}
             >
-              <HandThumbsUpFill className="text-white "></HandThumbsUpFill>
+              <HandThumbsUpFill
+                className={liked ? "text-white" : "text-info"}
+                id="thumb-up"
+                onClick={likeClick}
+              ></HandThumbsUpFill>
             </div>
-            <Card.Text className="d-flex justify-content-between">
-              {Math.floor(Math.random() * 1000).toLocaleString()}
-            </Card.Text>
+            <div>{like}</div>
+            <Card.Text className="d-flex justify-content-between"></Card.Text>
           </div>
           <Card.Text className="mb-0">
-            {Math.floor(Math.random() * 100)} commenti &#8226; {Math.floor(Math.random() * 100)} diffusione post
+            {Math.floor(Math.random() * 100)} commenti &#8226; {Math.floor(Math.random() * 100)} diffusioni post
           </Card.Text>
         </div>
         <hr className="mx-3 pt-0 mt-0"></hr>
