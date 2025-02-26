@@ -28,18 +28,22 @@ import {
   PlayBtnFill,
 } from "react-bootstrap-icons";
 
-import { fetchUser } from "../redux/actions";
+import { fetchGetPost, fetchUser } from "../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink, useLocation } from "react-router";
 import { BsFillSlashSquareFill } from "react-icons/bs";
 
 const CustomNav = () => {
   const user = useSelector((state) => state.user.content);
+  const post = useSelector((state) => state.post.content);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchUser());
+    dispatch(fetchGetPost());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  console.log("SONO FETCHPOST", post);
   const location = useLocation();
 
   return (

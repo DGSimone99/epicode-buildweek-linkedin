@@ -37,10 +37,8 @@ const Emoji = ({ value, onChange }) => {
       </Button>
 
       <Overlay show={show} target={target} placement="top" containerPadding={10}>
-        <Popover style={{ width: "450px", height: "400px" }}>
-          <Popover.Body>
-            <EmojiPicker onEmojiClick={onEmojiClick} style={{ width: "350px", height: "350px" }} />
-          </Popover.Body>
+        <Popover style={{ width: "350px", height: "350px" }}>
+          <EmojiPicker onEmojiClick={onEmojiClick} style={{ width: "350px", height: "350px" }} />
         </Popover>
       </Overlay>
     </div>
