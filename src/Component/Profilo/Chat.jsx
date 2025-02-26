@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Collapse from "react-bootstrap/Collapse";
-import { PencilSquare, ThreeDots, ChevronDown, Search, Sliders2 } from "react-bootstrap-icons";
+import { PencilSquare, ThreeDots, ChevronCompactDown, Search, Sliders2 } from "react-bootstrap-icons";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Dropdown, DropdownButton, Form, Image, InputGroup } from "react-bootstrap";
 import { useSelector } from "react-redux";
@@ -12,13 +12,7 @@ const Chat = () => {
 
   return (
     <div className="position-fixed bottom-0 end-0 bg-white border rounded-top" style={{ width: "275px", zIndex: "3" }}>
-      <Button
-        onClick={() => setOpen(!open)}
-        aria-controls="chat-collapse-content"
-        aria-expanded={open}
-        variant="light"
-        className="w-100 p-0 border-0"
-      >
+      <Button onClick={() => setOpen(!open)} aria-controls="chat-collapse-content" aria-expanded={open} variant="light" className="w-100 p-0 border-0">
         <div className="d-flex align-items-center justify-content-between p-2 border">
           <Image
             src={user.image}
@@ -33,8 +27,8 @@ const Chat = () => {
           <p className="fw-semibold ms-2 mb-0">Messaggistica</p>
           <div className="d-flex gap-2 ms-auto">
             <ThreeDots size={17} className="ms-1 text-dark" />
-            <PencilSquare size={17} className="ms-1 text-dark" />
-            <ChevronDown size={17} className="mx-1" />
+            <PencilSquare size={15} className="ms-1 text-dark" />
+            <ChevronCompactDown size={17} className="mx-1 text-dark" />
           </div>
         </div>
       </Button>
@@ -44,18 +38,8 @@ const Chat = () => {
             <InputGroup.Text id="inputGroup-sizing-sm" className="border-0 bg-body-secondary">
               <Search size={15} color="black" />
             </InputGroup.Text>
-            <Form.Control
-              className="border-0 bg-body-secondary"
-              aria-label="Small"
-              aria-describedby="inputGroup-sizing-sm"
-              placeholder="Cerca messaggi"
-            />
-            <DropdownButton
-              title={<Sliders2 size={18} color="black" />}
-              variant="white"
-              id="input-group-dropdown"
-              align="end"
-            >
+            <Form.Control className="border-0 bg-body-secondary" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Cerca messaggi" />
+            <DropdownButton title={<Sliders2 size={18} color="black" />} variant="white" id="input-group-dropdown" align="end">
               <Dropdown.Item href="#">Da leggere</Dropdown.Item>
               <Dropdown.Item href="#">Contassegnati con una stella</Dropdown.Item>
               <Dropdown.Item href="#">Messaggi InMail</Dropdown.Item>
