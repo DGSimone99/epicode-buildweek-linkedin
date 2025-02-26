@@ -15,9 +15,12 @@ import {
 import { BiGlobe, BiX, BiXCircle } from "react-icons/bi";
 import { BsHandThumbsUp, BsHandThumbsUpFill } from "react-icons/bs";
 import { useNavigate } from "react-router";
+import { fetchGetPost, removePost } from "../redux/actions";
+import { useDispatch } from "react-redux";
 
 const PostCard = (props) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [like, setLike] = useState(Math.floor(Math.random() * 100));
   const [liked, setLiked] = useState(false);
 
@@ -84,6 +87,18 @@ const PostCard = (props) => {
                   <Dropdown.Item className="fw-semibold d-flex align-items-center py-3">
                     <FlagFill className="me-2 text-black"></FlagFill> Segnala post
                   </Dropdown.Item>
+                  {props.id == "67bc4dcce703370015316db1" ? (
+                    <Dropdown.Item
+                      className="fw-semibold d-flex align-items-center py-3"
+                      onClick={() => {
+                        dispatch(removePost(props.postId)), dispatch(fetchGetPost());
+                      }}
+                    >
+                      <FlagFill className="me-2 text-black"></FlagFill> Cancella Post
+                    </Dropdown.Item>
+                  ) : (
+                    <div></div>
+                  )}
                 </Dropdown.Menu>
               </Dropdown>
               <Button className="bg-transparent border-0 m-2 p-0" onClick={() => setDisplay(false)}>

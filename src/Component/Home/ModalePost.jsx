@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { useDispatch, useSelector } from "react-redux";
 import Emoji from "./Emoji";
-import { fetchSharePost } from "../redux/actions";
+import { fetchGetPost, fetchSharePost } from "../redux/actions";
 import { Form } from "react-bootstrap";
 
 function ModalePost(props) {
@@ -62,7 +62,13 @@ function ModalePost(props) {
           <Button variant="outline-light" className="border-0 rounded-circle ">
             <Clock />
           </Button>
-          <Button variant="light" className="rounded-pill mx-2" onClick={() => dispatch(fetchSharePost(postText))}>
+          <Button
+            variant="light"
+            className="rounded-pill mx-2"
+            onClick={() => {
+              dispatch(fetchSharePost(postText)), dispatch(fetchGetPost());
+            }}
+          >
             Pubblica
           </Button>
         </div>
