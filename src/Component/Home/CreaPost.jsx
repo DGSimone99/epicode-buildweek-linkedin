@@ -26,7 +26,7 @@ const CreaPost = () => {
           </div>
         </Col>
         <Col xs={10}>
-          <div className="border rounded-5 p-3 mx-1" onClick={() => setModalShow(true)}>
+          <div className="border rounded-5 p-3 " onClick={() => setModalShow(true)}>
             Crea un post
           </div>
           <ModalePost show={modalShow} onHide={() => setModalShow(false)} />
