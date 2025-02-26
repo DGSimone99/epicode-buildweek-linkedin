@@ -25,7 +25,7 @@ const CreaPost = () => {
             />
           </div>
         </Col>
-        <Col xs={10} className="p-0">
+        <Col xs={10} className="p-0 pe-2">
           <div className="border rounded-5 p-3 " onClick={() => setModalShow(true)}>
             Crea un post
           </div>

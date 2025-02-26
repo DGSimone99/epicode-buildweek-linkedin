@@ -172,6 +172,10 @@ p {
   font-size: 0.9rem;
 }
 
+.dropdown-toggle::after {
+  align-self: middle;
+}
+
 /*RESPONSIVE - NAVBAR*/
 
 @media screen and (max-width: 1024px) {
