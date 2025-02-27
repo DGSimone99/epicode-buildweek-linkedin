@@ -100,7 +100,7 @@ const User = () => {
               <NavLink className="fw-bold py-0 d-flex align-items-center">
                 <BiCalendarAlt className="me-2 text-black"></BiCalendarAlt>Eventi
               </NavLink>
-              <Link className="text-decoration-none" to="/shrek">
+              <Link className="text-decoration-none mt-2" to="/shrek">
                 <Container fluid className="px-0 d-flex align-items-center">
                   <img src={iconsh} width="16px" height="16px" alt="Shrek is love shrek is life" className="me-2 p-0" />
 
