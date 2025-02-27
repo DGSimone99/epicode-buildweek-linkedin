@@ -9,7 +9,7 @@ const PersonaSingola = (props) => {
       <Container fluid className="px-0 pointer">
         <Row
           onClick={() => {
-            navigate("/" + props.profile._id);
+            navigate("/user/" + props.profile._id);
           }}
         >
           <Col xs={3}>

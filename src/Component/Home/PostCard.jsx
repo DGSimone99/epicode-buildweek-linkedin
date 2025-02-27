@@ -48,7 +48,7 @@ const PostCard = (props) => {
             <Card.Title
               className="d-flex align-items-center px-3 pt-3 pointer"
               onClick={() => {
-                navigate("/" + props.id);
+                navigate("/user/" + props.id);
               }}
             >
               <div className="me-2">
