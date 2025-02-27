@@ -98,7 +98,7 @@ const CustomNav = () => {
             <HouseDoorFill size={20} className="mb-1 mx-4" />
             <p>Home</p>
           </NavLink>
-          <Nav.Link to="/network" className={`text-center nav-link ${location.pathname === "/network" ? "navActive" : ""}`}>
+          <Nav.Link as={Link} to="/network" className={`text-center nav-link ${location.pathname === "/network" ? "navActive" : ""}`}>
             <PeopleFill size={20} className="mb-1 mx-4" />
             <p>Rete</p>
           </Nav.Link>
