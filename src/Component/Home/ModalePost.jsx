@@ -26,6 +26,8 @@ const ModalePost = (props) => {
     setPostText("");
   };
 
+  const [display, setDisplay] = useState(false);
+
   return (
     <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
       <Modal.Header className="border-0" closeButton>
@@ -50,9 +52,6 @@ const ModalePost = (props) => {
             <p style={{ fontSize: 12 }}>Pubblica: Chiunque</p>
           </div>
         </div>
-        <Form.Group controlId="formFile" className="d-flex align-items-center">
-          <Form.Control type="file" className="me-3" name="picture" onChange={handlePicture} />
-        </Form.Group>
       </Modal.Header>
       <div>
         <Form.Control
@@ -65,10 +64,16 @@ const ModalePost = (props) => {
         />
       </div>
       <Emoji value={postText} onChange={setPostText} />
-      <div className="d-flex ms-3 mb-3">
-        <Image />
-        <Calendar className=" ms-4" />
-        <PlusLg className=" ms-4" />
+
+      <div className="d-flex ms-3 mb-3 align-items-center">
+        <Image onClick={() => setDisplay(!display)} className="pointer" />
+        <Calendar className=" ms-4 pointer" />
+        <PlusLg onClick={() => setDisplay(!display)} className=" ms-4 pointer" />
+        {display && (
+          <Form.Group controlId="formFile" className="mx-3">
+            <Form.Control type="file" name="picture" onChange={handlePicture} />
+          </Form.Group>
+        )}
       </div>
 
       <Modal.Footer>
