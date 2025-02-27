@@ -23,6 +23,7 @@ function EsperienzeModal(props) {
   const [endYear, setEndYear] = useState("");
   const [description, setDescription] = useState("");
   const [area, setArea] = useState("");
+  const [image, setImage] = useState(null);
   useEffect(() => {
     setRole("");
     setCompany("");
@@ -80,6 +81,41 @@ function EsperienzeModal(props) {
     fetchEsperienza();
     props.onHide();
   };
+  const imageSubmit = async (exp) => {
+    if (image) {
+      const formData = new FormData();
+      formData.append("experience", image);
+      try {
+        const resp = await fetch(
+          "https://striveschool-api.herokuapp.com/api/profile/67bc4dcce703370015316db1/experiences/" +
+            exp._id +
+            "/picture",
+
+          {
+            method: "POST",
+            headers: {
+              Authorization:
+                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2JjNGRjY2U3MDMzNzAwMTUzMTZkYjEiLCJpYXQiOjE3NDAzOTM5MzIsImV4cCI6MTc0MTYwMzUzMn0.1t8kxCm5d0UPnuFQqZs9G6-VZkPjsGpIMIhIadrrE4Q",
+            },
+            body: formData,
+          }
+        );
+        if (resp.ok) {
+          if (props.experienceid) {
+            console.log("immagine modificata con successo");
+          } else {
+            console.log("immagine aggiunta con successo");
+          }
+          dispatch(fetchExperience());
+        } else {
+          throw new Error("Errore");
+        }
+      } catch (error) {
+        console.error(error);
+        alert("errore nel caricamento dell'immagine");
+      }
+    }
+  };
   const fetchEsperienza = async () => {
     try {
       const resp = await fetch(
@@ -112,6 +148,8 @@ function EsperienzeModal(props) {
           alert("esperienza aggiunta con successo");
           dispatch(fetchExperience());
         }
+        const exp = await resp.json();
+        imageSubmit(exp);
         setRole("");
         setCompany("");
         setDescription("");
@@ -129,7 +167,9 @@ function EsperienzeModal(props) {
       alert("errore nell'aggiunta dell'esperienza");
     }
   };
-
+  const handleImage = (e) => {
+    setImage(e.target.files[0]);
+  };
   const handleJobRole = (e) => {
     setRole(e.target.value);
   };
@@ -386,7 +426,7 @@ function EsperienzeModal(props) {
               </Button>
               <Collapse in={open}>
                 <div id="example-collapse-text" className="py-3">
-                  <Form.Control type="file" />
+                  <Form.Control type="file" onChange={(e) => handleImage(e)} />
                 </div>
               </Collapse>
             </Container>

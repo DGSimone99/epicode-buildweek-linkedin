@@ -4,10 +4,10 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { useDispatch, useSelector } from "react-redux";
 import Emoji from "./Emoji";
-import { fetchGetPost, fetchSharePost } from "../redux/actions";
+import { fetchSharePost } from "../redux/actions";
 import { Form } from "react-bootstrap";
 
-function ModalePost(props) {
+const ModalePost = (props) => {
   const user = useSelector((state) => state.user.content);
   const [postText, setPostText] = useState("");
   const dispatch = useDispatch();
@@ -18,7 +18,7 @@ function ModalePost(props) {
 
   const newPost = () => {
     dispatch(fetchSharePost(postText));
-    dispatch(fetchGetPost());
+    setPostText("");
   };
 
   return (
@@ -46,16 +46,17 @@ function ModalePost(props) {
           </div>
         </div>
       </Modal.Header>
-      <div className="mb-5">
+      <div>
         <Form.Control
-          type="text"
-          className="border-0 shadow-none me-2"
+          as="textarea"
+          className="border-0 shadow-none me-2 pb-5"
           placeholder="Di cosa vorresti parlare?"
           value={postText}
           onChange={handleChange}
+          rows={4}
         />
       </div>
-      {/*   <Emoji value={postText} onChange={setPostText} /> */}
+      <Emoji value={postText} onChange={setPostText} />
       <div className="d-flex ms-3 mb-3">
         <Image />
         <Calendar className=" ms-4" />
@@ -71,7 +72,8 @@ function ModalePost(props) {
             variant="light"
             className="rounded-pill mx-2"
             onClick={() => {
-              newPost(), props.onHide;
+              newPost();
+              props.onHide();
             }}
           >
             Pubblica
@@ -80,6 +82,6 @@ function ModalePost(props) {
       </Modal.Footer>
     </Modal>
   );
-}
+};
 
 export default ModalePost;
