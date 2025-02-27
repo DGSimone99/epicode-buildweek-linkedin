@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { useDispatch, useSelector } from "react-redux";
 import Emoji from "./Emoji";
-import { fetchSharePost, sharePostImage } from "../redux/actions";
+import { fetchSharePost } from "../redux/actions";
 import { Form } from "react-bootstrap";
 
 const ModalePost = (props) => {
@@ -16,14 +16,14 @@ const ModalePost = (props) => {
     setPostText(event.target.value);
   };
 
-  const newPost = () => {
-    dispatch(fetchSharePost(postText));
-    setPostText("");
-  };
-
   const [picture, setPicture] = useState([]);
   const handlePicture = (event) => {
     setPicture(event.target.files);
+  };
+
+  const newPost = () => {
+    dispatch(fetchSharePost(postText, picture[0]));
+    setPostText("");
   };
 
   return (
@@ -82,7 +82,6 @@ const ModalePost = (props) => {
             onClick={() => {
               newPost();
               props.onHide();
-              dispatch(sharePostImage(picture[0]));
             }}
           >
             Pubblica

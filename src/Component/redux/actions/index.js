@@ -8,7 +8,6 @@ export const SET_EXPERIENCES = "SET_EXPERIENCES";
 export const GET_POST = "GET_POST";
 export const POST_POST = "POST_POST";
 export const REMOVE_POST = "REMOVE_POST";
-export const POSTIMG_POST = "POSTIMG_POST";
 export const setProfilesAction = (data) => ({ type: SET_PROFILES, payload: data });
 export const setUserAction = (data) => ({ type: SET_USER, payload: data });
 export const setExperiences = (data) => ({ type: SET_EXPERIENCES, payload: data });
@@ -172,7 +171,32 @@ export const removePost = (id) => {
   };
 };
 
-export const fetchSharePost = (testo) => {
+export const sharePostImage = (postId, file) => {
+  return (dispatch) => {
+    const formData = new FormData();
+    formData.append("post", file);
+
+    fetch("https://striveschool-api.herokuapp.com/api/posts/" + postId, {
+      method: "POST",
+      headers: {
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2JjNGRjY2U3MDMzNzAwMTUzMTZkYjEiLCJpYXQiOjE3NDAzOTM5MzIsImV4cCI6MTc0MTYwMzUzMn0.1t8kxCm5d0UPnuFQqZs9G6-VZkPjsGpIMIhIadrrE4Q",
+      },
+      body: formData,
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        if (!data) {
+          alert("il post non è stato pubblicato");
+        } else {
+          dispatch(fetchGetPost());
+        }
+      })
+      .catch((err) => console.error(err));
+  };
+};
+
+export const fetchSharePost = (testo, file) => {
   return (dispatch) => {
     fetch("https://striveschool-api.herokuapp.com/api/posts/", {
       method: "POST",
@@ -187,12 +211,15 @@ export const fetchSharePost = (testo) => {
       .then((data) => {
         if (data) {
           dispatch({ type: POST_POST, payload: data });
+          const postId = data._id;
+          if (file) {
+            dispatch(sharePostImage(postId, file));
+          } else {
+            dispatch(fetchGetPost());
+          }
         } else {
           alert("il post non è stato pubblicato");
         }
-      })
-      .then(() => {
-        dispatch(fetchGetPost());
       })
       .catch((err) => console.error(err));
   };
@@ -230,34 +257,6 @@ export const fetchExperience = () => {
         } else {
           alert("errore nella fetch");
         }
-      })
-      .catch((err) => console.error(err));
-  };
-};
-
-export const sharePostImage = (postId, file) => {
-  return (dispatch) => {
-    const formData = new FormData();
-    formData.append("post", file);
-
-    fetch("https://striveschool-api.herokuapp.com/api/posts/" + postId, {
-      method: "POST",
-      headers: {
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2JjNGRjY2U3MDMzNzAwMTUzMTZkYjEiLCJpYXQiOjE3NDAzOTM5MzIsImV4cCI6MTc0MTYwMzUzMn0.1t8kxCm5d0UPnuFQqZs9G6-VZkPjsGpIMIhIadrrE4Q",
-      },
-      body: formData,
-    })
-      .then((resp) => resp.json())
-      .then((data) => {
-        if (data) {
-          dispatch({ type: POSTIMG_POST, payload: data });
-        } else {
-          alert("il post non è stato pubblicato");
-        }
-      })
-      .then(() => {
-        dispatch(fetchGetPost());
       })
       .catch((err) => console.error(err));
   };
