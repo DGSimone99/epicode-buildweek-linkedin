@@ -8,6 +8,7 @@ export const SET_EXPERIENCES = "SET_EXPERIENCES";
 export const GET_POST = "GET_POST";
 export const POST_POST = "POST_POST";
 export const REMOVE_POST = "REMOVE_POST";
+export const EDIT_POST = "EDIT_POST";
 export const setProfilesAction = (data) => ({ type: SET_PROFILES, payload: data });
 export const setUserAction = (data) => ({ type: SET_USER, payload: data });
 export const setExperiences = (data) => ({ type: SET_EXPERIENCES, payload: data });

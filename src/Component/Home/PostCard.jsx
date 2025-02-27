@@ -13,7 +13,7 @@ import {
   ThreeDots,
   TrashFill,
 } from "react-bootstrap-icons";
-import { BiGlobe, BiShapeCircle, BiShapeTriangle, BiShareAlt, BiX, BiXCircle } from "react-icons/bi";
+import { BiGlobe, BiPencil, BiShapeCircle, BiShapeTriangle, BiShareAlt, BiX, BiXCircle } from "react-icons/bi";
 import { BsHandThumbsUp, BsHandThumbsUpFill } from "react-icons/bs";
 import { useNavigate } from "react-router";
 import { fetchGetPost, removePost } from "../redux/actions";
@@ -68,7 +68,8 @@ const PostCard = (props) => {
               </div>
             </Card.Title>
             <div className="d-flex pe-3 pt-0 mt-0 align-items-center fs-2">
-              <Dropdown className="">
+              <Dropdown>
+                {props.id == user._id && <BiPencil className="me-3 fs-3 p-0 mb-2 pointer"></BiPencil>}
                 <Dropdown.Toggle className="bg-transparent p-0 m-0 border-0 me-2 mb-2 toggleRemove">
                   <ThreeDots></ThreeDots>
                 </Dropdown.Toggle>
