@@ -87,8 +87,14 @@ const CustomNav = () => {
                 placeholder="Cerca"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    e.preventDefault();
+                    handleSearch();
+                  }
+                }}
                 className="d-none d-md-block"
-                style={{ backgroundColor: "#F4F2EE", border: "none" }}
+                style={{ backgroundColor: "#F4F2EE", border: "none", outline: "none", boxShadow: "none" }}
               />
             </InputGroup>
 
@@ -104,7 +110,7 @@ const CustomNav = () => {
                   type="search"
                   placeholder="Città, stato o CAP"
                   className="d-none d-md-block"
-                  style={{ backgroundColor: "#F4F2EE", border: "none" }}
+                  style={{ backgroundColor: "#F4F2EE", border: "none", outline: "none", boxShadow: "none" }}
                 />
               </InputGroup>
             )}
