@@ -39,7 +39,13 @@ function PictureModal(props) {
       <Modal.Footer>
         <Form.Group controlId="formFile" className="d-flex align-items-center">
           <Form.Control type="file" className="me-3" name="picture" onChange={handlePicture} />
-          <Button className="rounded-pill w-50" onClick={() => dispatch(editUserImage(picture[0]))}>
+          <Button
+            className="rounded-pill w-50"
+            onClick={() => {
+              dispatch(editUserImage(picture[0]));
+              props.onHide();
+            }}
+          >
             Carica foto
           </Button>
         </Form.Group>
