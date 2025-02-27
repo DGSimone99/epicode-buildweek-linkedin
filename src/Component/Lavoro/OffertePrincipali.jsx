@@ -15,13 +15,18 @@ const OffertePrincipali = () => {
         </p>
         {loading && <p>Caricamento...</p>}
         {error && <p>Errore: {error}</p>}
+        {!loading && !error && jobs.length === 0 && (
+          <p style={{ color: "rgba(61, 159, 204, 0.7)" }}>Cerca un lavoro nella barra di ricerca</p>
+        )}
         {!loading && !error && jobs.slice(0, 3).map((job) => <AnnuncioSingolo key={job._id} job={job} />)}
       </Container>
-      <div className="pb-3">
-        <p className="fw-bold text-center mb-0 ">
-          Mostra tutto <ArrowRight />
-        </p>
-      </div>
+      {!loading && !error && jobs.length > 0 && (
+        <div className="pb-3">
+          <p className="fw-bold text-center mb-0 ">
+            Mostra tutto <ArrowRight />
+          </p>
+        </div>
+      )}
     </Container>
   );
 };

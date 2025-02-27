@@ -238,15 +238,30 @@ export const fetchJobsRequest = () => ({ type: FETCH_JOBS_REQUEST });
 export const fetchJobsSuccess = (jobs) => ({ type: FETCH_JOBS_SUCCESS, payload: jobs });
 export const fetchJobsFailure = (error) => ({ type: FETCH_JOBS_FAILURE, payload: error });
 
-export const fetchJobs = (query) => {
+export const fetchJobs = (searchType, value) => {
   return async (dispatch) => {
     dispatch(fetchJobsRequest());
+
+    let apiUrl = "https://strive-benchmark.herokuapp.com/api/jobs";
+
+    if (searchType === "company") {
+      apiUrl += `?company=${value}`;
+    } else if (searchType === "category") {
+      apiUrl += `?category=${value}&limit=10`;
+    } else {
+      apiUrl += `?search=${value}`;
+    }
+
     try {
-      const response = await fetch(`https://strive-benchmark.herokuapp.com/api/jobs?search=${query}`);
+      const response = await fetch(apiUrl);
       if (!response.ok) throw new Error("Errore nel recupero dei dati");
       const data = await response.json();
+
+      if (!data || !data.data) throw new Error("Dati non validi");
+
       dispatch(fetchJobsSuccess(data.data));
     } catch (error) {
+      console.error("Errore:", error);
       dispatch(fetchJobsFailure(error.message));
     }
   };
