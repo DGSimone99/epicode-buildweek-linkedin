@@ -102,6 +102,7 @@ const EditExperiences = () => {
                     <Col>
                       <h3 className="fs-5">{experience.role}</h3>
                       <p>{experience.company}</p>
+                      <p>{experience.description}</p>
                       <p>
                         {experience.endDate
                           ? `from ${new Date(experience.startDate).toLocaleDateString()} to ${new Date(
