@@ -1,20 +1,22 @@
 import { Col, Container, Image, Row } from "react-bootstrap";
 
-const SingoloLavoro = () => {
+const SingoloLavoro = ({ job }) => {
   return (
     <Container className="bg-white mt-0 border p-3">
       <div className=" d-flex justify-content-start">
         <div className="me-4">
           <Image
-            src="https://media.licdn.com/dms/image/v2/D4E0BAQEv3QBJew9V4A/company-logo_100_100/company-logo_100_100/0/1719821230020/hays_logo?e=1748476800&v=beta&t=gsOkLQTxRSjOSnfsoYbhZgUCzvBy-G9elG_0beBZ7uw"
-            width={70}
-            height={70}
+            src={
+              job.company_logo_url ||
+              "https://media.licdn.com/dms/image/v2/C4D0BAQEv4iZCWCWMsA/company-logo_200_200/company-logo_200_200/0/1647188299217/ca_silca_logo?e=2147483647&v=beta&t=cV2jOR6v2lO3P0a6HP0hJNgs8HaZMomC9_wtK75uZNI"
+            }
+            style={{ objectFit: "cover", width: "50px", height: "50px" }}
           />
         </div>
         <div>
-          <h5 className="text-primary">Junior Amministrativo Categorie Protetta (JOBS:NOME)</h5>
-          <p className="mb-0">Hays</p>
-          <p className="text-secondary mb-0">Roma</p>
+          <h5 className="text-primary">{job.title}</h5>
+          <p className="mb-0">{job.company_name}</p>
+          <p className="text-secondary mb-0">{job.candidate_required_location}</p>
           <p className="mb-0">Visualizzato • Promosso </p>
         </div>
       </div>
