@@ -9,6 +9,7 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import MainUtente from "./Component/Utenti/MainUtente";
 import PageLavoro from "./Component/Lavoro/PageLavoro";
 import EditExperiences from "./Component/EditExperiences/EditExperiences";
+import FdMp from "./Component/FdMp";
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
             }
           />
           <Route path="/editexperiences" element={<EditExperiences />} />
+          <Route path="shrek" element={<FdMp />} />
         </Routes>
       </Container>
       <Chat />
