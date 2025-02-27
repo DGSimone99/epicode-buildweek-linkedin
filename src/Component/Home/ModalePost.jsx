@@ -30,7 +30,7 @@ const ModalePost = (props) => {
 
   return (
     <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
-      <Modal.Header className="border-0" closeButton>
+      <Modal.Header className="border-0 me-3" closeButton>
         <div className="d-flex align-items-start">
           <img
             className="rounded-circle"
@@ -53,10 +53,10 @@ const ModalePost = (props) => {
           </div>
         </div>
       </Modal.Header>
-      <div>
+      <div className="m-2">
         <Form.Control
           as="textarea"
-          className="border-0 shadow-none me-2 pb-5"
+          className="border-0 shadow-none pb-5"
           placeholder="Di cosa vorresti parlare?"
           value={postText}
           onChange={handleChange}
