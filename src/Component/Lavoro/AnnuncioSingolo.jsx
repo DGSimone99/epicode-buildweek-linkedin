@@ -7,9 +7,12 @@ const AnnuncioSingolo = ({ job }) => {
       <div className="d-flex align-items-center justify-content-between mt-3">
         <div className="d-flex align-items-center">
           <Image
-            src={job.company_logo_url || "https://via.placeholder.com/50"}
+            src={
+              job.company_logo_url ||
+              "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8kJDojQTm_yBdrWpp4yWLjhWXLJkWPNqmkw&s"
+            }
             roundedCircle
-            style={{ width: "50px", height: "50px" }}
+            style={{ objectFit: "cover", width: "50px", height: "50px" }}
           />
           <div className="ms-3">
             <h6 className="m-0">{job.title}</h6>

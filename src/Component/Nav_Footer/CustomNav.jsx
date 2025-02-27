@@ -36,24 +36,20 @@ import { BsFillSlashSquareFill } from "react-icons/bs";
 
 const CustomNav = () => {
   const user = useSelector((state) => state.user.content);
-  const post = useSelector((state) => state.post.content);
   const dispatch = useDispatch();
+  const location = useLocation();
+  const [query, setQuery] = useState("");
+
   useEffect(() => {
     dispatch(fetchUser());
     dispatch(fetchGetPost());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
-
-  const [query, setQuery] = useState("");
 
   const handleSearch = () => {
     if (query.trim()) {
       dispatch(fetchJobs(query));
     }
   };
-
-  /* console.log("SONO FETCHPOST", post); */
-  const location = useLocation();
 
   return (
     <Navbar id="navbar" bg="white" expand="lg" className="px-3 shadow-sm container-fluid sticky-top ">
