@@ -2,6 +2,7 @@ import { Container } from "react-bootstrap";
 import { ArrowRight } from "react-bootstrap-icons";
 import { useSelector } from "react-redux";
 import AnnuncioSingolo from "./AnnuncioSingolo";
+import { Link } from "react-router";
 
 const AltreOfferte = () => {
   const { jobs, loading, error } = useSelector((state) => state.jobs);
@@ -21,10 +22,10 @@ const AltreOfferte = () => {
         {!loading && !error && jobs.slice(7, 10).map((job) => <AnnuncioSingolo key={job._id} job={job} />)}
       </Container>
       {!loading && !error && jobs.length > 0 && (
-        <div className="pb-3">
-          <p className="fw-bold text-center mb-0 ">
+        <div className="pb-3 text-center">
+          <Link to="/pagedettagli" className="fw-bold text-center mb-0 text-black text-decoration-none ">
             Mostra tutto <ArrowRight />
-          </p>
+          </Link>
         </div>
       )}
     </Container>

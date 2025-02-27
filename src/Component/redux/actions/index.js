@@ -8,7 +8,6 @@ export const SET_EXPERIENCES = "SET_EXPERIENCES";
 export const GET_POST = "GET_POST";
 export const POST_POST = "POST_POST";
 export const REMOVE_POST = "REMOVE_POST";
-export const EDIT_POST = "EDIT_POST";
 export const setProfilesAction = (data) => ({ type: SET_PROFILES, payload: data });
 export const setUserAction = (data) => ({ type: SET_USER, payload: data });
 export const setExperiences = (data) => ({ type: SET_EXPERIENCES, payload: data });
@@ -216,9 +215,8 @@ export const fetchSharePost = (testo, file) => {
           const postId = data._id;
           if (file) {
             dispatch(sharePostImage(postId, file));
-          } else {
-            dispatch(fetchGetPost());
           }
+          dispatch(fetchGetPost());
         } else {
           alert("il post non è stato pubblicato");
         }
@@ -310,3 +308,29 @@ export const removeJob = (jobId) => ({
   type: REMOVE_JOB,
   payload: jobId,
 });
+export const editPost = (postId, testo, file) => {
+  return async (dispatch) => {
+    try {
+      const resp = await fetch("https://striveschool-api.herokuapp.com/api/posts/" + postId, {
+        method: "PUT",
+        headers: {
+          Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2JjNGRjY2U3MDMzNzAwMTUzMTZkYjEiLCJpYXQiOjE3NDAzOTM5MzIsImV4cCI6MTc0MTYwMzUzMn0.1t8kxCm5d0UPnuFQqZs9G6-VZkPjsGpIMIhIadrrE4Q",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ text: testo }),
+      });
+      if (resp.ok) {
+        console.log("file", file);
+        if (file) {
+          dispatch(sharePostImage(postId, file));
+        }
+        dispatch(fetchGetPost());
+      } else {
+        throw new Error("Errore");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+};

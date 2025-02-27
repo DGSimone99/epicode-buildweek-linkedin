@@ -1,4 +1,5 @@
 import { Button, Container } from "react-bootstrap";
+import { Link } from "react-router";
 
 const SpazioCercaLavoro = () => {
   return (
@@ -9,9 +10,12 @@ const SpazioCercaLavoro = () => {
         <p className=" fs-6 text-secondary">
           Avvia una ricerca e condivideremo le opportunità che corrispondono ai tuoi criteri
         </p>
-        <Button variant="outline-primary" className="rounded-pill fw-bold mx-2 px-3">
-          Cerca subito
-        </Button>
+
+        <Link to="/pagedettagli" className="fw-bold text-center mb-0 text-black text-decoration-none ">
+          <Button variant="outline-primary" className="rounded-pill fw-bold mx-2 px-3">
+            Cerca subito
+          </Button>
+        </Link>
       </Container>
     </Container>
   );

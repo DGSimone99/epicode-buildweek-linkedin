@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { useDispatch, useSelector } from "react-redux";
 import Emoji from "./Emoji";
-import { fetchSharePost } from "../redux/actions";
+import { editPost, fetchSharePost } from "../redux/actions";
 import { Form } from "react-bootstrap";
 
 const ModalePost = (props) => {
@@ -85,7 +85,11 @@ const ModalePost = (props) => {
             variant="light"
             className="rounded-pill mx-2"
             onClick={() => {
-              newPost();
+              if (props.postid) {
+                dispatch(editPost(props.postid, postText, picture[0]));
+              } else {
+                newPost();
+              }
               props.onHide();
             }}
           >

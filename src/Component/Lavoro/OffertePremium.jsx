@@ -3,6 +3,7 @@ import { ArrowRight } from "react-bootstrap-icons";
 import { BsFillSlashSquareFill } from "react-icons/bs";
 import { useSelector } from "react-redux";
 import AnnuncioSingolo from "./AnnuncioSingolo";
+import { Link } from "react-router";
 
 const OffertePremium = () => {
   const { jobs, loading, error } = useSelector((state) => state.jobs);
@@ -23,10 +24,10 @@ const OffertePremium = () => {
         {!loading && !error && jobs.slice(4, 6).map((job) => <AnnuncioSingolo key={job._id} job={job} />)}
       </Container>
       {!loading && !error && jobs.length > 0 && (
-        <div className="pb-3">
-          <p className="fw-bold text-center mb-0 ">
+        <div className="pb-3 text-center">
+          <Link to="/pagedettagli" className="fw-bold text-center mb-0 text-black text-decoration-none ">
             Mostra tutto <ArrowRight />
-          </p>
+          </Link>
         </div>
       )}
     </Container>

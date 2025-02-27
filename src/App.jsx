@@ -12,6 +12,7 @@ import EditExperiences from "./Component/EditExperiences/EditExperiences";
 import Network from "./Component/Rete/Network";
 import FdMp from "./Component/FdMp";
 import PageNotFound from "./Component/PageNotFound";
+import PaginaDettagliLavoro from "./Component/Lavoro/PaginaDettagliLavoro";
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
               </Container>
             }
           />
+          <Route path="/pagedettagli" element={<PaginaDettagliLavoro />} />
           <Route
             path="/network"
             element={

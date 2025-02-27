@@ -21,7 +21,6 @@ const postReducer = (state = initialState, action) => {
         ...state,
         content: state.content.filter((_id) => _id !== action.payload),
       };
-
     default:
       return state;
   }
