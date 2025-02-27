@@ -9,6 +9,7 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import MainUtente from "./Component/Utenti/MainUtente";
 import PageLavoro from "./Component/Lavoro/PageLavoro";
 import EditExperiences from "./Component/EditExperiences/EditExperiences";
+import Network from "./Component/Rete/Network";
 
 function App() {
   return (
@@ -45,6 +46,14 @@ function App() {
             element={
               <Container className="pt-3">
                 <PageLavoro />
+              </Container>
+            }
+          />
+          <Route
+            path="/network"
+            element={
+              <Container className="pt-3">
+                <Network />
               </Container>
             }
           />
