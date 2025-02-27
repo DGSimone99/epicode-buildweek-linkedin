@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Calendar3, Image, TextIndentLeft } from "react-bootstrap-icons";
 import { useSelector } from "react-redux";
@@ -33,15 +33,15 @@ const CreaPost = () => {
         </Col>
       </Row>
       <div className="d-flex justify-content-between mt-3">
-        <div className="d-flex align-items-center">
+        <div className="d-flex align-items-center pointer">
           <Image color="#378FE9" />
           <p className="ms-2 mb-0">Contenuti Multimediali</p>
         </div>
 
-        <div className="d-flex align-items-center">
+        <div className="d-flex align-items-center pointer">
           <Calendar3 color="#C37D16" /> <p className="ms-2 mb-0">Evento</p>
         </div>
-        <div className="d-flex align-items-center">
+        <div className="d-flex align-items-center pointer">
           <TextIndentLeft color="#E06847" />
           <p className="ms-2 mb-0">Scrivi un articolo</p>
         </div>

@@ -11,37 +11,51 @@ const CustomFooter = () => {
               <Col xs={6} sm={3} className="mb-3">
                 <div className="footer-links">
                   <p>
-                    <a className="link-secondary" href="#">
+                    <a className="link-secondary pointer" href="#">
                       Informazioni
                     </a>
                   </p>
                   <p>
-                    <a className="link-secondary" href="#">
+                    <a className="link-secondary pointer" href="#">
                       Informativa sulla community professionale
                     </a>
                   </p>
                   <Dropdown drop="up">
-                    <Dropdown.Toggle className="text-secondary p-0 pb-3 border-0" variant="" id="dropdown-footer">
+                    <Dropdown.Toggle
+                      className="text-secondary p-0 pb-3 border-0 pointer"
+                      variant=""
+                      id="dropdown-footer"
+                    >
                       Privacy e condizioni
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
-                      <Dropdown.Item href="#">Informativa sulla privacy</Dropdown.Item>
-                      <Dropdown.Item href="#">Contratto di licenza</Dropdown.Item>
-                      <Dropdown.Item href="#">Termini e condizioni delle pagine</Dropdown.Item>
-                      <Dropdown.Item href="#">Informativa sui cookie</Dropdown.Item>
-                      <Dropdown.Item href="#">Informativa sul copyright</Dropdown.Item>
-                      <Dropdown.Item href="#">
+                      <Dropdown.Item href="#" className="pointer">
+                        Informativa sulla privacy
+                      </Dropdown.Item>
+                      <Dropdown.Item href="#" className="pointer">
+                        Contratto di licenza
+                      </Dropdown.Item>
+                      <Dropdown.Item href="#" className="pointer">
+                        Termini e condizioni delle pagine
+                      </Dropdown.Item>
+                      <Dropdown.Item href="#" className="pointer">
+                        Informativa sui cookie
+                      </Dropdown.Item>
+                      <Dropdown.Item href="#" className="pointer">
+                        Informativa sul copyright
+                      </Dropdown.Item>
+                      <Dropdown.Item href="#" className="pointer">
                         Opzioni relative all&lsquo;informativa sulla privacy (Stato della California)
                       </Dropdown.Item>
                     </Dropdown.Menu>
                   </Dropdown>
                   <small>
-                    <a className="link-secondary" href="#">
+                    <a className="link-secondary pointer" href="#">
                       Sales e Solutions
                     </a>
                   </small>
                   <p>
-                    <a className="link-secondary" href="#">
+                    <a className="link-secondary pointer" href="#">
                       Centro sicurezza
                     </a>
                   </p>
@@ -50,22 +64,22 @@ const CustomFooter = () => {
               <Col xs={6} sm={3} className="mb-3">
                 <div className="footer-links">
                   <p>
-                    <a className="link-secondary" href="#">
+                    <a className="link-secondary pointer" href="#">
                       Accessibilità
                     </a>
                   </p>
                   <p>
-                    <a className="link-secondary" href="#">
+                    <a className="link-secondary pointer" href="#">
                       Carriera
                     </a>
                   </p>
                   <p>
-                    <a className="link-secondary" href="#">
+                    <a className="link-secondary pointer" href="#">
                       Opzioni per gli annunci pubblicitari
                     </a>
                   </p>
                   <p>
-                    <a className="link-secondary" href="#">
+                    <a className="link-secondary pointer" href="#">
                       Mobile
                     </a>
                   </p>
@@ -74,22 +88,22 @@ const CustomFooter = () => {
               <Col xs={6} sm={3} className="mb-3">
                 <div className="footer-links">
                   <p>
-                    <a className="link-secondary" href="#">
+                    <a className="link-secondary pointer" href="#">
                       Talent Solutions
                     </a>
                   </p>
                   <p>
-                    <a className="link-secondary" href="#">
+                    <a className="link-secondary pointer" href="#">
                       Soluzioni di marketing
                     </a>
                   </p>
                   <p>
-                    <a className="link-secondary" href="#">
+                    <a className="link-secondary pointer" href="#">
                       Pubblicità
                     </a>
                   </p>
                   <p>
-                    <a className="link-secondary" href="#">
+                    <a className="link-secondary pointer" href="#">
                       Piccole imprese
                     </a>
                   </p>
@@ -99,19 +113,19 @@ const CustomFooter = () => {
                 <div className="footer-links">
                   <p>
                     <QuestionCircleFill size={20} />
-                    <a className="link-secondary mx-1" href="#">
+                    <a className="link-secondary pointer mx-1" href="#">
                       Domande?
                     </a>
                   </p>
                   <p>
                     <GearFill size={20} />
-                    <a className="link-secondary mx-1" href="#">
+                    <a className="link-secondary pointer mx-1" href="#">
                       Gestisci il tuo account e la tua privacy
                     </a>
                   </p>
                   <p>
                     <ShieldShaded size={20} />
-                    <a className="link-secondary mx-1" href="#">
+                    <a className="link-secondary pointer mx-1" href="#">
                       Trasparenza sui conenuti consigliati
                     </a>
                   </p>
