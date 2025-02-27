@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Button, Card, Dropdown, Image } from "react-bootstrap";
 import {
   Bookmark,
@@ -8,18 +8,19 @@ import {
   FlagFill,
   HandThumbsUpFill,
   Link45deg,
-  Recycle,
   SendFill,
   ThreeDots,
   TrashFill,
 } from "react-bootstrap-icons";
-import { BiGlobe, BiShapeCircle, BiShapeTriangle, BiShareAlt, BiX, BiXCircle } from "react-icons/bi";
+import { BiGlobe, BiPencil, BiShareAlt, BiX, BiXCircle } from "react-icons/bi";
 import { BsHandThumbsUp, BsHandThumbsUpFill } from "react-icons/bs";
 import { useNavigate } from "react-router";
 import { fetchGetPost, removePost } from "../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
+import ModalePost from "./ModalePost";
 
 const PostCard = (props) => {
+  const [modalShow, setModalShow] = React.useState(false);
   const user = useSelector((state) => state.user.content);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -49,7 +50,7 @@ const PostCard = (props) => {
             <Card.Title
               className="d-flex align-items-center px-3 pt-3 pointer"
               onClick={() => {
-                navigate("/" + props.id);
+                navigate("/user/" + props.id);
               }}
             >
               <div className="me-2">
@@ -68,7 +69,11 @@ const PostCard = (props) => {
               </div>
             </Card.Title>
             <div className="d-flex pe-3 pt-0 mt-0 align-items-center fs-2">
-              <Dropdown className="">
+              <Dropdown>
+                {props.id == user._id && (
+                  <BiPencil className="me-3 fs-3 p-0 mb-2 pointer" onClick={() => setModalShow(true)}></BiPencil>
+                )}
+                <ModalePost show={modalShow} onHide={() => setModalShow(false)} postid={props.postId} />
                 <Dropdown.Toggle className="bg-transparent p-0 m-0 border-0 me-2 mb-2 toggleRemove">
                   <ThreeDots></ThreeDots>
                 </Dropdown.Toggle>
@@ -143,26 +148,26 @@ const PostCard = (props) => {
                 ) : (
                   <BsHandThumbsUp className="text-black  me-1"></BsHandThumbsUp>
                 )}
-                Consiglia
+                <p className="m-0">Consiglia</p>
               </Button>
             </div>
             <Button
               variant="primary"
               className="bg-transparent border-0 text-dark fw-semibold d-flex align-items-center ms-3"
             >
-              <ChatDots className="me-1"></ChatDots> Commenta
+              <ChatDots className="me-1"></ChatDots> <p className="m-0">Commenta</p>
             </Button>
             <Button
               variant="primary"
               className="bg-transparent border-0 text-dark fw-semibold d-flex align-items-center mx-3"
             >
-              <BiShareAlt className="me-1"></BiShareAlt> Diffondi il post
+              <BiShareAlt className="me-1"></BiShareAlt> <p className="m-0">Diffondi il post</p>
             </Button>
             <Button
               variant="primary"
               className="bg-transparent border-0 text-dark fw-semibold d-flex align-items-center"
             >
-              <SendFill className="me-1"></SendFill> Invia
+              <SendFill className="me-1"></SendFill> <p className="m-0">Invia</p>
             </Button>
           </div>
         </Card.Body>

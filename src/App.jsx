@@ -11,7 +11,7 @@ import PageLavoro from "./Component/Lavoro/PageLavoro";
 import EditExperiences from "./Component/EditExperiences/EditExperiences";
 import Network from "./Component/Rete/Network";
 import FdMp from "./Component/FdMp";
-import PaginaDettagliLavoro from "./Component/Lavoro/PaginaDettagliLavoro";
+import PageNotFound from "./Component/PageNotFound";
 
 function App() {
   return (
@@ -36,7 +36,7 @@ function App() {
             }
           />
           <Route
-            path="/:id"
+            path="/user/:id"
             element={
               <Container className="pt-3">
                 <MainUtente />
@@ -62,6 +62,7 @@ function App() {
           />
           <Route path="/editexperiences" element={<EditExperiences />} />
           <Route path="shrek" element={<FdMp />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </Container>
       <Chat />

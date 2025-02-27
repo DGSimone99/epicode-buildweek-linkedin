@@ -63,7 +63,7 @@ const User = () => {
                   </a>
                 </div>
                 <div>
-                  <PersonPlusFill className="text-black"></PersonPlusFill>
+                  <PersonPlusFill className="text-black pointer"></PersonPlusFill>
                 </div>
               </div>
             </Container>

@@ -84,6 +84,7 @@ function EditProfilo(props) {
           onClick={(e) => {
             e.preventDefault();
             dispatch(editUser(newData));
+            props.onHide();
           }}
         >
           Salva

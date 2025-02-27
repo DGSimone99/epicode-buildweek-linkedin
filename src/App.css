@@ -272,7 +272,7 @@ footer a {
 .pointer2 {
   cursor: pointer;
   &:hover {
-    text-decoration: underline;
+    text-decoration: underline !important;
   }
 }
 .pointer3 {
