@@ -1,17 +1,5 @@
 import { useEffect, useState } from "react";
-import {
-  Navbar,
-  Nav,
-  Form,
-  FormControl,
-  Image,
-  Container,
-  Dropdown,
-  InputGroup,
-  Button,
-  Col,
-  Row,
-} from "react-bootstrap";
+import { Navbar, Nav, Form, FormControl, Image, Container, Dropdown, InputGroup, Button, Col, Row } from "react-bootstrap";
 import {
   HouseDoorFill,
   PeopleFill,
@@ -67,19 +55,11 @@ const CustomNav = () => {
       <Container>
         <div className="d-flex align-items-center">
           <Navbar.Brand as={Link} to="/">
-            <Image
-              src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
-              width="34"
-              height="34"
-              alt="LinkedIn Logo"
-            />
+            <Image src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" width="34" height="34" alt="LinkedIn Logo" />
           </Navbar.Brand>
           <Form className="d-flex">
             <InputGroup className="custom-input-group d-flex flex-nowrap">
-              <InputGroup.Text
-                className="search-icon d-flex align-items-center pe-0"
-                style={{ backgroundColor: "#F4F2EE", border: "none" }}
-              >
+              <InputGroup.Text className="search-icon d-flex align-items-center pe-0" style={{ backgroundColor: "#F4F2EE", border: "none" }}>
                 <Search onClick={handleSearch} />
               </InputGroup.Text>
               <FormControl
@@ -100,10 +80,7 @@ const CustomNav = () => {
 
             {location.pathname === "/jobs" && (
               <InputGroup className="custom-input-group ms-3 d-flex flex-nowrap">
-                <InputGroup.Text
-                  className="search-icon d-flex align-items-center pe-0"
-                  style={{ backgroundColor: "#F4F2EE", border: "none" }}
-                >
+                <InputGroup.Text className="search-icon d-flex align-items-center pe-0" style={{ backgroundColor: "#F4F2EE", border: "none" }}>
                   <GeoAltFill />
                 </InputGroup.Text>
                 <FormControl
@@ -121,15 +98,11 @@ const CustomNav = () => {
             <HouseDoorFill size={20} className="mb-1 mx-4" />
             <p>Home</p>
           </NavLink>
-          <Nav.Link to="" className={`text-center nav-link ${location.pathname === "" ? "navActive" : ""}`}>
+          <Nav.Link as={Link} to="/network" className={`text-center nav-link ${location.pathname === "/network" ? "navActive" : ""}`}>
             <PeopleFill size={20} className="mb-1 mx-4" />
             <p>Rete</p>
           </Nav.Link>
-          <Nav.Link
-            as={Link}
-            to="/jobs"
-            className={`text-center nav-link ${location.pathname === "/jobs" ? "navActive" : ""}`}
-          >
+          <Nav.Link as={Link} to="/jobs" className={`text-center nav-link ${location.pathname === "/jobs" ? "navActive" : ""}`}>
             <BriefcaseFill size={20} className="mb-1 mx-4" />
             <p>Lavoro</p>
           </Nav.Link>
@@ -178,20 +151,14 @@ const CustomNav = () => {
                     </div>
                   </div>
                 </Button>
-                <Button
-                  as={Link}
-                  to="/me"
-                  variant="outline-primary"
-                  className="rounded-pill fw-semibold w-100 py-0 my-2"
-                >
+                <Button as={Link} to="/me" variant="outline-primary" className="rounded-pill fw-semibold w-100 py-0 my-2">
                   Visualizza profilo
                 </Button>
               </Dropdown>
               <Dropdown.Item href="#">
                 <h6>Account</h6>
                 <div className="fw-semibold text-secondary">
-                  <BsFillSlashSquareFill className="me-2" style={{ color: "#E7A33E" }}></BsFillSlashSquareFill> Prova 1
-                  mese di Premium per 0 EUR
+                  <BsFillSlashSquareFill className="me-2" style={{ color: "#E7A33E" }}></BsFillSlashSquareFill> Prova 1 mese di Premium per 0 EUR
                 </div>
                 <div className="pointer2">Impostazioni e privacy</div>
                 <div className="pointer2">Guida</div>
@@ -273,11 +240,7 @@ const CustomNav = () => {
               </Container>
             </Dropdown.Menu>
           </Dropdown>
-          <Nav.Link
-            href="#"
-            className="text-center"
-            style={{ color: "rgb(131, 97, 24)", textDecorationLine: "underline" }}
-          >
+          <Nav.Link href="#" className="text-center" style={{ color: "rgb(131, 97, 24)", textDecorationLine: "underline" }}>
             <p>Prova Premium per 0 EUR</p>
           </Nav.Link>
         </Nav>
