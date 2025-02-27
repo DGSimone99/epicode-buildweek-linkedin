@@ -1,5 +1,6 @@
 import { Button, Image } from "react-bootstrap";
 import {
+  ArrowReturnLeft,
   ArrowRight,
   BanFill,
   BoxArrowUpRight,
@@ -8,6 +9,7 @@ import {
   Lightbulb,
   ListCheck,
   SendFill,
+  ThreeDots,
 } from "react-bootstrap-icons";
 
 const DettaglioSingoloLavoro = () => {
@@ -20,6 +22,10 @@ const DettaglioSingoloLavoro = () => {
           height={30}
         />
         <p className="mb-0 ms-2">Hays </p>
+        <div className="ms-auto">
+          <ArrowReturnLeft style={{ transform: "rotate(180deg)", color: "black" }} className="me-3" />
+          <ThreeDots />
+        </div>
       </div>
       <div>
         <h2>Junior Amministrativo Categoria Protetta L. 68/99 Art.1 </h2>
@@ -51,7 +57,7 @@ const DettaglioSingoloLavoro = () => {
             </a>
           </p>
         </div>
-        <div className="d-flex sticky-top my-3 bg-white p-3">
+        <div className="d-flex sticky-top my-3 bg-white p-3" style={{ top: "120px" }}>
           <Button variant="primary" className="align-items-baseline rounded-pill me-2 px-4">
             <strong>Candidati</strong>
             <BoxArrowUpRight color="white" className="ms-2" />
