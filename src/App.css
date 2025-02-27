@@ -258,3 +258,26 @@ footer a {
 .footerSticky {
   top: 50px !important;
 }
+
+.morePostsBtn {
+  color: #0d6efd !important;
+  border: 0.1em solid #0d6efd !important;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.089) !important;
+    color: #0a54c2 !important;
+    border: 0.1em solid #0a54c2 !important;
+  }
+}
+
+.pointer2 {
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.pointer3 {
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.041) !important;
+  }
+}

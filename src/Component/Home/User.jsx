@@ -57,8 +57,8 @@ const User = () => {
               </Card.Text>
               <div className="d-flex justify-content-between">
                 <div>
-                  <a href="#" className="nav-link">
-                    <Card.Text className="mb-0 fw-bold">Collegamenti</Card.Text>
+                  <a href="#" className="nav-link pointer2">
+                    <Card.Text className="mb-0 fw-bold ">Collegamenti</Card.Text>
                     <Card.Text className="text-secondary my-0">Espandi la tua rete</Card.Text>
                   </a>
                 </div>
@@ -77,8 +77,8 @@ const User = () => {
             <Container>
               <a href="#" className="nav-link">
                 <Card.Text className="text-secondary mb-3">Accedi a strumenti e informazioni in esclusiva</Card.Text>
-                <Card.Text className="mb-0 fw-bold d-flex align-items-center">
-                  <BsFillSlashSquareFill className="me-2" style={{ color: "#E7A33E" }}></BsFillSlashSquareFill> Prova
+                <Card.Text className="mb-0 fw-bold d-flex align-items-center pointer2">
+                  <BsFillSlashSquareFill className="me-2 " style={{ color: "#E7A33E" }}></BsFillSlashSquareFill> Prova
                   Premium per 0 EUR
                 </Card.Text>{" "}
               </a>
@@ -91,20 +91,20 @@ const User = () => {
         <Card>
           <Card.Body className="px-2">
             <Container className="d-flex flex-column align-items-start">
-              <NavLink className="fw-bold py-0 d-flex align-items-center">
+              <NavLink className="fw-bold py-0 d-flex align-items-center pointer2">
                 <BsFillBookmarkFill className="me-2"></BsFillBookmarkFill>Elementi Salvati
               </NavLink>
-              <NavLink className="fw-bold my-2 py-0 d-flex align-items-center">
+              <NavLink className="fw-bold my-2 py-0 d-flex align-items-center pointer2">
                 <PeopleFill className="me-2 text-black"></PeopleFill>Gruppi
               </NavLink>
-              <NavLink className="fw-bold py-0 d-flex align-items-center">
+              <NavLink className="fw-bold py-0 d-flex align-items-center pointer2">
                 <BiCalendarAlt className="me-2 text-black"></BiCalendarAlt>Eventi
               </NavLink>
-              <Link className="text-decoration-none mt-2" to="/shrek">
+              <Link className="text-decoration-none mt-2 pointer2" to="/shrek">
                 <Container fluid className="px-0 d-flex align-items-center">
                   <img src={iconsh} width="16px" height="16px" alt="Shrek is love shrek is life" className="me-2 p-0" />
 
-                  <span className="text-black fw-bold fs-6 p-0">Shrekkizzati</span>
+                  <span className="text-black fw-bold fs-6 p-0 pointer2">Shrekkizzati</span>
                 </Container>
               </Link>
             </Container>
