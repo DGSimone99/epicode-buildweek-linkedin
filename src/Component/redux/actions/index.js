@@ -14,6 +14,7 @@ export const setExperiences = (data) => ({ type: SET_EXPERIENCES, payload: data 
 export const FETCH_JOBS_REQUEST = "FETCH_JOBS_REQUEST";
 export const FETCH_JOBS_SUCCESS = "FETCH_JOBS_SUCCESS";
 export const FETCH_JOBS_FAILURE = "FETCH_JOBS_FAILURE";
+export const REMOVE_JOB = "REMOVE_JOB";
 
 export const fetchProfiles = () => {
   return (dispatch) => {
@@ -294,3 +295,8 @@ export const fetchJobs = (searchType, value) => {
     }
   };
 };
+
+export const removeJob = (jobId) => ({
+  type: REMOVE_JOB,
+  payload: jobId,
+});

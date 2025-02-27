@@ -11,8 +11,7 @@ const ConsigliPerTe = () => {
             <div>
               <Image
                 src="https://media.licdn.com/dms/image/v2/C510BAQG_1VWEGBmO9A/company-logo_100_100/company-logo_100_100/0/1631353289340?e=1748476800&v=beta&t=hGklvdByfYynRr_VdJqCTEVBdvBL1BLLYXOl6Jizu1Y"
-                roundedCircle
-                className="me-1 d-block"
+                className="me-2 d-block"
                 style={{
                   width: "50px",
                   height: "50px",
@@ -37,8 +36,7 @@ const ConsigliPerTe = () => {
             <div>
               <Image
                 src="https://media.licdn.com/dms/image/v2/C4E0BAQEooBvMO2kBVg/company-logo_100_100/company-logo_100_100/0/1631311071955?e=1748476800&v=beta&t=jfxXIAMr3fKBhvJDtJua1gVcbRyy_Yfucv-Pem2mrm4"
-                roundedCircle
-                className="me-1 d-block"
+                className="me-2 d-block"
                 style={{
                   width: "50px",
                   height: "50px",
@@ -65,8 +63,7 @@ const ConsigliPerTe = () => {
             <div>
               <Image
                 src="https://media.licdn.com/dms/image/v2/D4E0BAQFWt4Tl53wjZQ/company-logo_100_100/company-logo_100_100/0/1705960989383/docker_logo?e=1748476800&v=beta&t=vU84PKYYfqmgVMruZKRoXx_x_ySVHvG4-iT33rh5uMQ"
-                roundedCircle
-                className="me-1 d-block"
+                className="me-2 d-block"
                 style={{
                   width: "50px",
                   height: "50px",
