@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Button, Card, Dropdown, Image } from "react-bootstrap";
 import {
   Bookmark,
@@ -17,8 +17,10 @@ import { BsHandThumbsUp, BsHandThumbsUpFill } from "react-icons/bs";
 import { useNavigate } from "react-router";
 import { fetchGetPost, removePost } from "../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
+import ModalePost from "./ModalePost";
 
 const PostCard = (props) => {
+  const [modalShow, setModalShow] = React.useState(false);
   const user = useSelector((state) => state.user.content);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -68,7 +70,10 @@ const PostCard = (props) => {
             </Card.Title>
             <div className="d-flex pe-3 pt-0 mt-0 align-items-center fs-2">
               <Dropdown>
-                {props.id == user._id && <BiPencil className="me-3 fs-3 p-0 mb-2 pointer"></BiPencil>}
+                {props.id == user._id && (
+                  <BiPencil className="me-3 fs-3 p-0 mb-2 pointer" onClick={() => setModalShow(true)}></BiPencil>
+                )}
+                <ModalePost show={modalShow} onHide={() => setModalShow(false)} postid={props.postId} />
                 <Dropdown.Toggle className="bg-transparent p-0 m-0 border-0 me-2 mb-2 toggleRemove">
                   <ThreeDots></ThreeDots>
                 </Dropdown.Toggle>

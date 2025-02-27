@@ -11,7 +11,6 @@ import PageLavoro from "./Component/Lavoro/PageLavoro";
 import EditExperiences from "./Component/EditExperiences/EditExperiences";
 import Network from "./Component/Rete/Network";
 import FdMp from "./Component/FdMp";
-import PaginaDettagliLavoro from "./Component/Lavoro/PaginaDettagliLavoro";
 
 function App() {
   return (
