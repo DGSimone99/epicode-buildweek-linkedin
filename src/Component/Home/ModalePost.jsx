@@ -7,7 +7,7 @@ import Emoji from "./Emoji";
 import { fetchGetPost, fetchSharePost } from "../redux/actions";
 import { Form } from "react-bootstrap";
 
-function ModalePost(props) {
+const ModalePost = (props) => {
   const user = useSelector((state) => state.user.content);
   const [postText, setPostText] = useState("");
   const dispatch = useDispatch();
@@ -18,7 +18,6 @@ function ModalePost(props) {
 
   const newPost = () => {
     dispatch(fetchSharePost(postText));
-    dispatch(fetchGetPost());
   };
 
   return (
@@ -80,6 +79,6 @@ function ModalePost(props) {
       </Modal.Footer>
     </Modal>
   );
-}
+};
 
 export default ModalePost;

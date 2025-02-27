@@ -168,7 +168,7 @@ export const removePost = (id) => {
   };
 };
 
-export const fetchSharePost = (mamma) => {
+export const fetchSharePost = (testo) => {
   return (dispatch) => {
     fetch("https://striveschool-api.herokuapp.com/api/posts/", {
       method: "POST",
@@ -177,7 +177,7 @@ export const fetchSharePost = (mamma) => {
           "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2JjNGRjY2U3MDMzNzAwMTUzMTZkYjEiLCJpYXQiOjE3NDAzOTM5MzIsImV4cCI6MTc0MTYwMzUzMn0.1t8kxCm5d0UPnuFQqZs9G6-VZkPjsGpIMIhIadrrE4Q",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ text: mamma }),
+      body: JSON.stringify({ text: testo }),
     })
       .then((resp) => resp.json())
       .then((data) => {
@@ -186,6 +186,9 @@ export const fetchSharePost = (mamma) => {
         } else {
           alert("il post non è stato pubblicato");
         }
+      })
+      .then(() => {
+        dispatch(fetchGetPost());
       })
       .catch((err) => console.error(err));
   };

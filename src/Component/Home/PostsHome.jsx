@@ -5,7 +5,7 @@ const PostsHome = () => {
   const posts = useSelector((state) => state.post.content);
   const reversedPosts = [...posts].reverse();
 
-  return reversedPosts.slice(1, 9).map((post) => {
+  return reversedPosts.slice(0, 9).map((post) => {
     return (
       <PostCard
         key={post._id}
