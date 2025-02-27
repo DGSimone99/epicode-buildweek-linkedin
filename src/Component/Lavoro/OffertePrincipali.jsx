@@ -3,6 +3,7 @@ import { ArrowRight } from "react-bootstrap-icons";
 import AnnuncioSingolo from "./AnnuncioSingolo";
 import { useDispatch, useSelector } from "react-redux";
 import { removeJob } from "../redux/actions";
+import { Link } from "react-router";
 
 const OffertePrincipali = () => {
   const dispatch = useDispatch();
@@ -27,10 +28,10 @@ const OffertePrincipali = () => {
           jobs.slice(0, 3).map((job) => <AnnuncioSingolo key={job._id} job={job} onRemove={handleRemove} />)}
       </Container>
       {!loading && !error && jobs.length > 0 && (
-        <div className="pb-3">
-          <p className="fw-bold text-center mb-0 ">
+        <div className="pb-3 text-center">
+          <Link to="/pagedettagli" className="fw-bold text-center mb-0 text-black text-decoration-none ">
             Mostra tutto <ArrowRight />
-          </p>
+          </Link>
         </div>
       )}
     </Container>

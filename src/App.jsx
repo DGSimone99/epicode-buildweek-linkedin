@@ -51,6 +51,7 @@ function App() {
               </Container>
             }
           />
+          <Route path="/pagedettagli" element={<PaginaDettagliLavoro />} />
           <Route
             path="/network"
             element={
