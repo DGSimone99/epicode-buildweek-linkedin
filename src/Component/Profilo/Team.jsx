@@ -47,13 +47,13 @@ const Team = () => {
           <BiPencil className="position-absolute pencil" onClick={() => setModalShow(true)}></BiPencil>
           <Row>
             <Col xs={8}>
-              <Card.Title className="fs-2 mb-0">{user.name + " " + user.surname}</Card.Title>
+              <Card.Title className="fs-2 mb-0 pointer">{user.name + " " + user.surname}</Card.Title>
               <Card.Text className="fs-5">{user.title}</Card.Text>
               <Card.Text className="text-secondary">
                 {user.area} <a href="#">Informazioni di contatto</a>
               </Card.Text>
             </Col>
-            <Col>
+            <Col className="pointer2">
               <img
                 src="https://media.licdn.com/dms/image/v2/C4E0BAQHYgix-Ynux1A/company-logo_100_100/company-logo_100_100/0/1646830188798/epicodeschool_logo?e=1748476800&amp;v=beta&amp;t=doTFJx0D6s9OjWg9ZXuLy9TSWloZEUtDzU0J_gPyBJs"
                 width={32}
@@ -79,7 +79,7 @@ const Team = () => {
             <Carousel.Item>
               <Row>
                 <Col>
-                  <div className="border border-1 px-3 py-2 rounded-3 position-relative h-100">
+                  <div className="border border-1 px-3 py-2 rounded-3 position-relative h-100 pointer3">
                     <p className="mb-0 pe-5">
                       <span className="fw-bold text-black" style={{ fontSize: "16px" }}>
                         Mostra ai recruiter che sei disponibile a lavorare
@@ -92,7 +92,7 @@ const Team = () => {
                   </div>
                 </Col>
                 <Col>
-                  <div className="border border-1 px-3 py-2 rounded-3 position-relative h-100">
+                  <div className="border border-1 px-3 py-2 rounded-3 position-relative h-100 pointer3">
                     <p className="mb-0 pe-5">
                       <span className="fw-bold text-black" style={{ fontSize: "16px" }}>
                         Fai sapere che stai facendo selezione&nbsp;
@@ -108,7 +108,7 @@ const Team = () => {
             <Carousel.Item>
               <Row>
                 <Col>
-                  <div className="border border-1 px-3 py-2 rounded-3 position-relative h-100">
+                  <div className="border border-1 px-3 py-2 rounded-3 position-relative h-100 pointer3">
                     <p className="mb-0 pe-5">
                       <span className="fw-bold text-black" style={{ fontSize: "16px" }}>
                         Metti in risalto i tuoi servizi&nbsp;
@@ -120,7 +120,7 @@ const Team = () => {
                   </div>
                 </Col>
                 <Col>
-                  <div className="border border-1 px-3 py-2 rounded-3 position-relative h-100">
+                  <div className="border border-1 px-3 py-2 rounded-3 position-relative h-100 pointer3">
                     <p className="mb-0 pe-5">
                       <span className="fw-bold text-black" style={{ fontSize: "16px" }}>
                         Mostra ai recruiter che sei disponibile a lavorare

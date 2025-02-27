@@ -14,7 +14,7 @@ const Analisi = () => {
             <EyeFill /> Solo per te
           </p>
 
-          <div className="d-flex">
+          <div className="d-flex pointer">
             <div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +37,7 @@ const Analisi = () => {
             </div>
           </div>
 
-          <div className="d-flex">
+          <div className="d-flex pointer">
             <div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -62,7 +62,7 @@ const Analisi = () => {
           </div>
         </div>
         <div className="border-top py-2">
-          <p className="fw-bold text-center mb-0 ">
+          <p className="fw-bold text-center mb-0 pointer">
             Mostra tutte le analisi <ArrowRight />
           </p>
         </div>

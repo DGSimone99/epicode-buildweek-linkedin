@@ -19,8 +19,8 @@ const MyCollapse = () => {
       </Button>
       <Collapse in={open}>
         <div id="example-collapse-text">
-          <p className="fw-semibold mb-0">I giovani lavoratori sono sempre me...</p>
-          <p className="text-secondary">4 ore fa • 122 lettori</p>
+          <p className="fw-semibold mb-0 pointer2">I giovani lavoratori sono sempre me...</p>
+          <p className="text-secondary pointer">4 ore fa • 122 lettori</p>
         </div>
       </Collapse>
     </>

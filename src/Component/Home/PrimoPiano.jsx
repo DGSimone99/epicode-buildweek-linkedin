@@ -18,11 +18,11 @@ const PrimoPiano = () => {
 
   return (
     <Container className="bg-white border rounded-3 p-3 d-none d-lg-block">
-      <div className="d-flex align-items-center">
-        <h3 className="mb-1">In primo piano</h3>
-        <InfoSquareFill color="black" className="ms-auto" />
+      <div className="d-flex align-items-center ">
+        <h3 className="mb-1 pointer">In primo piano</h3>
+        <InfoSquareFill color="black" className="ms-auto pointer" />
       </div>
-      <p className="text-secondary fw-semibold">a cura di LinkedIn Notizie</p>
+      <p className="text-secondary fw-semibold pointer">a cura di LinkedIn Notizie</p>
 
       {/*  <NotiziePrimoPiano titolo={notizia.results.title} aggiornamento={notizia.results.pubDate} /> */}
 
@@ -33,7 +33,7 @@ const PrimoPiano = () => {
 
       <MyCollapse />
       <h6 className="text-secondary mt-4 mb-3">I Giochi di oggi</h6>
-      <div className="d-flex mb-3 align-items-center">
+      <div className="d-flex mb-3 align-items-center pointer2">
         <div>
           <Image src="https://static.licdn.com/aero-v1/sc/h/im5l00imv9odauybfemlfxm6" height={48} />
         </div>
@@ -43,7 +43,7 @@ const PrimoPiano = () => {
         </div>
         <ChevronCompactRight className="ms-auto" />
       </div>
-      <div className="d-flex mb-4 align-items-center">
+      <div className="d-flex mb-4 align-items-center pointer2">
         <div>
           <Image src="https://static.licdn.com/aero-v1/sc/h/25itbd3dpc6ockbgvdhot9qp1" height={48} />
         </div>

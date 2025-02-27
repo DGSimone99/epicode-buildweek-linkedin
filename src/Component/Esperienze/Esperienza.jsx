@@ -23,7 +23,7 @@ const Esperienza = () => {
             <h5 className="fw-bold">Esperienza</h5>
             {experiences.length > 0 ? (
               <div>
-                <Plus onClick={() => setModalShow(true)} />
+                <Plus onClick={() => setModalShow(true)} className="pointer" />
                 <Link to={"/editexperiences"}>
                   <PencilFill />
                 </Link>
@@ -42,7 +42,7 @@ const Esperienza = () => {
               <Row key={experience._id}>
                 <Col xs={1} className="d-flex">
                   {experience.image ? (
-                    <img src={experience.image} alt="" width="50px" height="50px" />
+                    <img src={experience.image} alt="" width="50px" height="50px" className="pointer" />
                   ) : (
                     <div
                       className="d-flex justify-content-center align-items-center p-3 border border-secondary rounded-3 me-auto"
