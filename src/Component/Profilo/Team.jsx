@@ -113,7 +113,7 @@ const Team = () => {
                       <span className="fw-bold text-black" style={{ fontSize: "16px" }}>
                         Metti in risalto i tuoi servizi&nbsp;
                       </span>
-                      in un’apposita sezione sul tuo profilo, così sarà più facile trovarti.
+                      in un&apos;apposita sezione sul tuo profilo, così sarà più facile trovarti.
                     </p>
                     <a href="#">Inizia</a>
                     <BsXLg className="position-absolute xCarousel"></BsXLg>
