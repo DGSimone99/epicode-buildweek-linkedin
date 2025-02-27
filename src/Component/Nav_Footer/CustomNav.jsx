@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   Navbar,
   Nav,
@@ -29,7 +29,7 @@ import {
   GeoAltFill,
 } from "react-bootstrap-icons";
 
-import { fetchGetPost, fetchUser } from "../redux/actions";
+import { fetchGetPost, fetchJobs, fetchUser } from "../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink, useLocation } from "react-router";
 import { BsFillSlashSquareFill } from "react-icons/bs";
@@ -43,6 +43,14 @@ const CustomNav = () => {
     dispatch(fetchGetPost());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
+
+  const [query, setQuery] = useState("");
+
+  const handleSearch = () => {
+    if (query.trim()) {
+      dispatch(fetchJobs(query));
+    }
+  };
 
   /* console.log("SONO FETCHPOST", post); */
   const location = useLocation();
@@ -65,15 +73,18 @@ const CustomNav = () => {
                 className="search-icon d-flex align-items-center pe-0"
                 style={{ backgroundColor: "#F4F2EE", border: "none" }}
               >
-                <Search />
+                <Search onClick={handleSearch} />
               </InputGroup.Text>
               <FormControl
-                type="search"
+                type="text"
                 placeholder="Cerca"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
                 className="d-none d-md-block"
                 style={{ backgroundColor: "#F4F2EE", border: "none" }}
               />
             </InputGroup>
+
             {location.pathname === "/jobs" && (
               <InputGroup className="custom-input-group ms-3 d-flex flex-nowrap">
                 <InputGroup.Text

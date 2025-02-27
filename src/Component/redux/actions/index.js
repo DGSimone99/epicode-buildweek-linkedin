@@ -11,6 +11,9 @@ export const REMOVE_POST = "REMOVE_POST";
 export const setProfilesAction = (data) => ({ type: SET_PROFILES, payload: data });
 export const setUserAction = (data) => ({ type: SET_USER, payload: data });
 export const setExperiences = (data) => ({ type: SET_EXPERIENCES, payload: data });
+export const FETCH_JOBS_REQUEST = "FETCH_JOBS_REQUEST";
+export const FETCH_JOBS_SUCCESS = "FETCH_JOBS_SUCCESS";
+export const FETCH_JOBS_FAILURE = "FETCH_JOBS_FAILURE";
 
 export const fetchProfiles = () => {
   return (dispatch) => {
@@ -225,5 +228,23 @@ export const fetchExperience = () => {
         }
       })
       .catch((err) => console.error(err));
+  };
+};
+
+export const fetchJobsRequest = () => ({ type: FETCH_JOBS_REQUEST });
+export const fetchJobsSuccess = (jobs) => ({ type: FETCH_JOBS_SUCCESS, payload: jobs });
+export const fetchJobsFailure = (error) => ({ type: FETCH_JOBS_FAILURE, payload: error });
+
+export const fetchJobs = (query) => {
+  return async (dispatch) => {
+    dispatch(fetchJobsRequest());
+    try {
+      const response = await fetch(`https://strive-benchmark.herokuapp.com/api/jobs?search=${query}`);
+      if (!response.ok) throw new Error("Errore nel recupero dei dati");
+      const data = await response.json();
+      dispatch(fetchJobsSuccess(data.data));
+    } catch (error) {
+      dispatch(fetchJobsFailure(error.message));
+    }
   };
 };
