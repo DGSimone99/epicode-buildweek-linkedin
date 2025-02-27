@@ -4,7 +4,7 @@ import { BiCalendarAlt } from "react-icons/bi";
 import { BsFillBookmarkFill, BsFillSlashSquareFill, BsPlus } from "react-icons/bs";
 import { useSelector } from "react-redux";
 import { Link } from "react-router";
-
+import iconsh from "../../assets/iconsh.png";
 const User = () => {
   const user = useSelector((state) => state.user.content);
   return (
@@ -100,6 +100,13 @@ const User = () => {
               <NavLink className="fw-bold py-0 d-flex align-items-center">
                 <BiCalendarAlt className="me-2 text-black"></BiCalendarAlt>Eventi
               </NavLink>
+              <Link className="text-decoration-none mt-2" to="/shrek">
+                <Container fluid className="px-0 d-flex align-items-center">
+                  <img src={iconsh} width="16px" height="16px" alt="Shrek is love shrek is life" className="me-2 p-0" />
+
+                  <span className="text-black fw-bold fs-6 p-0">Shrekkizzati</span>
+                </Container>
+              </Link>
             </Container>
           </Card.Body>
         </Card>

@@ -47,7 +47,18 @@ const CustomNav = () => {
 
   const handleSearch = () => {
     if (query.trim()) {
-      dispatch(fetchJobs(query));
+      let searchType = "query";
+      let searchValue = query.trim();
+
+      if (query.startsWith("company:")) {
+        searchType = "company";
+        searchValue = query.replace("company:", "").trim();
+      } else if (query.startsWith("category:")) {
+        searchType = "category";
+        searchValue = query.replace("category:", "").trim();
+      }
+
+      dispatch(fetchJobs(searchType, searchValue));
     }
   };
 
