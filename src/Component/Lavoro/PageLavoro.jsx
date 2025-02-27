@@ -1,15 +1,19 @@
 import { Col, Row } from "react-bootstrap";
-import User from "../Home/User";
 import OffertePrincipali from "./OffertePrincipali";
 import OffertePremium from "./OffertePremium";
 import AltreOfferte from "./AltreOfferte";
+import FooterMini from "../Nav_Footer/FooterMini";
+import UserLavoro from "./UserLavoro";
 
 const PageLavoro = () => {
   return (
     <>
-      <Row xs={1} md={2}>
+      <Row xs={1} md={2} className="mb-5">
         <Col md={4}>
-          <User />
+          <UserLavoro />
+          <div className="d-none d-md-block">
+            <FooterMini />
+          </div>
         </Col>
         <Col md={8}>
           <OffertePrincipali />

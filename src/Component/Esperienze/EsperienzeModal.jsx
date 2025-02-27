@@ -1,14 +1,19 @@
-import { useState } from "react";
-import { Col, Container, Form, Row } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Col, Collapse, Container, Form, Row } from "react-bootstrap";
 import { Plus } from "react-bootstrap-icons";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { Link } from "react-router";
 import { fetchExperience } from "../redux/actions";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import CompetenzeModal from "./CompetenzeModal";
 
 function EsperienzeModal(props) {
+  const [competenzeModalShow, setCompetenzeModalShow] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
+  const experiences = useSelector((state) => state.experiences.content);
+  const experience = experiences.find((exp) => exp._id === props.experienceid);
   const [stillInJob, setStillinJob] = useState(true);
   const [role, setRole] = useState("");
   const [company, setCompany] = useState("");
@@ -18,6 +23,37 @@ function EsperienzeModal(props) {
   const [endYear, setEndYear] = useState("");
   const [description, setDescription] = useState("");
   const [area, setArea] = useState("");
+  useEffect(() => {
+    setRole("");
+    setCompany("");
+    setDescription("");
+    setArea("");
+    setStartMonth("");
+    setStartYear("");
+    setEndMonth("");
+    setEndYear("");
+    setDescription("");
+  }, [props.experienceid]);
+  useEffect(() => {
+    if (experience) {
+      setRole(experience.role);
+      setCompany(experience.company);
+      setDescription(experience.description);
+      setArea(experience.area);
+      const start = new Date(experience.startDate);
+      setStartMonth(start.getMonth() + 1);
+      setStartYear(start.getFullYear());
+      if (experience.endDate) {
+        const end = new Date(experience.endDate);
+        setEndMonth(end.getMonth() + 1);
+        setEndYear(end.getFullYear());
+        setStillinJob(false);
+      } else {
+        setStillinJob(true);
+      }
+    }
+  }, [experience]);
+
   const handleDelete = () => {
     fetch(
       "https://striveschool-api.herokuapp.com/api/profile/67bc4dcce703370015316db1/experiences/" + props.experienceid,
@@ -323,10 +359,14 @@ function EsperienzeModal(props) {
               <Button
                 variant="light"
                 className="rounded-pill border border-primary fw-bold d-flex align-items-center justify-content-center me-auto text-primary"
+                onClick={() => {
+                  setCompetenzeModalShow(true);
+                }}
               >
                 <Plus className="text-primary me-2" />
                 Aggiungi competenze
               </Button>
+              <CompetenzeModal show={competenzeModalShow} onHide={() => setCompetenzeModalShow(false)} />
             </Container>
             <Container fluid className="px-0 py-3">
               <h3>Media</h3>
@@ -337,10 +377,18 @@ function EsperienzeModal(props) {
               <Button
                 variant="light"
                 className="rounded-pill border border-primary fw-bold d-flex align-items-center justify-content-center me-auto text-primary"
+                onClick={() => setOpen(!open)}
+                aria-controls="example-collapse-text"
+                aria-expanded={open}
               >
                 <Plus className="text-primary me-2" />
                 Aggiungi Media
               </Button>
+              <Collapse in={open}>
+                <div id="example-collapse-text" className="py-3">
+                  <Form.Control type="file" />
+                </div>
+              </Collapse>
             </Container>
           </Container>
         </Modal.Body>
@@ -349,7 +397,8 @@ function EsperienzeModal(props) {
             <span
               className="text-secondary fs-5"
               onClick={() => {
-                handleDelete(), props.onHide();
+                handleDelete();
+                props.onHide();
               }}
             >
               Elimina esperienza

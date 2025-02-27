@@ -121,8 +121,9 @@ span {
   color: black;
 }
 
-.pAziende {
-  font-size: 0.7rem;
+.pAziende,
+#pFooter {
+  font-size: 0.7rem !important;
 }
 
 .textTruncate {
@@ -172,7 +173,15 @@ p {
   font-size: 0.9rem;
 }
 
-/*RESPONSIVE - NAVBAR*/
+.p {
+  font-size: 0.9rem !important;
+}
+
+.bi.bi-pencil-square {
+  color: #0d6efd !important;
+}
+
+/*RESPONSIVE*/
 
 @media screen and (max-width: 1024px) {
   .navbar {
@@ -183,8 +192,12 @@ p {
 @media screen and (max-width: 769px) {
   #navbar p,
   span,
-  .dropdown-toggle::after,
-  #dropdownAziende {
+  #navbar .dropdown-toggle::after,
+  #dropdownAziende,
+  #analisi,
+  #accedi,
+  #elementi,
+  #preferenze {
     display: none !important;
   }
   .search-icon {
