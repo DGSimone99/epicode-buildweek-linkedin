@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { useDispatch, useSelector } from "react-redux";
 import Emoji from "./Emoji";
-import { fetchSharePost } from "../redux/actions";
+import { fetchSharePost, sharePostImage } from "../redux/actions";
 import { Form } from "react-bootstrap";
 
 const ModalePost = (props) => {
@@ -19,6 +19,11 @@ const ModalePost = (props) => {
   const newPost = () => {
     dispatch(fetchSharePost(postText));
     setPostText("");
+  };
+
+  const [picture, setPicture] = useState([]);
+  const handlePicture = (event) => {
+    setPicture(event.target.files);
   };
 
   return (
@@ -45,6 +50,9 @@ const ModalePost = (props) => {
             <p style={{ fontSize: 12 }}>Pubblica: Chiunque</p>
           </div>
         </div>
+        <Form.Group controlId="formFile" className="d-flex align-items-center">
+          <Form.Control type="file" className="me-3" name="picture" onChange={handlePicture} />
+        </Form.Group>
       </Modal.Header>
       <div>
         <Form.Control
@@ -74,6 +82,7 @@ const ModalePost = (props) => {
             onClick={() => {
               newPost();
               props.onHide();
+              dispatch(sharePostImage(picture[0]));
             }}
           >
             Pubblica

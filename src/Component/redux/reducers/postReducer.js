@@ -1,4 +1,4 @@
-import { GET_POST, POST_POST, REMOVE_POST } from "../actions";
+import { GET_POST, POST_POST, POSTIMG_POST, REMOVE_POST } from "../actions";
 
 const initialState = {
   content: [],
@@ -20,6 +20,11 @@ const postReducer = (state = initialState, action) => {
       return {
         ...state,
         content: state.content.filter((_id) => _id !== action.payload),
+      };
+    case POSTIMG_POST:
+      return {
+        ...state,
+        content: action.payload,
       };
 
     default:
