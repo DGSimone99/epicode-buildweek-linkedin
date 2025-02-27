@@ -27,7 +27,7 @@ const Chat = () => {
           <p className="fw-semibold ms-2 mb-0">Messaggistica</p>
           <div className="d-flex gap-2 ms-auto">
             <ThreeDots size={17} className="ms-1 text-dark" />
-            <PencilSquare size={15} className="ms-1 text-dark" />
+            <PencilSquare size={15} color="black" className="ms-1 text-dark" />
             <ChevronCompactDown size={17} className="mx-1 text-dark" />
           </div>
         </div>
