@@ -5,6 +5,7 @@ import newsReducer from "../reducers/newsReducer";
 import otherUserReducer from "../reducers/otherUserReducer";
 import experienceReducer from "../reducers/experienceReducer";
 import postReducer from "../reducers/postReducer";
+import jobsReducer from "../reducers/jobsReducer";
 
 const mainReducer = combineReducers({
   profiles: profilesReducer,
@@ -13,6 +14,7 @@ const mainReducer = combineReducers({
   news: newsReducer,
   experiences: experienceReducer,
   post: postReducer,
+  jobs: jobsReducer,
 });
 const store = configureStore({
   reducer: mainReducer,
