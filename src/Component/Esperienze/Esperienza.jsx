@@ -68,7 +68,7 @@ const Esperienza = () => {
           })
         ) : (
           <Row>
-            <Col xs={1} className="d-flex">
+            <Col xs={2} xl={1} className="d-flex">
               <div
                 className="d-flex justify-content-center align-items-center p-3 border border-secondary rounded-3 me-auto"
                 style={{ width: "50px", height: "50px" }}

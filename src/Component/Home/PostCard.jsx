@@ -143,26 +143,26 @@ const PostCard = (props) => {
                 ) : (
                   <BsHandThumbsUp className="text-black  me-1"></BsHandThumbsUp>
                 )}
-                Consiglia
+                <p className="m-0">Consiglia</p>
               </Button>
             </div>
             <Button
               variant="primary"
               className="bg-transparent border-0 text-dark fw-semibold d-flex align-items-center ms-3"
             >
-              <ChatDots className="me-1"></ChatDots> Commenta
+              <ChatDots className="me-1"></ChatDots> <p className="m-0">Commenta</p>
             </Button>
             <Button
               variant="primary"
               className="bg-transparent border-0 text-dark fw-semibold d-flex align-items-center mx-3"
             >
-              <BiShareAlt className="me-1"></BiShareAlt> Diffondi il post
+              <BiShareAlt className="me-1"></BiShareAlt> <p className="m-0">Diffondi il post</p>
             </Button>
             <Button
               variant="primary"
               className="bg-transparent border-0 text-dark fw-semibold d-flex align-items-center"
             >
-              <SendFill className="me-1"></SendFill> Invia
+              <SendFill className="me-1"></SendFill> <p className="m-0">Invia</p>
             </Button>
           </div>
         </Card.Body>
