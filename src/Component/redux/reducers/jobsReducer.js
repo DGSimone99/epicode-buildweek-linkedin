@@ -9,7 +9,7 @@ const initialState = {
 const jobsReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_JOBS_REQUEST:
-      return { ...state, loading: true, error: null };
+      return { ...state, jobs: action.payload, loading: true, error: null };
     case FETCH_JOBS_SUCCESS:
       return { ...state, loading: false, jobs: action.payload };
     case FETCH_JOBS_FAILURE:

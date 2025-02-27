@@ -1,7 +1,7 @@
 import { Container, Dropdown } from "react-bootstrap";
 const FooterMini = () => {
   return (
-    <footer className="py-3 text-muted text-center m-auto sticky-top footerSticky">
+    <footer className="py-3 text-muted text-center m-auto sticky-top footerSticky" style={{ zIndex: "0" }}>
       <Container>
         <div className="d-flex flex-wrap justify-content-center">
           <p id="pFooter" className="text-muted text-decoration-none my-1 mx-2" href="#">

@@ -15,7 +15,7 @@ const OffertePrincipali = () => {
         </p>
         {loading && <p>Caricamento...</p>}
         {error && <p>Errore: {error}</p>}
-        {!loading && !error && jobs.map((job) => <AnnuncioSingolo key={job._id} job={job} />)}
+        {!loading && !error && jobs.slice(0, 3).map((job) => <AnnuncioSingolo key={job._id} job={job} />)}
       </Container>
       <div className="pb-3">
         <p className="fw-bold text-center mb-0 ">

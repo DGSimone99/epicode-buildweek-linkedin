@@ -16,10 +16,17 @@ const ModalePost = (props) => {
     setPostText(event.target.value);
   };
 
+  const [picture, setPicture] = useState([]);
+  const handlePicture = (event) => {
+    setPicture(event.target.files);
+  };
+
   const newPost = () => {
-    dispatch(fetchSharePost(postText));
+    dispatch(fetchSharePost(postText, picture[0]));
     setPostText("");
   };
+
+  const [display, setDisplay] = useState(false);
 
   return (
     <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
@@ -57,10 +64,16 @@ const ModalePost = (props) => {
         />
       </div>
       <Emoji value={postText} onChange={setPostText} />
-      <div className="d-flex ms-3 mb-3">
-        <Image />
-        <Calendar className=" ms-4" />
-        <PlusLg className=" ms-4" />
+
+      <div className="d-flex ms-3 mb-3 align-items-center">
+        <Image onClick={() => setDisplay(!display)} className="pointer" />
+        <Calendar className=" ms-4 pointer" />
+        <PlusLg onClick={() => setDisplay(!display)} className=" ms-4 pointer" />
+        {display && (
+          <Form.Group controlId="formFile" className="mx-3">
+            <Form.Control type="file" name="picture" onChange={handlePicture} />
+          </Form.Group>
+        )}
       </div>
 
       <Modal.Footer>
