@@ -62,16 +62,16 @@ const Team = () => {
             </Col>
           </Row>
           <div className="mt-4">
-            <Button variant="primary" className="rounded-pill fw-bold">
+            <Button variant="primary" className="rounded-pill fw-bold my-1">
               Disponibile per
             </Button>
-            <Button variant="outline-primary" className="rounded-pill fw-bold mx-2">
+            <Button variant="outline-primary" className="rounded-pill fw-bold my-1 mx-2">
               Aggiungi sezione del profilo
             </Button>
-            <Button variant="outline-primary" className="rounded-pill fw-bold me-2">
+            <Button variant="outline-primary" className="rounded-pill fw-bold my-1 me-2">
               Migliora profilo
             </Button>
-            <Button variant="outline-secondary" className="rounded-pill fw-bold">
+            <Button variant="outline-secondary" className="rounded-pill fw-bold my-1">
               Risorse
             </Button>
           </div>
