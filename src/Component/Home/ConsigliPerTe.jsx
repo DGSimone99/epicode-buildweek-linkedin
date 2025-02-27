@@ -7,7 +7,7 @@ const ConsigliPerTe = () => {
       <Container className="p-4">
         <h6>Consigli per te</h6>
         <Row className=" aling-items-center mt-4 justify-content-between">
-          <Col xs={8} xl={9} className="d-flex">
+          <Col xs={8} xl={9} className="d-flex pointer">
             <div>
               <Image
                 src="https://media.licdn.com/dms/image/v2/C510BAQG_1VWEGBmO9A/company-logo_100_100/company-logo_100_100/0/1631353289340?e=1748476800&v=beta&t=hGklvdByfYynRr_VdJqCTEVBdvBL1BLLYXOl6Jizu1Y"
@@ -32,7 +32,7 @@ const ConsigliPerTe = () => {
         </Row>
         <hr />
         <Row className=" aling-items-center mt-3 justify-content-between">
-          <Col xs={8} xl={9} className="d-flex">
+          <Col xs={8} xl={9} className="d-flex pointer">
             <div>
               <Image
                 src="https://media.licdn.com/dms/image/v2/C4E0BAQEooBvMO2kBVg/company-logo_100_100/company-logo_100_100/0/1631311071955?e=1748476800&v=beta&t=jfxXIAMr3fKBhvJDtJua1gVcbRyy_Yfucv-Pem2mrm4"
@@ -59,7 +59,7 @@ const ConsigliPerTe = () => {
         </Row>
         <hr />
         <Row className=" aling-items-center mt-3 justify-content-between">
-          <Col xs={8} xl={9} className="d-flex">
+          <Col xs={8} xl={9} className="d-flex pointer">
             <div>
               <Image
                 src="https://media.licdn.com/dms/image/v2/D4E0BAQFWt4Tl53wjZQ/company-logo_100_100/company-logo_100_100/0/1705960989383/docker_logo?e=1748476800&v=beta&t=vU84PKYYfqmgVMruZKRoXx_x_ySVHvG4-iT33rh5uMQ"
@@ -85,7 +85,7 @@ const ConsigliPerTe = () => {
           </Col>
         </Row>
       </Container>
-      <div className="border-top py-3">
+      <div className="border-top py-3 pointer">
         <p className="fw-bold text-center mb-0 ">
           Visualizza altro <ArrowRight />
         </p>

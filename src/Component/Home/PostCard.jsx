@@ -13,13 +13,14 @@ import {
   ThreeDots,
   TrashFill,
 } from "react-bootstrap-icons";
-import { BiGlobe, BiX, BiXCircle } from "react-icons/bi";
+import { BiGlobe, BiShapeCircle, BiShapeTriangle, BiShareAlt, BiX, BiXCircle } from "react-icons/bi";
 import { BsHandThumbsUp, BsHandThumbsUpFill } from "react-icons/bs";
 import { useNavigate } from "react-router";
 import { fetchGetPost, removePost } from "../redux/actions";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const PostCard = (props) => {
+  const user = useSelector((state) => state.user.content);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [like, setLike] = useState(Math.floor(Math.random() * 100));
@@ -27,9 +28,9 @@ const PostCard = (props) => {
 
   const [display, setDisplay] = useState(true);
 
-  const [followers, setFollowers] = useState(Math.floor(Math.random() * 1000));
-  const [comments, setComments] = useState(Math.floor(Math.random() * 100));
-  const [shares, setShares] = useState(Math.floor(Math.random() * 100));
+  const [followers] = useState(Math.floor(Math.random() * 1000));
+  const [comments] = useState(Math.floor(Math.random() * 100));
+  const [shares] = useState(Math.floor(Math.random() * 100));
 
   const likeClick = () => {
     if (liked) {
@@ -88,7 +89,7 @@ const PostCard = (props) => {
                   <Dropdown.Item className="fw-semibold d-flex align-items-center py-3">
                     <FlagFill className="me-2 text-black"></FlagFill> Segnala post
                   </Dropdown.Item>
-                  {props.id == "67bc4dcce703370015316db1" ? (
+                  {props.id == user._id ? (
                     <Dropdown.Item
                       className="fw-semibold d-flex align-items-center py-3"
                       onClick={() => {
@@ -131,7 +132,7 @@ const PostCard = (props) => {
             </Card.Text>
           </div>
           <hr className="mx-3 pt-0 mt-0"></hr>
-          <div className="d-flex px-4 pb-3 justify-content-center">
+          <div className="d-flex px-4 pb-3 justify-content-center align-items-center">
             <div onClick={likeClick}>
               <Button
                 variant="primary"
@@ -155,7 +156,7 @@ const PostCard = (props) => {
               variant="primary"
               className="bg-transparent border-0 text-dark fw-semibold d-flex align-items-center mx-3"
             >
-              <Recycle className="me-1"></Recycle> Diffondi il post
+              <BiShareAlt className="me-1"></BiShareAlt> Diffondi il post
             </Button>
             <Button
               variant="primary"

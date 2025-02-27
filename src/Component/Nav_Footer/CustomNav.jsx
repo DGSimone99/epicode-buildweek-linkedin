@@ -187,19 +187,19 @@ const CustomNav = () => {
                   <BsFillSlashSquareFill className="me-2" style={{ color: "#E7A33E" }}></BsFillSlashSquareFill> Prova 1
                   mese di Premium per 0 EUR
                 </div>
-                <div>Impostazioni e privacy</div>
-                <div>Guida</div>
-                <div>Lingua</div>
+                <div className="pointer2">Impostazioni e privacy</div>
+                <div className="pointer2">Guida</div>
+                <div className="pointer2">Lingua</div>
               </Dropdown.Item>
               <Dropdown.Divider />
               <Dropdown.Item href="#">
                 <h6>Gestisci</h6>
-                <div>Post e attività</div>
-                <div>Account per la pubblicazione di of...</div>
+                <div className="pointer2">Post e attività</div>
+                <div className="pointer2">Account per la pubblicazione di of...</div>
               </Dropdown.Item>
               <Dropdown.Divider />
               <Dropdown.Item href="#">
-                <div className="m-0">Esci</div>
+                <div className="m-0 pointer2">Esci</div>
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
@@ -209,36 +209,36 @@ const CustomNav = () => {
               <Grid3x3GapFill size={20} className="mb-1 mx-4 d-block" />
               <span>Per le aziende</span>
             </Dropdown.Toggle>
-            <Dropdown.Menu className="dropdown-menu-end mt-2" style={{ width: "680px" }}>
+            <Dropdown.Menu className="dropdown-menu-end mt-2 " style={{ width: "680px" }}>
               <Container className="p-4">
                 <Row xs={1} md={2}>
                   <Col className="border-end">
                     <div href="#">
                       <h5>Le mie App</h5>
-                      <h6 className="mt-4 fw-semibold">
+                      <h6 className="mt-4 fw-semibold pointer2">
                         <CompassFill /> Trova lead
                       </h6>
-                      <h6 className="my-4 fw-semibold">
+                      <h6 className="my-4 fw-semibold pointer2">
                         <PeopleFill /> Gruppi
                       </h6>
                       <h6 className="fw-semibold text-secondary mt-4">Talent</h6>
-                      <h6 className="my-4 fw-semibold">
+                      <h6 className="my-4 fw-semibold pointer2">
                         <FileEarmarkBarGraphFill />
                         Talent Insights
                       </h6>
-                      <h6 className="my-4 fw-semibold">
+                      <h6 className="my-4 fw-semibold pointer2">
                         <LaptopFill /> Pubblica un&apos; offerta di lavoro
                       </h6>
                       <h6 className="fw-semibold text-secondary mt-4">Vendite</h6>
-                      <h6 className="my-4 fw-semibold">
+                      <h6 className="my-4 fw-semibold pointer2">
                         <InfoCircleFill /> Marketplace dei servizi
                       </h6>
                       <h6 className="fw-semibold text-secondary mt-4">Marketing</h6>
-                      <h6 className="my-4 fw-semibold">
+                      <h6 className="my-4 fw-semibold pointer2">
                         <Bullseye /> Pubblicizza
                       </h6>
                       <h6 className="fw-semibold text-secondary mt-4">Learning</h6>
-                      <h6 className="my-4 fw-semibold">
+                      <h6 className="my-4 fw-semibold pointer2">
                         <PlayBtnFill /> Learning
                       </h6>
                     </div>
@@ -246,21 +246,21 @@ const CustomNav = () => {
                   <Col className="ps-4">
                     <div href="#">
                       <h5>Scopri altro per il business</h5>
-                      <h6 className="mt-4 mb-1 fw-semibold">Assumi su Linkedin</h6>
+                      <h6 className="mt-4 mb-1 fw-semibold pointer2">Assumi su Linkedin</h6>
                       <p className="pAziende">Trova, attrai e assumi</p>
-                      <h6 className="mt-4 mb-1 fw-semibold">Vendi con Linkedin</h6>
+                      <h6 className="mt-4 mb-1 fw-semibold pointer2">Vendi con Linkedin</h6>
                       <p className="pAziende">Sblocca nuove opportunità di vendita</p>
-                      <h6 className="mt-4 mb-1 fw-semibold">Offerta di lavoro gratuita</h6>
+                      <h6 className="mt-4 mb-1 fw-semibold pointer2">Offerta di lavoro gratuita</h6>
                       <p className="pAziende">Ottieni rapidamente candidati qualificati</p>
-                      <h6 className="mt-4 mb-1 fw-semibold">Fai pubblicità su Linkedin</h6>
+                      <h6 className="mt-4 mb-1 fw-semibold pointer2">Fai pubblicità su Linkedin</h6>
                       <p className="pAziende">Acquisisci clienti e fai crescere la tua azienda</p>
-                      <h6 className="mt-4 mb-1 fw-semibold">Inizia con Premium</h6>
+                      <h6 className="mt-4 mb-1 fw-semibold pointer2">Inizia con Premium</h6>
                       <p className="pAziende">Amplia e sfrutta la tua rete</p>
-                      <h6 className="mt-4 mb-1 fw-semibold">Impara con Linkedin</h6>
+                      <h6 className="mt-4 mb-1 fw-semibold pointer2">Impara con Linkedin</h6>
                       <p className="pAziende">Corsi per formare i tuoi dipendenti</p>
-                      <h6 className="mt-4 mb-1 fw-semibold">Admin Center</h6>
+                      <h6 className="mt-4 mb-1 fw-semibold pointer2">Admin Center</h6>
                       <p className="pAziende">Gestisci i dettagli di fatturazione e account</p>
-                      <h6 className="mt-4 mb-1 fw-semibold">Crea una pagina aziendale +</h6>
+                      <h6 className="mt-4 mb-1 fw-semibold pointer2">Crea una pagina aziendale +</h6>
                     </div>
                   </Col>
                 </Row>
