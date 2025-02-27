@@ -3,6 +3,7 @@ import FooterMini from "../Nav_Footer/FooterMini";
 import MyNetwork from "./MyNetwork";
 import Invites from "./Invites";
 import Popular from "./Popular";
+import Conoscenti from "./Conoscenti";
 
 const Network = () => {
   return (
@@ -16,6 +17,7 @@ const Network = () => {
         </Col>
         <Col md={8}>
           <Invites />
+          <Conoscenti />
           <Popular />
         </Col>
       </Row>
