@@ -8,12 +8,11 @@ import {
   FlagFill,
   HandThumbsUpFill,
   Link45deg,
-  Recycle,
   SendFill,
   ThreeDots,
   TrashFill,
 } from "react-bootstrap-icons";
-import { BiGlobe, BiPencil, BiShapeCircle, BiShapeTriangle, BiShareAlt, BiX, BiXCircle } from "react-icons/bi";
+import { BiGlobe, BiPencil, BiShareAlt, BiX, BiXCircle } from "react-icons/bi";
 import { BsHandThumbsUp, BsHandThumbsUpFill } from "react-icons/bs";
 import { useNavigate } from "react-router";
 import { fetchGetPost, removePost } from "../redux/actions";

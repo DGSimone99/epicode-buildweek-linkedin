@@ -1,4 +1,4 @@
-import { GET_POST, POST_POST, REMOVE_POST, EDIT_POST } from "../actions";
+import { GET_POST, POST_POST, REMOVE_POST } from "../actions";
 
 const initialState = {
   content: [],
