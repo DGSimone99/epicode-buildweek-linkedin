@@ -361,3 +361,30 @@ export const fetchGetComments = () => {
       .catch((err) => console.error(err));
   };
 };
+export const fetchNewComment = (comment, id) => {
+  return (dispatch) => {
+    fetch("https://striveschool-api.herokuapp.com/api/comments/", {
+      method: "POST",
+      headers: {
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2JjNGRjY2U3MDMzNzAwMTUzMTZkYjEiLCJpYXQiOjE3NDAzOTM5MzIsImV4cCI6MTc0MTYwMzUzMn0.1t8kxCm5d0UPnuFQqZs9G6-VZkPjsGpIMIhIadrrE4Q",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        comment: comment,
+        rate: 5,
+        elementId: id,
+      }),
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        if (data) {
+          console.log("commento inviato");
+        } else {
+          alert("il post non è stato pubblicato");
+        }
+        dispatch(fetchGetComments());
+      })
+      .catch((err) => console.error(err));
+  };
+};
