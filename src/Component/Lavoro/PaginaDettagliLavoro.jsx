@@ -5,10 +5,12 @@ import NavLavoro from "../Nav_Footer/NavLavoro";
 import { useSelector } from "react-redux";
 import { useState } from "react";
 import FooterMini from "../Nav_Footer/FooterMini";
+import { useParams } from "react-router";
 
 const PaginaDettagliLavoro = () => {
+  const { id } = useParams();
   const { jobs } = useSelector((state) => state.jobs);
-  const [select, setSelect] = useState(jobs[0]);
+  const [select, setSelect] = useState(jobs.find((job) => job._id == id));
 
   console.log("SONO JOB", jobs);
   return (

@@ -2,6 +2,9 @@ import { Col, Row } from "react-bootstrap";
 import FooterMini from "../Nav_Footer/FooterMini";
 import MyNetwork from "./MyNetwork";
 import Invites from "./Invites";
+import Annuncio from "../Home/Annuncio";
+import Giochi from "./Giochi";
+import Conoscenti from "./Conoscenti";
 
 const Network = () => {
   return (
@@ -24,7 +27,6 @@ const Network = () => {
           />
           <Conoscenti titolo="Persone che potresti conoscere in Roma" partenza={400} fine={408} />
           <Conoscenti titolo="Persone da seguire in base alla tua attività" partenza={300} fine={308} />
-          <Popular />
         </Col>
       </Row>
     </>
