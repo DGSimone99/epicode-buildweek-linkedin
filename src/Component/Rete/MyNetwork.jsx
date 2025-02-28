@@ -5,7 +5,7 @@ import { HiUserGroup } from "react-icons/hi";
 const MyNetwork = () => {
   return (
     <>
-      <Card>
+      <Card className=" mb-2">
         <Card.Body className="px-2">
           <Container className="d-flex flex-column align-items-start">
             <Card.Text className="fw-bold fs-6 mb-0">Gestisci la tua rete</Card.Text>
