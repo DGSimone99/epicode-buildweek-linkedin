@@ -2,7 +2,6 @@ import { Col, Row } from "react-bootstrap";
 import FooterMini from "../Nav_Footer/FooterMini";
 import MyNetwork from "./MyNetwork";
 import Invites from "./Invites";
-import Popular from "./Popular";
 
 const Network = () => {
   return (
@@ -16,7 +15,6 @@ const Network = () => {
         </Col>
         <Col md={8}>
           <Invites />
-          <Popular />
         </Col>
       </Row>
     </>

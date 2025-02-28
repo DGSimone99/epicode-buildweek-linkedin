@@ -5,13 +5,14 @@ import { PencilSquare, ThreeDots, ChevronCompactDown, Search, Sliders2 } from "r
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Dropdown, DropdownButton, Form, Image, InputGroup } from "react-bootstrap";
 import { useSelector } from "react-redux";
+import messages from "../../assets/NoMessage.png";
 
 const Chat = () => {
   const [open, setOpen] = useState(false);
   const user = useSelector((state) => state.user.content);
 
   return (
-    <div className="position-fixed bottom-0 end-0 bg-white border rounded-top" style={{ width: "275px", zIndex: "3" }}>
+    <div className="position-fixed bottom-0 end-0 bg-white border rounded-top" style={{ width: "300px", zIndex: "3" }}>
       <Button onClick={() => setOpen(!open)} aria-controls="chat-collapse-content" aria-expanded={open} variant="light" className="w-100 p-0 border-0">
         <div className="d-flex align-items-center justify-content-between p-2 border">
           <Image
@@ -49,6 +50,7 @@ const Chat = () => {
             </DropdownButton>
           </InputGroup>
           <div className="text-center pb-5 mb-5">
+            <Image src={messages}></Image>
             <h4>Ancora nessun messaggio</h4>
             <p>Entra in contatto e dai il via a una conversazione per far decollare la tua carriera</p>
             <Button className="bg-white text-secondary fw-bold border-secondary rounded-5">Invia un messaggio</Button>
