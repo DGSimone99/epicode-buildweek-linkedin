@@ -1,12 +1,19 @@
 import { Container, Image } from "react-bootstrap";
 import { useNavigate } from "react-router";
 
-const SingoloLavoro = ({ job }) => {
+const SingoloLavoro = ({ select, job }) => {
   const navigate = useNavigate();
 
   return (
-    <Container className="bg-white mt-0 border p-3" onClick={() => navigate("/pagedettagli/" + job._id)}>
-      <div className=" d-flex justify-content-start">
+    <Container
+      className={`${
+        select && select._id === job._id
+          ? "bg-light mt-0 p-3 border-start border-3 border-secondary"
+          : "bg-white mt-0 p-3 border-top  border-bottom"
+      }`}
+      onClick={() => navigate("/pagedettagli/" + job._id)}
+    >
+      <div className=" d-flex justify-content-start ">
         <div className="me-4">
           <Image
             src={
