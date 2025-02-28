@@ -30,6 +30,7 @@ const PostCard = (props) => {
   const dispatch = useDispatch();
   const [like, setLike] = useState(Math.floor(Math.random() * 100));
   const [liked, setLiked] = useState(false);
+  const [showComments, setShowComments] = useState(false);
 
   const [display, setDisplay] = useState(true);
 
@@ -156,7 +157,7 @@ const PostCard = (props) => {
             <div onClick={likeClick}>
               <Button
                 variant="primary"
-                className="bg-transparent border-0 text-dark fw-semibold d-flex align-items-center"
+                className="bg-transparent border-0 text-dark fw-semibold d-flex align-items-center  pointer3"
               >
                 {liked ? (
                   <BsHandThumbsUpFill className="text-info me-1"></BsHandThumbsUpFill>
@@ -168,19 +169,23 @@ const PostCard = (props) => {
             </div>
             <Button
               variant="primary"
-              className="bg-transparent border-0 text-dark fw-semibold d-flex align-items-center ms-3"
+              className="bg-transparent border-0 text-dark fw-semibold d-flex align-items-center ms-3  pointer3"
+              onClick={() => {
+                setShowComments(!showComments);
+              }}
             >
-              <ChatDots className="me-1"></ChatDots> <p className="m-0">Commenta</p>
+              <ChatDots className={`me-1 ${showComments ? "text-info" : "text-black"}`}></ChatDots>{" "}
+              <p className="m-0">Commenta</p>
             </Button>
             <Button
               variant="primary"
-              className="bg-transparent border-0 text-dark fw-semibold d-flex align-items-center mx-3"
+              className="bg-transparent border-0 text-dark fw-semibold d-flex align-items-center mx-3  pointer3"
             >
               <BiShareAlt className="me-1"></BiShareAlt> <p className="m-0">Diffondi il post</p>
             </Button>
             <Button
               variant="primary"
-              className="bg-transparent border-0 text-dark fw-semibold d-flex align-items-center"
+              className="bg-transparent border-0 text-dark fw-semibold d-flex align-items-center  pointer3"
             >
               <SendFill className="me-1"></SendFill> <p className="m-0">Invia</p>
             </Button>
@@ -210,7 +215,7 @@ const PostCard = (props) => {
                   ></TextareaAutosize>
                 </Col>
               </Row>
-              <Comments comments={thisPostComments} />
+              {showComments && <Comments comments={thisPostComments} />}
             </Container>
           ) : (
             <Container className="pb-3">
