@@ -15,13 +15,14 @@ import {
 import { BiGlobe, BiPencil, BiShareAlt, BiX, BiXCircle } from "react-icons/bi";
 import { BsHandThumbsUp, BsHandThumbsUpFill } from "react-icons/bs";
 import { useNavigate } from "react-router";
-import { fetchGetPost, removePost } from "../redux/actions";
+import { fetchGetPost, fetchNewComment, removePost } from "../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import ModalePost from "./ModalePost";
 import Comments from "./Comments";
 import TextareaAutosize from "react-textarea-autosize";
 const PostCard = (props) => {
   const postComments = useSelector((state) => state.comments.content);
+  const [commentText, setCommentText] = useState("");
   const [thisPostComments, setThisPostComments] = useState([]);
   const [modalShow, setModalShow] = React.useState(false);
   const user = useSelector((state) => state.user.content);
@@ -34,7 +35,7 @@ const PostCard = (props) => {
 
   const [followers] = useState(Math.floor(Math.random() * 1000));
   const [shares] = useState(Math.floor(Math.random() * 100));
-
+  console.log(commentText);
   const likeClick = () => {
     if (liked) {
       setLike(like - 1);
@@ -54,7 +55,7 @@ const PostCard = (props) => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("qui ci va la post dei commenti");
+    dispatch(fetchNewComment(commentText, props.postId));
   };
   return (
     <Card className="mt-3">
@@ -204,6 +205,8 @@ const PostCard = (props) => {
                     className="form-control rounded-5"
                     placeholder="Aggiungi il tuo commento..."
                     onKeyDown={handleKeyDown}
+                    value={commentText}
+                    onChange={(e) => setCommentText(e.target.value)}
                   ></TextareaAutosize>
                 </Col>
               </Row>
@@ -229,6 +232,8 @@ const PostCard = (props) => {
                     className="form-control rounded-5"
                     placeholder="Aggiungi il tuo commento..."
                     onKeyDown={handleKeyDown}
+                    value={commentText}
+                    onChange={(e) => setCommentText(e.target.value)}
                   ></TextareaAutosize>
                 </Col>
               </Row>
