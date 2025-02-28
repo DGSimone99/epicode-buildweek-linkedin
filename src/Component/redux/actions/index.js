@@ -296,6 +296,10 @@ export const fetchJobs = (searchType, value, location = "") => {
         jobs = jobs.filter((job) => job.candidate_required_location?.toLowerCase().includes(location.toLowerCase()));
       }
 
+      if (jobs.length === 0) {
+        throw new Error("Nessun risultato trovato per questa ricerca.");
+      }
+
       dispatch(fetchJobsSuccess(jobs));
     } catch (error) {
       console.error("Errore:", error);
@@ -308,6 +312,7 @@ export const removeJob = (jobId) => ({
   type: REMOVE_JOB,
   payload: jobId,
 });
+
 export const editPost = (postId, testo, file) => {
   return async (dispatch) => {
     try {
