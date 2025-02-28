@@ -6,9 +6,10 @@ import AltreOfferte from "./AltreOfferte";
 import FooterMini from "../Nav_Footer/FooterMini";
 import UserLavoro from "./UserLavoro";
 import SpazioCercaLavoro from "./SpazioCercaLavoro";
+import Loader from "../Loader";
 
 const PageLavoro = () => {
-  const { jobs } = useSelector((state) => state.jobs);
+  const { jobs, loading } = useSelector((state) => state.jobs);
 
   const hasAnnuncioSingolo = jobs && jobs.length > 0;
 
@@ -22,7 +23,8 @@ const PageLavoro = () => {
           </div>
         </Col>
         <Col md={8}>
-          {!hasAnnuncioSingolo && <SpazioCercaLavoro />}
+          {loading && <Loader />}
+          {!loading && !hasAnnuncioSingolo && <SpazioCercaLavoro />}
           {hasAnnuncioSingolo && <OffertePrincipali />}
           {hasAnnuncioSingolo && <OffertePremium />}
           {hasAnnuncioSingolo && <AltreOfferte />}
