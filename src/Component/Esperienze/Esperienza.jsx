@@ -40,7 +40,7 @@ const Esperienza = () => {
           experiences.map((experience) => {
             return (
               <Row key={experience._id}>
-                <Col xs={1} className="d-flex">
+                <Col xs={2} xl={1} className="d-flex">
                   {experience.image ? (
                     <img src={experience.image} alt="" width="50px" height="50px" className="pointer" />
                   ) : (

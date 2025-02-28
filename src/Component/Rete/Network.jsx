@@ -2,10 +2,6 @@ import { Col, Row } from "react-bootstrap";
 import FooterMini from "../Nav_Footer/FooterMini";
 import MyNetwork from "./MyNetwork";
 import Invites from "./Invites";
-import Popular from "./Popular";
-import Conoscenti from "./Conoscenti";
-import Annuncio from "../Home/Annuncio";
-import Giochi from "./Giochi";
 
 const Network = () => {
   return (
