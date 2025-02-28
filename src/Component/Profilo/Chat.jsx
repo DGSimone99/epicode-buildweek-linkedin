@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Collapse from "react-bootstrap/Collapse";
-import { PencilSquare, ThreeDots, ChevronCompactDown, Search, Sliders2 } from "react-bootstrap-icons";
+import { PencilSquare, ThreeDots, ChevronCompactDown, Search, Sliders2, ChevronCompactUp } from "react-bootstrap-icons";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Dropdown, DropdownButton, Form, Image, InputGroup } from "react-bootstrap";
 import { useSelector } from "react-redux";
@@ -37,7 +37,15 @@ const Chat = () => {
           <div className="d-flex gap-2 ms-auto">
             <ThreeDots size={17} className="ms-1 text-dark" />
             <PencilSquare size={15} color="black" className="ms-1 text-dark" />
-            <ChevronCompactDown size={17} className="mx-1 text-dark" />
+            {open == true ? (
+              <p className="ms-auto mb-0 pointer " onClick={() => setOpen(false)}>
+                <ChevronCompactDown size={17} className="mx-1 text-dark" />
+              </p>
+            ) : (
+              <p className="ms-auto mb-0 pointer" onClick={() => setOpen(true)}>
+                <ChevronCompactUp size={17} className="mx-1 text-dark" />
+              </p>
+            )}
           </div>
         </div>
       </Button>
