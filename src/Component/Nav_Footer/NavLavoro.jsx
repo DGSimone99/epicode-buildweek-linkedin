@@ -1,55 +1,17 @@
-import { useEffect, useState } from "react";
-import {
-  Navbar,
-  Nav,
-  Form,
-  FormControl,
-  Image,
-  Container,
-  Dropdown,
-  InputGroup,
-  Button,
-  Col,
-  Row,
-} from "react-bootstrap";
-import {
-  HouseDoorFill,
-  PeopleFill,
-  BriefcaseFill,
-  ChatDotsFill,
-  BellFill,
-  Grid3x3GapFill,
-  Search,
-  CompassFill,
-  FileEarmarkBarGraphFill,
-  LaptopFill,
-  InfoCircleFill,
-  Bullseye,
-  PlayBtnFill,
-  GeoAltFill,
-} from "react-bootstrap-icons";
+import { useEffect } from "react";
+import { Navbar, Nav, Image } from "react-bootstrap";
 
-import { fetchGetPost, fetchJobs, fetchUser } from "../redux/actions";
-import { useDispatch, useSelector } from "react-redux";
-import { Link, NavLink, useLocation } from "react-router";
-import { BsFillSlashSquareFill } from "react-icons/bs";
+import { fetchGetPost, fetchUser } from "../redux/actions";
+import { useDispatch } from "react-redux";
+import { NavLink } from "react-router";
 
 const NavLavoro = () => {
-  const user = useSelector((state) => state.user.content);
   const dispatch = useDispatch();
-  const location = useLocation();
-  const [query, setQuery] = useState("");
 
   useEffect(() => {
     dispatch(fetchUser());
     dispatch(fetchGetPost());
   }, [dispatch]);
-
-  const handleSearch = () => {
-    if (query.trim()) {
-      dispatch(fetchJobs(query));
-    }
-  };
 
   return (
     <Navbar
