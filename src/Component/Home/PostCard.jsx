@@ -20,9 +20,11 @@ import { useDispatch, useSelector } from "react-redux";
 import ModalePost from "./ModalePost";
 import Comments from "./Comments";
 import TextareaAutosize from "react-textarea-autosize";
+
 const PostCard = (props) => {
   const postComments = useSelector((state) => state.comments.content);
   const [commentText, setCommentText] = useState("");
+
   const [thisPostComments, setThisPostComments] = useState([]);
   const [modalShow, setModalShow] = React.useState(false);
   const user = useSelector((state) => state.user.content);

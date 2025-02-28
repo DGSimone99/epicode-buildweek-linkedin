@@ -1,10 +1,12 @@
 import { Col, Container, Row } from "react-bootstrap";
 import { ThreeDots } from "react-bootstrap-icons";
 import { useSelector } from "react-redux";
+import EditComment from "./EditComment";
+import { useState } from "react";
 
 const Comments = (props) => {
   const users = useSelector((state) => state.profiles.content);
-
+  const [editShow, setEditShow] = useState(false);
   return (
     <Container fluid>
       {users &&
@@ -34,7 +36,8 @@ const Comments = (props) => {
                     <span className="text-secondary">{"user title"}</span>
                   </div>
                   <div>
-                    <ThreeDots />
+                    <ThreeDots onClick={() => setEditShow(true)} />
+                    <EditComment show={editShow} onHide={() => setEditShow(false)} commentId={comment._id} />
                   </div>
                 </Col>
               </Row>
