@@ -8,14 +8,14 @@ import Conoscenti from "./Conoscenti";
 const Network = () => {
   return (
     <>
-      <Row xs={1} md={2} className="mb-5">
-        <Col md={4}>
+      <Row xs={1} md={2} className="mb-5 justify-content-center">
+        <Col md={3}>
           <MyNetwork />
           <div className="d-none d-md-block">
             <FooterMini />
           </div>
         </Col>
-        <Col md={8}>
+        <Col md={7}>
           <Invites />
           <Conoscenti />
           <Popular />

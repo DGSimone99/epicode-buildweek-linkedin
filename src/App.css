@@ -27,6 +27,21 @@ body {
   left: 30px;
 }
 
+.cardUserImg2 {
+  position: absolute;
+  top: 30px;
+  left: 60px;
+}
+
+.nome-profile {
+  font-size: 1rem !important;
+  font-weight: bolder !important;
+}
+
+.title-profile {
+  font-size: 0.85rem !important;
+}
+
 .plusImg {
   color: #0a66c2;
   border: solid 0.05em #0a66c2 !important;

@@ -14,10 +14,13 @@ const Conoscenti = () => {
   console.log("SONO PROFILES", profiles);
   return (
     <Container className="bg-white p-3 rounded-3 border">
-      <Row xs={4}>
-        <Col>
-          <CardUtenti />
-        </Col>
+      <h5>Persone che potresti conoscere in base alla tua attività recente</h5>
+      <Row xs={4} className="g-2">
+        {profiles.slice(200, 200 + 8).map((profile) => (
+          <Col key={profile._id}>
+            <CardUtenti profile={profile} />
+          </Col>
+        ))}
       </Row>
     </Container>
   );
