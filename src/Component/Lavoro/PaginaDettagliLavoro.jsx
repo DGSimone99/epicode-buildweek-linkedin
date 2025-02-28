@@ -12,7 +12,6 @@ const PaginaDettagliLavoro = () => {
   const { jobs } = useSelector((state) => state.jobs);
   const [select, setSelect] = useState(jobs.find((job) => job._id == id));
 
-  console.log("SONO JOB", jobs);
   return (
     <>
       <NavLavoro />
@@ -27,7 +26,7 @@ const PaginaDettagliLavoro = () => {
             <div className="overflow-y-scroll" style={{ height: "calc(100vh - 300px)" }}>
               {jobs.slice(0, 15).map((job) => (
                 <div className="pointer" key={job._id} onClick={() => setSelect(job)}>
-                  <SingoloLavoro job={job} />
+                  <SingoloLavoro job={job} select={select} />
                 </div>
               ))}
               <div className="bg-white border">
