@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Button, Card, Dropdown, Image } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Button, Card, Col, Container, Dropdown, Image, Row } from "react-bootstrap";
 import {
   Bookmark,
   CaretDownFill,
@@ -18,8 +18,11 @@ import { useNavigate } from "react-router";
 import { fetchGetPost, removePost } from "../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import ModalePost from "./ModalePost";
-
+import Comments from "./Comments";
+import TextareaAutosize from "react-textarea-autosize";
 const PostCard = (props) => {
+  const postComments = useSelector((state) => state.comments.content);
+  const [thisPostComments, setThisPostComments] = useState([]);
   const [modalShow, setModalShow] = React.useState(false);
   const user = useSelector((state) => state.user.content);
   const navigate = useNavigate();
@@ -30,7 +33,6 @@ const PostCard = (props) => {
   const [display, setDisplay] = useState(true);
 
   const [followers] = useState(Math.floor(Math.random() * 1000));
-  const [comments] = useState(Math.floor(Math.random() * 100));
   const [shares] = useState(Math.floor(Math.random() * 100));
 
   const likeClick = () => {
@@ -41,7 +43,19 @@ const PostCard = (props) => {
     }
     setLiked(!liked);
   };
-
+  useEffect(() => {
+    setThisPostComments(postComments.filter((comm) => comm.elementId === props.postId));
+  }, [postComments]);
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      handleSubmit(e);
+    }
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("qui ci va la post dei commenti");
+  };
   return (
     <Card className="mt-3">
       {display ? (
@@ -133,7 +147,7 @@ const PostCard = (props) => {
               <Card.Text className="d-flex justify-content-between"></Card.Text>
             </div>
             <Card.Text className="mb-0">
-              {comments} commenti &#8226; {shares} diffusioni post
+              {thisPostComments.length} commenti &#8226; {shares} diffusioni post
             </Card.Text>
           </div>
           <hr className="mx-3 pt-0 mt-0"></hr>
@@ -170,6 +184,56 @@ const PostCard = (props) => {
               <SendFill className="me-1"></SendFill> <p className="m-0">Invia</p>
             </Button>
           </div>
+          {thisPostComments.length > 0 ? (
+            <Container className="pb-3">
+              <Row className="px-3">
+                <Col xs={2} md={1} className="d-flex justify-content-center align-items-center">
+                  <img
+                    className="rounded-circle fluid"
+                    src={user.image}
+                    alt=""
+                    style={{
+                      width: "40px",
+                      height: "40px",
+                      objectFit: "cover",
+                    }}
+                  />
+                </Col>
+                <Col className="d-flex align-items-center">
+                  <TextareaAutosize
+                    className="form-control rounded-5"
+                    placeholder="Aggiungi il tuo commento..."
+                    onKeyDown={handleKeyDown}
+                  ></TextareaAutosize>
+                </Col>
+              </Row>
+              <Comments comments={thisPostComments} />
+            </Container>
+          ) : (
+            <Container className="pb-3">
+              <Row className="px-3">
+                <Col xs={2} md={1} className="d-flex justify-content-center align-items-center">
+                  <img
+                    className="rounded-circle fluid"
+                    src={user.image}
+                    alt=""
+                    style={{
+                      width: "40px",
+                      height: "40px",
+                      objectFit: "cover",
+                    }}
+                  />
+                </Col>
+                <Col className="d-flex align-items-center">
+                  <TextareaAutosize
+                    className="form-control rounded-5"
+                    placeholder="Aggiungi il tuo commento..."
+                    onKeyDown={handleKeyDown}
+                  ></TextareaAutosize>
+                </Col>
+              </Row>
+            </Container>
+          )}
         </Card.Body>
       ) : (
         <Card.Body>
