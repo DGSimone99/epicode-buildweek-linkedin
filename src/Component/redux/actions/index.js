@@ -225,9 +225,9 @@ export const fetchSharePost = (testo, file) => {
   };
 };
 
-/* export const fetchNews = () => {
+export const fetchNews = () => {
   return (dispatch) => {
-    fetch("https://newsdata.io/api/1/latest?apikey=pub_7197279c519a1bafb5c6febea5712936833b7&language=it")
+    fetch("http://api.mediastack.com/v1/news?access_key=7828375f284ca25f8c7b67474633f493&sources=it")
       .then((resp) => resp.json())
       .then((news) => {
         if (news) {
@@ -239,7 +239,7 @@ export const fetchSharePost = (testo, file) => {
       })
       .catch((err) => console.error(err));
   };
-}; */
+};
 
 export const fetchExperience = () => {
   return (dispatch) => {

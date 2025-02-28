@@ -281,3 +281,13 @@ footer a {
     background-color: rgba(0, 0, 0, 0.041) !important;
   }
 }
+
+.linkNews {
+  color: black;
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
