@@ -51,7 +51,7 @@ function EditComment(props) {
 
       <Modal.Body className="p-0" style={{ maxHeight: "70vh", overflowY: "auto" }}>
         <Container className="pb-3">
-          <Row className="px-3">
+          <Row className="p-3">
             <Col xs={2} md={1} className="d-flex justify-content-center align-items-center">
               <img
                 className="rounded-circle fluid"
