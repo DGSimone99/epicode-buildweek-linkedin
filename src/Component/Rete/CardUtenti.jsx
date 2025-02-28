@@ -3,7 +3,11 @@ import { PersonFillAdd } from "react-bootstrap-icons";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
+import { useNavigate } from "react-router";
+
 function CardUtenti({ profile }) {
+  const navigate = useNavigate();
+
   return (
     <Card
       className="d-flex flex-column "
@@ -22,11 +26,14 @@ function CardUtenti({ profile }) {
         <Image
           src={profile.image}
           fluid
-          className="rounded-circle position-relative"
+          className="rounded-circle position-relative pointer"
           style={{
             width: "80px",
             height: "80px",
             objectFit: "cover",
+          }}
+          onClick={() => {
+            navigate("/user/" + profile._id);
           }}
         />
       </div>
