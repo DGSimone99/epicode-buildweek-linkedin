@@ -8,7 +8,9 @@ export const SET_EXPERIENCES = "SET_EXPERIENCES";
 export const GET_POST = "GET_POST";
 export const POST_POST = "POST_POST";
 export const REMOVE_POST = "REMOVE_POST";
+export const SET_COMMENTS = "SET_COMMENTS";
 export const setProfilesAction = (data) => ({ type: SET_PROFILES, payload: data });
+export const setCommentsAction = (data) => ({ type: SET_COMMENTS, payload: data });
 export const setUserAction = (data) => ({ type: SET_USER, payload: data });
 export const setExperiences = (data) => ({ type: SET_EXPERIENCES, payload: data });
 export const FETCH_JOBS_REQUEST = "FETCH_JOBS_REQUEST";
@@ -332,5 +334,25 @@ export const editPost = (postId, testo, file) => {
     } catch (error) {
       console.error(error);
     }
+  };
+};
+export const fetchGetComments = () => {
+  return (dispatch) => {
+    fetch("https://striveschool-api.herokuapp.com/api/comments/", {
+      method: "GET",
+      headers: {
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2N2JjNGRjY2U3MDMzNzAwMTUzMTZkYjEiLCJpYXQiOjE3NDAzOTM5MzIsImV4cCI6MTc0MTYwMzUzMn0.1t8kxCm5d0UPnuFQqZs9G6-VZkPjsGpIMIhIadrrE4Q",
+      },
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        if (data) {
+          dispatch(setCommentsAction(data));
+        } else {
+          alert("nessun commento trovato");
+        }
+      })
+      .catch((err) => console.error(err));
   };
 };

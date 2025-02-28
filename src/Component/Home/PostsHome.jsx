@@ -1,12 +1,20 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import PostCard from "./PostCard";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
+import { fetchGetComments, fetchProfiles } from "../redux/actions";
 
 const PostsHome = () => {
   const posts = useSelector((state) => state.post.content);
   const reversedPosts = [...posts].reverse();
   const [numPost, setNumPost] = useState(9);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchGetComments());
+    dispatch(fetchProfiles());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div>
