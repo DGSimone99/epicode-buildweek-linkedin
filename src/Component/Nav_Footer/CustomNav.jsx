@@ -155,11 +155,19 @@ const CustomNav = () => {
             <BriefcaseFill size={20} className="mb-1 mx-4" />
             <p>Lavoro</p>
           </Nav.Link>
-          <Nav.Link to="" className={`text-center nav-link ${location.pathname === "" ? "navActive" : ""}`}>
+          <Nav.Link
+            as={Link}
+            to="/messaging"
+            className={`text-center nav-link ${location.pathname === "/messaging" ? "navActive" : ""}`}
+          >
             <ChatDotsFill size={20} className="mb-1 mx-4" />
             <p>Messaggi</p>
           </Nav.Link>
-          <Nav.Link to="" className={`text-center nav-link ${location.pathname === "" ? "navActive" : ""}`}>
+          <Nav.Link
+            as={Link}
+            to="/notifications"
+            className={`text-center nav-link ${location.pathname === "/notifications" ? "navActive" : ""}`}
+          >
             <BellFill size={20} className="mb-1 mx-4" />
             <p>Notifiche</p>
           </Nav.Link>

@@ -12,6 +12,7 @@ const Popular = () => {
           />
           <div className="userImg2">
             <Image
+              src="https://consumersiteimages.trustpilot.net/business-units/62a6277627ee655c1226b624-198x149-1x.avif"
               fluid
               className="rounded-circle position-relative"
               style={{
@@ -26,7 +27,7 @@ const Popular = () => {
               <Card.Title className="fs-3 mb-0"></Card.Title>
               <Card.Text className="mb-0"></Card.Text>
               <Card.Text className="text-secondary my-0"></Card.Text>
-              <Card.Text className="my-1">
+              <Card.Text className="my-1 pointer2">
                 <img
                   src="https://media.licdn.com/dms/image/v2/C4E0BAQHYgix-Ynux1A/company-logo_100_100/company-logo_100_100/0/1646830188798/epicodeschool_logo?e=1748476800&amp;v=beta&amp;t=doTFJx0D6s9OjWg9ZXuLy9TSWloZEUtDzU0J_gPyBJs"
                   width={32}

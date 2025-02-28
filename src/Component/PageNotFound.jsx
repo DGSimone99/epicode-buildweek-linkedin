@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { Button, Image } from "react-bootstrap";
 import { Link } from "react-router";
 import notFound from "../assets/NotFound.png";
