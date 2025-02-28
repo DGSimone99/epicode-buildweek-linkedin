@@ -7,15 +7,15 @@ const Invites = () => {
         <h6>Inviti</h6>
         <Button className="ms-auto border-0 bg-white text-dark fw-semibold">Mostra tutto</Button>
       </Container>
-      <Container className="d-flex ps-3 py-3">
+      <Container className="d-flex ps-3 py-3 pointer">
         <Image
           className="rounded-1 me-2"
           src="https://media.licdn.com/dms/image/v2/C4D0BAQH_sxPLw-Vfjw/company-logo_100_100/company-logo_100_100/0/1630574580547/linkedin_notizie_logo?e=2147483647&v=beta&t=DmYMJD9HmbNgZQIXPgS-6MTn9WiF3V_GCsv2UQFqXdY"
           width={80}
         />
         <div className="align-self-center">
-          <span>Newsletter • Mensile</span>
-          <p className="fs-6">LinkedIn Notizie ti hainvitato a iscriverti a Tech in breve</p>
+          <span className="pointer2">Newsletter • Mensile</span>
+          <p className="fs-6 pointer2">LinkedIn Notizie ti hainvitato a iscriverti a Tech in breve</p>
         </div>
 
         <div className="ms-auto align-self-center">

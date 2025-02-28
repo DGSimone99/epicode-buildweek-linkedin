@@ -1,4 +1,4 @@
-import { Col, Container, Image, Row } from "react-bootstrap";
+import { Container, Image } from "react-bootstrap";
 
 const SingoloLavoro = ({ job }) => {
   return (
@@ -14,10 +14,10 @@ const SingoloLavoro = ({ job }) => {
           />
         </div>
         <div>
-          <h5 className="text-primary">{job.title}</h5>
-          <p className="mb-0">{job.company_name}</p>
-          <p className="text-secondary mb-0">{job.candidate_required_location}</p>
-          <p className="mb-0">Visualizzato • Promosso </p>
+          <h5 className="text-primary pointer2">{job.title}</h5>
+          <p className="mb-0 pointer2">{job.company_name}</p>
+          <p className="text-secondary mb-0 pointer2">{job.candidate_required_location}</p>
+          <p className="mb-0 pointer2">Visualizzato • Promosso </p>
         </div>
       </div>
     </Container>

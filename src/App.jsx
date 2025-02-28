@@ -13,6 +13,8 @@ import Network from "./Component/Rete/Network";
 import FdMp from "./Component/FdMp";
 import PageNotFound from "./Component/PageNotFound";
 import PaginaDettagliLavoro from "./Component/Lavoro/PaginaDettagliLavoro";
+import NotificheMain from "./Component/Notifiche/NotificheMain";
+import MessaggiMain from "./Component/Messaggi/MessaggiMain";
 
 function App() {
   return (
@@ -58,6 +60,22 @@ function App() {
             element={
               <Container className="pt-3">
                 <Network />
+              </Container>
+            }
+          />
+          <Route
+            path="/notifications"
+            element={
+              <Container className="pt-3">
+                <NotificheMain />
+              </Container>
+            }
+          />
+          <Route
+            path="/messaging"
+            element={
+              <Container className="pt-3">
+                <MessaggiMain />
               </Container>
             }
           />

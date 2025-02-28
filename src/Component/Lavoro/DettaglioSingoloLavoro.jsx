@@ -17,31 +17,32 @@ const DettaglioSingoloLavoro = ({ job }) => {
     <div className="bg-white border p-3 overflow-y-scroll" style={{ height: "calc(100vh - 120px)" }}>
       <div className="d-flex align-items-center">
         <Image
+          className="pointer"
           src={
             job.company_logo_url ||
             "https://media.licdn.com/dms/image/v2/C4D0BAQEv4iZCWCWMsA/company-logo_200_200/company-logo_200_200/0/1647188299217/ca_silca_logo?e=2147483647&v=beta&t=cV2jOR6v2lO3P0a6HP0hJNgs8HaZMomC9_wtK75uZNI"
           }
           style={{ objectFit: "cover", width: "30px", height: "30px" }}
         />
-        <p className="mb-0 ms-2">{job.company_name} </p>
+        <p className="mb-0 ms-2 pointer2">{job.company_name} </p>
         <div className="ms-auto">
           <ArrowReturnLeft style={{ transform: "rotate(180deg)", color: "black" }} className="me-3" />
           <ThreeDots />
         </div>
       </div>
       <div>
-        <h2>{job.title}</h2>
+        <h2 className="mt-2 pointer2">{job.title}</h2>
         <p className="mb-0 text-secondary">
           {job.candidate_required_location} · {job.publication_date} · 48 persone hanno cliccato sul pulsante
           “Candidati”
         </p>
         <div className="d-flex align-items-start mt-2">
-          <BriefcaseFill />
-          <p style={{ backgroundColor: "#DAEBD1" }} className="rounded-3 px-1 ms-2 mb-0">
+          <BriefcaseFill className="pointer" />
+          <p style={{ backgroundColor: "#DAEBD1" }} className="rounded-3 px-1 ms-2 mb-0 pointer2">
             In sede
           </p>
           <p className="ms-2">·</p>
-          <p style={{ backgroundColor: "#DAEBD1" }} className="rounded-3 px-1 ms-2 mb-0">
+          <p style={{ backgroundColor: "#DAEBD1" }} className="rounded-3 px-1 ms-2 mb-0 pointer2">
             {job.job_type}
           </p>
           <p className="ms-2 mb-0">·</p>
@@ -72,11 +73,12 @@ const DettaglioSingoloLavoro = ({ job }) => {
         <h5 className="mt-3">Persone che puoi contattare</h5>
         <div className="d-flex align-items-center border rounded-3 p-3">
           <Image
+            className="pointer"
             src="https://media.licdn.com/dms/image/v2/C510BAQF5OJVPD2RZjA/company-logo_100_100/company-logo_100_100/0/1631329806779?e=1748476800&v=beta&t=Da08f8UuUa-Cn51jFtcVNsdNRftYCHsSCgI_Q3LFUJw"
             width={50}
             height={50}
           />
-          <p className="ms-2 me-2 mb-0">Ex studenti di Sapienza Università di Roma</p>
+          <p className="ms-2 me-2 mb-0 pointer2">Ex studenti di Sapienza Università di Roma</p>
           <Button variant="outline-secondary" className="rounded-pill px-4 ms-auto">
             Mostra tutto
           </Button>
@@ -91,10 +93,10 @@ const DettaglioSingoloLavoro = ({ job }) => {
               height={50}
               className="rounded-circle"
             />
-            <div className="ms-2 mb-0">
-              <h5>Enrico Forlino</h5>
+            <div className="ms-2 mb-0 pointer">
+              <h5 className="pointer2">Enrico Forlino</h5>
               <p className="mb-0">Team Leader presso Hays - Divisione Sales & Marketing</p>
-              <p className="mb-0">Autore dell'offerta di lavoro · 2 collegamenti in comune </p>
+              <p className="mb-0">Autore offerta di lavoro · 2 collegamenti in comune </p>
             </div>
             <Button variant="outline-secondary" className="rounded-pill px-4 ms-auto">
               <SendFill className="me-1" />
@@ -105,7 +107,7 @@ const DettaglioSingoloLavoro = ({ job }) => {
 
         <div>
           <h5>Informazioni sull’offerta di lavoro</h5>
-          <p className="mb-0 mt-2">{job.title}</p>
+          <p className="mb-0 mt-2 pointer2">{job.title}</p>
 
           <div dangerouslySetInnerHTML={{ __html: job.description }} />
 

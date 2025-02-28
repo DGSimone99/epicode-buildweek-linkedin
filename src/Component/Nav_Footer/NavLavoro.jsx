@@ -60,7 +60,7 @@ const NavLavoro = () => {
       style={{ top: "60px" }}
     >
       <Nav className="d-flex align-items-center justify-content-between  w-100 ">
-        <NavLink className={`d-flex align-items-center nav-link mx-4`}>
+        <NavLink className={`d-flex align-items-center nav-link mx-4 pointer2`}>
           <Image
             src="https://media.licdn.com/media/AAYAAgQJAAgAAQAAAAAAAHzpg-xWkZIMSTKjhrg9aabRmw.png"
             className="mb-1 me-2"
@@ -69,7 +69,7 @@ const NavLavoro = () => {
           />
           <p>Per te</p>
         </NavLink>
-        <NavLink className={`d-flex align-items-center nav-link `}>
+        <NavLink className={`d-flex align-items-center nav-link pointer2`}>
           <Image
             src="https://media.licdn.com/media/AAYAAgQJAAgAAQAAAAAAALxe-13i08oISNC0LL0E8rOjbQ.png"
             className="mb-1 me-2"
@@ -78,7 +78,7 @@ const NavLavoro = () => {
           />
           <p>Ibrido</p>
         </NavLink>
-        <NavLink className={`d-flex align-items-center nav-link `}>
+        <NavLink className={`d-flex align-items-center nav-link pointer2`}>
           <Image
             src="https://media.licdn.com/media/AAYAAgQJAAgAAQAAAAAAAGP4rUyqs0gcQHyq-AxUoT9SVg.png"
             className="mb-1 me-2"
@@ -87,7 +87,7 @@ const NavLavoro = () => {
           />
           <p>Candidatura semplice</p>
         </NavLink>
-        <NavLink className={`d-flex align-items-center nav-link `}>
+        <NavLink className={`d-flex align-items-center nav-link pointer2`}>
           <Image
             src="https://media.licdn.com/media/AAYAAgQJAAgAAQAAAAAAALXOZ_PEtcJLSEqdUt9ZET7yeA.png"
             className="mb-1 me-2"
@@ -96,7 +96,7 @@ const NavLavoro = () => {
           />
           <p>Industria manifatturiera</p>
         </NavLink>
-        <NavLink className={`d-flex align-items-center nav-link `}>
+        <NavLink className={`d-flex align-items-center nav-link pointer2`}>
           <Image
             src="https://media.licdn.com/media/AAYAAgQJAAgAAQAAAAAAACmG4H52GI2ESsex3aFZtqIX4g.png"
             className="mb-1 me-2"
@@ -105,7 +105,7 @@ const NavLavoro = () => {
           />
           <p>HR</p>
         </NavLink>
-        <NavLink className={`d-flex align-items-center nav-link `}>
+        <NavLink className={`d-flex align-items-center nav-link pointer2`}>
           <Image
             src="https://media.licdn.com/media/AAYAAgQJAAgAAQAAAAAAAMjG8APRYp3UQiKGJ2V0tTioaA.png"
             className="mb-1 me-2"
