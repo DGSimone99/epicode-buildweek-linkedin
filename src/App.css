@@ -181,6 +181,10 @@ p {
   color: #0d6efd !important;
 }
 
+/* #chat-collapse-content {
+  height: 600px;
+} */
+
 /*RESPONSIVE*/
 
 @media screen and (max-width: 1024px) {
