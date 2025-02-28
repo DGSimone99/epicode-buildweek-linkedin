@@ -5,6 +5,7 @@ import { PencilSquare, ThreeDots, ChevronCompactDown, Search, Sliders2 } from "r
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Dropdown, DropdownButton, Form, Image, InputGroup } from "react-bootstrap";
 import { useSelector } from "react-redux";
+import messages from "../../assets/NoMessage.png";
 
 const Chat = () => {
   const [open, setOpen] = useState(false);

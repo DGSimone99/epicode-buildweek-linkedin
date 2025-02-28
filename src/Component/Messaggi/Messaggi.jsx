@@ -12,10 +12,7 @@ const Messaggi = () => {
           <div className="d-flex align-items-center">
             <h5 className="me-3">Messaggistica</h5>
             <InputGroup className="custom-input-group d-flex flex-nowrap">
-              <InputGroup.Text
-                className="search-icon d-flex align-items-center pe-0"
-                style={{ backgroundColor: "#F4F2EE", border: "none" }}
-              >
+              <InputGroup.Text className="search-icon d-flex align-items-center pe-0" style={{ backgroundColor: "#F4F2EE", border: "none" }}>
                 <Search />
               </InputGroup.Text>
               <FormControl
@@ -28,7 +25,7 @@ const Messaggi = () => {
           </div>
           <div className="d-flex align-items-center">
             <ThreeDots className="fs-4 text-black me-3 pointer"></ThreeDots>
-            <PencilSquare className="fs-4 pointer"></PencilSquare>
+            <PencilSquare className="fs-4 pointer" color="black"></PencilSquare>
           </div>
         </div>
         <hr></hr>
@@ -73,12 +70,7 @@ const Messaggi = () => {
             <div className="border-top border-3">
               <Form className="m-2 mt-3">
                 <Form.Group controlId="exampleTextarea">
-                  <Form.Control
-                    as="textarea"
-                    rows={4}
-                    placeholder="Scrivi un messaggio..."
-                    style={{ backgroundColor: "#F4F2EE" }}
-                  />
+                  <Form.Control as="textarea" rows={4} placeholder="Scrivi un messaggio..." style={{ backgroundColor: "#F4F2EE" }} />
                 </Form.Group>
                 <div className="d-flex justify-content-between mt-3 ms-1">
                   <div className="d-flex align-items-center ">
