@@ -1,8 +1,11 @@
 import { Container, Image } from "react-bootstrap";
+import { useNavigate } from "react-router";
 
 const SingoloLavoro = ({ job }) => {
+  const navigate = useNavigate();
+
   return (
-    <Container className="bg-white mt-0 border p-3">
+    <Container className="bg-white mt-0 border p-3" onClick={() => navigate("/pagedettagli/" + job._id)}>
       <div className=" d-flex justify-content-start">
         <div className="me-4">
           <Image

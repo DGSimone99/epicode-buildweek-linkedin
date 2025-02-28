@@ -54,7 +54,7 @@ function App() {
               </Container>
             }
           />
-          <Route path="/pagedettagli" element={<PaginaDettagliLavoro />} />
+          <Route path="/pagedettagli/:id" element={<PaginaDettagliLavoro />} />
           <Route
             path="/network"
             element={

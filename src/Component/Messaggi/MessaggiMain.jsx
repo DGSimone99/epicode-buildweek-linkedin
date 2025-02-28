@@ -1,6 +1,7 @@
 import { Col, Row } from "react-bootstrap";
 import FooterMini from "../Nav_Footer/FooterMini";
 import Messaggi from "./Messaggi";
+import Annuncio from "../Home/Annuncio";
 
 const MessaggiMain = () => {
   return (
@@ -10,6 +11,7 @@ const MessaggiMain = () => {
       </Col>
       <Col md={8} lg={3}>
         <FooterMini />
+        <Annuncio />
       </Col>
     </Row>
   );

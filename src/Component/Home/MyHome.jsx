@@ -5,6 +5,7 @@ import User from "./User";
 import ConsigliPerTe from "./ConsigliPerTe";
 import PostsHome from "./PostsHome";
 import FooterMini from "../Nav_Footer/FooterMini";
+import Annuncio from "./Annuncio";
 
 const MyHome = () => {
   return (
@@ -20,6 +21,7 @@ const MyHome = () => {
         </Col>
         <Col md={8} lg={3}>
           <PrimoPiano />
+          <Annuncio />
           <FooterMini />
         </Col>
       </Row>
