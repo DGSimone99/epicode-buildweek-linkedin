@@ -29,6 +29,7 @@ const PostCard = (props) => {
   const dispatch = useDispatch();
   const [like, setLike] = useState(Math.floor(Math.random() * 100));
   const [liked, setLiked] = useState(false);
+  const [showComments, setShowComments] = useState(false);
 
   const [display, setDisplay] = useState(true);
 
@@ -168,8 +169,12 @@ const PostCard = (props) => {
             <Button
               variant="primary"
               className="bg-transparent border-0 text-dark fw-semibold d-flex align-items-center ms-3"
+              onClick={() => {
+                setShowComments(!showComments);
+              }}
             >
-              <ChatDots className="me-1"></ChatDots> <p className="m-0">Commenta</p>
+              <ChatDots className={`me-1 ${showComments ? "text-info" : "text-black"}`}></ChatDots>{" "}
+              <p className="m-0">Commenta</p>
             </Button>
             <Button
               variant="primary"
@@ -207,7 +212,7 @@ const PostCard = (props) => {
                   ></TextareaAutosize>
                 </Col>
               </Row>
-              <Comments comments={thisPostComments} />
+              {showComments && <Comments comments={thisPostComments} />}
             </Container>
           ) : (
             <Container className="pb-3">
