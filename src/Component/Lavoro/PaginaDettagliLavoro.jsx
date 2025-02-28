@@ -16,9 +16,9 @@ const PaginaDettagliLavoro = () => {
   return (
     <>
       <NavLavoro />
-      <Container fluid>
+      <Container>
         <Row className=" justify-content-center">
-          <Col xs={4} className="pe-0 ">
+          <Col xs={5} className="pe-0 ">
             <div className="sticky-top bg-white border p-3" style={{ top: "120px" }}>
               <h2>Le principali offerte di lavoro </h2>
               <p>In base al tuo profilo, alle tue preferenze e ad attività come candidature, ricerche e salvataggi.</p>
@@ -35,7 +35,7 @@ const PaginaDettagliLavoro = () => {
               </div>
             </div>
           </Col>
-          <Col xs={6} className="ps-0">
+          <Col xs={7} className="ps-0">
             <DettaglioSingoloLavoro job={select} />
           </Col>
         </Row>
