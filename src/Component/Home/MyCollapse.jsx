@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button, Collapse } from "react-bootstrap";
-import { ChevronCompactDown } from "react-bootstrap-icons";
+import { ChevronCompactDown, ChevronCompactUp } from "react-bootstrap-icons";
 import { useSelector } from "react-redux";
 import NotiziePrimoPiano from "./NotiziePrimoPiano";
 
@@ -17,8 +17,17 @@ const MyCollapse = () => {
         aria-controls="example-collapse-text"
         aria-expanded={open}
       >
-        Vedi altro
-        <ChevronCompactDown className="ms-2" />
+        {open == false ? (
+          <p className="ms-auto mb-0 pointer " onClick={() => setOpen(false)}>
+            Mostra altro
+            <ChevronCompactDown className="ms-2" />
+          </p>
+        ) : (
+          <p className="ms-auto mb-0 pointer" onClick={() => setOpen(true)}>
+            Mostra meno
+            <ChevronCompactUp className="ms-2" />
+          </p>
+        )}
       </Button>
       <Collapse in={open}>
         <div>
