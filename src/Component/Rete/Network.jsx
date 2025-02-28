@@ -17,7 +17,7 @@ const Network = () => {
             <FooterMini />
           </div>
         </Col>
-        <Col md={7}>
+        <Col md={9}>
           <Invites />
           <Giochi />
           <Conoscenti
