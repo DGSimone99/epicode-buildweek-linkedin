@@ -4,6 +4,8 @@ import MyNetwork from "./MyNetwork";
 import Invites from "./Invites";
 import Popular from "./Popular";
 import Conoscenti from "./Conoscenti";
+import Annuncio from "../Home/Annuncio";
+import Giochi from "./Giochi";
 
 const Network = () => {
   return (
@@ -12,12 +14,20 @@ const Network = () => {
         <Col md={3}>
           <MyNetwork />
           <div className="d-none d-md-block">
+            <Annuncio />
             <FooterMini />
           </div>
         </Col>
         <Col md={7}>
           <Invites />
-          <Conoscenti />
+          <Giochi />
+          <Conoscenti
+            titolo="Persone che potresti conoscere in base alla tua attività recente"
+            partenza={200}
+            fine={208}
+          />
+          <Conoscenti titolo="Persone che potresti conoscere in Roma" partenza={400} fine={408} />
+          <Conoscenti titolo="Persone da seguire in base alla tua attività" partenza={300} fine={308} />
           <Popular />
         </Col>
       </Row>

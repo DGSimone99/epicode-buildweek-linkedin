@@ -6,10 +6,10 @@ import Card from "react-bootstrap/Card";
 function CardUtenti({ profile }) {
   return (
     <Card
-      className="d-flex flex-column"
+      className="d-flex flex-column "
       style={{
         flex: "1 1 300px",
-        minHeight: "300px",
+        minHeight: "280px",
         display: "flex",
       }}
     >
@@ -24,8 +24,8 @@ function CardUtenti({ profile }) {
           fluid
           className="rounded-circle position-relative"
           style={{
-            width: "68px",
-            height: "68px",
+            width: "80px",
+            height: "80px",
             objectFit: "cover",
           }}
         />
@@ -38,10 +38,21 @@ function CardUtenti({ profile }) {
           justifyContent: "space-between",
         }}
       >
-        <Card.Title className="mt-5 nome-profile mb-0">
-          {profile.name} {""} {profile.surname}
-        </Card.Title>
-        <Card.Text className="text-secondary title-profile">{profile.title}</Card.Text>
+        <div>
+          <Card.Title
+            className="mt-5 nome-profile mb-0 text-truncate text-center"
+            style={{
+              maxWidth: "100%",
+              whiteSpace: "nowrap",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+            }}
+            title={`${profile.name} ${profile.surname}`}
+          >
+            {profile.name} {profile.surname}
+          </Card.Title>
+          <Card.Text className="text-secondary title-profile text-center mb-0">{profile.title}</Card.Text>
+        </div>
         <Button variant="outline-primary" className="rounded-pill  px-3">
           <PersonFillAdd className="me-1" />
           <strong>Collegati</strong>

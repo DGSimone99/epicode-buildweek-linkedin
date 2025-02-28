@@ -30,7 +30,8 @@ body {
 .cardUserImg2 {
   position: absolute;
   top: 30px;
-  left: 60px;
+  left: 50%;
+  transform: translate(-50%);
 }
 
 .nome-profile {
@@ -39,7 +40,7 @@ body {
 }
 
 .title-profile {
-  font-size: 0.85rem !important;
+  font-size: 0.75rem !important;
 }
 
 .plusImg {
