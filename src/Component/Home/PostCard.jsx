@@ -156,7 +156,7 @@ const PostCard = (props) => {
             <div onClick={likeClick}>
               <Button
                 variant="primary"
-                className="bg-transparent border-0 text-dark fw-semibold d-flex align-items-center"
+                className="bg-transparent border-0 text-dark fw-semibold d-flex align-items-center  pointer3"
               >
                 {liked ? (
                   <BsHandThumbsUpFill className="text-info me-1"></BsHandThumbsUpFill>
@@ -168,7 +168,7 @@ const PostCard = (props) => {
             </div>
             <Button
               variant="primary"
-              className="bg-transparent border-0 text-dark fw-semibold d-flex align-items-center ms-3"
+              className="bg-transparent border-0 text-dark fw-semibold d-flex align-items-center ms-3  pointer3"
               onClick={() => {
                 setShowComments(!showComments);
               }}
@@ -178,13 +178,13 @@ const PostCard = (props) => {
             </Button>
             <Button
               variant="primary"
-              className="bg-transparent border-0 text-dark fw-semibold d-flex align-items-center mx-3"
+              className="bg-transparent border-0 text-dark fw-semibold d-flex align-items-center mx-3  pointer3"
             >
               <BiShareAlt className="me-1"></BiShareAlt> <p className="m-0">Diffondi il post</p>
             </Button>
             <Button
               variant="primary"
-              className="bg-transparent border-0 text-dark fw-semibold d-flex align-items-center"
+              className="bg-transparent border-0 text-dark fw-semibold d-flex align-items-center  pointer3"
             >
               <SendFill className="me-1"></SendFill> <p className="m-0">Invia</p>
             </Button>

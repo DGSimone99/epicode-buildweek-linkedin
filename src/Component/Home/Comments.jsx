@@ -18,7 +18,7 @@ const Comments = (props) => {
                   <div>
                     {users.find((u) => u.username == comment.author) ? (
                       <img
-                        className="rounded-circle fluid me-2"
+                        className="rounded-circle fluid me-3"
                         src={user?.image}
                         alt={"user propic"}
                         style={{
