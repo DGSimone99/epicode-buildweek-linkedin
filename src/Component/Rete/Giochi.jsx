@@ -6,11 +6,17 @@ const Giochi = () => {
     <Container className="bg-white border rounded-3 p-3 ">
       <div className="d-flex align-items-center mb-3">
         <p className="mb-0">Rimani in contatto con giochi giornalieri</p>
-        <div className="d-flex ms-auto">
-          <div className="rounded-circle p-1 me-2" style={{ backgroundColor: "#E8E8E8" }}>
+        <div className="d-flex ms-auto ">
+          <div
+            className="rounded-circle p-1 me-2 d-flex align-items-center"
+            style={{ width: "25px", height: "25px", backgroundColor: "#E8E8E8" }}
+          >
             <ChevronCompactLeft />
           </div>
-          <div className="p-1 rounded-circle" style={{ backgroundColor: "#E8E8E8" }}>
+          <div
+            className="p-1 rounded-circle d-flex align-items-center"
+            style={{ width: "25px", height: "25px", backgroundColor: "#E8E8E8" }}
+          >
             <ChevronCompactRight />
           </div>
         </div>
@@ -25,7 +31,7 @@ const Giochi = () => {
             </p>
             <p className="mb-0">Friday, Feb 28</p>
           </div>
-          <Button variant="outline-primary" className="rounded-pill mx-3">
+          <Button variant="outline-primary" className="rounded-pill mx-3" style={{ height: "40px" }}>
             <strong>Risolvi</strong>
           </Button>
         </div>
@@ -38,7 +44,7 @@ const Giochi = () => {
             </p>
             <p className="mb-0">Friday, Feb 28</p>
           </div>
-          <Button variant="outline-primary" className="rounded-pill mx-3">
+          <Button variant="outline-primary" className="rounded-pill mx-3" style={{ height: "40px" }}>
             <strong>Risolvi</strong>
           </Button>
         </div>

@@ -12,13 +12,12 @@ const PaginaDettagliLavoro = () => {
   const { jobs } = useSelector((state) => state.jobs);
   const [select, setSelect] = useState(jobs.find((job) => job._id == id));
 
-  console.log("SONO JOB", jobs);
   return (
     <>
       <NavLavoro />
-      <Container fluid>
+      <Container>
         <Row className=" justify-content-center">
-          <Col xs={4} className="pe-0 ">
+          <Col xs={5} className="pe-0 ">
             <div className="sticky-top bg-white border p-3" style={{ top: "120px" }}>
               <h2>Le principali offerte di lavoro </h2>
               <p>In base al tuo profilo, alle tue preferenze e ad attività come candidature, ricerche e salvataggi.</p>
@@ -27,7 +26,7 @@ const PaginaDettagliLavoro = () => {
             <div className="overflow-y-scroll" style={{ height: "calc(100vh - 300px)" }}>
               {jobs.slice(0, 15).map((job) => (
                 <div className="pointer" key={job._id} onClick={() => setSelect(job)}>
-                  <SingoloLavoro job={job} />
+                  <SingoloLavoro job={job} select={select} />
                 </div>
               ))}
               <div className="bg-white border">
@@ -35,7 +34,7 @@ const PaginaDettagliLavoro = () => {
               </div>
             </div>
           </Col>
-          <Col xs={6} className="ps-0">
+          <Col xs={7} className="ps-0">
             <DettaglioSingoloLavoro job={select} />
           </Col>
         </Row>

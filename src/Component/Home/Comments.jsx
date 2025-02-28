@@ -1,4 +1,4 @@
-import { Col, Container, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { ThreeDots } from "react-bootstrap-icons";
 import { useSelector } from "react-redux";
 import EditComment from "./EditComment";
@@ -9,44 +9,60 @@ const Comments = (props) => {
   const [editShow, setEditShow] = useState(false);
   return (
     <Container fluid>
-      {users &&
+      {users.length > 0 &&
         props.comments.map((comment, i) => {
-          const user = users.find((u) => u.username === comment.author);
-          console.log(user);
+          const user = users.find((u) => u.username == comment.author);
+          console.log(comment);
+
           return (
             <div key={comment.elementId + i} className="pt-4">
-              <Row>
-                <Col xs={2} md={1}>
-                  <img
-                    className="rounded-circle fluid"
-                    src={
-                      "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541"
-                    }
-                    alt={"user propic"}
-                    style={{
-                      width: "40px",
-                      height: "40px",
-                      objectFit: "cover",
-                    }}
-                  />
-                </Col>
-                <Col className="d-flex justify-content-between">
-                  <div className="d-flex flex-column">
-                    <span className="fw-bold">{"username"}</span>
-                    <span className="text-secondary">{"user title"}</span>
-                  </div>
+              <div className="d-flex justify-content-between">
+                <div className="d-flex">
                   <div>
-                    <ThreeDots onClick={() => setEditShow(true)} />
-                    <EditComment show={editShow} onHide={() => setEditShow(false)} commentId={comment._id} />
+                    {users.find((u) => u.username == comment.author) ? (
+                      <img
+                        className="rounded-circle fluid me-3"
+                        src={user?.image}
+                        alt={"user propic"}
+                        style={{
+                          width: "40px",
+                          height: "40px",
+                          objectFit: "cover",
+                        }}
+                      />
+                    ) : (
+                      <img
+                        className="rounded-circle fluid  me-2"
+                        src={
+                          "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?20150327203541"
+                        }
+                        alt={"user propic"}
+                        style={{
+                          width: "40px",
+                          height: "40px",
+                          objectFit: "cover",
+                        }}
+                      />
+                    )}
                   </div>
-                </Col>
-              </Row>
-              <Row>
-                <Col xs={2} md={1}></Col>
-                <Col>
-                  <p>{comment.comment}</p>
-                </Col>
-              </Row>
+                  <div className="d-flex flex-column">
+                    {users.find((u) => u.username == comment.author) ? (
+                      <span className="fw-bold">{user?.name}</span>
+                    ) : (
+                      <span className="fw-bold">Username</span>
+                    )}
+                    <p className="mt-2 mb-0">{comment.comment}</p>
+
+                    <div>
+                      <p className="pointer text-secondary">Consiglia | Rispondi</p>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <ThreeDots onClick={() => setEditShow(true)} />
+                  <EditComment show={editShow} onHide={() => setEditShow(false)} commentId={comment._id} />
+                </div>
+              </div>
             </div>
           );
         })}
