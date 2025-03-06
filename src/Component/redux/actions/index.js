@@ -229,7 +229,7 @@ export const fetchSharePost = (testo, file) => {
 
 export const fetchNews = () => {
   return (dispatch) => {
-    fetch("http://api.mediastack.com/v1/news?access_key=7828375f284ca25f8c7b67474633f493&sources=it")
+    fetch("http://api.mediastack.com/v1/news?access_key=dd9e12986a01ec71a4448b94a76cf048&sources=it")
       .then((resp) => resp.json())
       .then((news) => {
         if (news) {
